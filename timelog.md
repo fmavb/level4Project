@@ -3,5 +3,7 @@
 ## Week 1
 
 ### 23rd September 2019
-* *2 hours* Going through the project guidelines and documentation
-* *0.5 hours* Setting repository & GitHub, and OneDrive folder for documentation storage
+* *0.5 hours* First meeting with supervisor
+* *1 hour* Going through the project guidelines and documentation
+* *0.5 hours* Setting up repository & GitHub, OneDrive folder for documentation storage, Zotero for reference management
+* *0.5 hours* Setting up Trello for project management
