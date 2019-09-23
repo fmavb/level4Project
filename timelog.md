@@ -7,3 +7,4 @@
 * *1 hour* Going through the project guidelines and documentation
 * *0.5 hours* Setting up repository & GitHub, OneDrive folder for documentation storage, Zotero for reference management
 * *0.5 hours* Setting up Trello for project management
+* *1 hour* Reading through research articles about social networks and privacy
