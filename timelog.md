@@ -8,3 +8,8 @@
 * *0.5 hours* Setting up repository & GitHub, OneDrive folder for documentation storage, Zotero for reference management
 * *0.5 hours* Setting up Trello for project management
 * *1 hour* Reading through research articles about social networks and privacy
+
+### 24th September 2019
+* *4 hours* Attending induction lecture
+* *0.5 hours* Week planning
+* *1 hour* Prelimenary research and reading about user data protection
