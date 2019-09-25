@@ -13,3 +13,7 @@
 * *4 hours* Attending induction lecture
 * *0.5 hours* Week planning
 * *1 hour* Prelimenary research and reading about user data protection
+
+### 25th September 2019
+* *1 hour* Going through template folder and customising dissertation template
+* *1.5 hours* Research and reading about cloud user data protection
