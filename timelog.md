@@ -17,3 +17,5 @@
 ### 25th September 2019
 * *1 hour* Going through template folder and customising dissertation template
 * *1.5 hours* Research and reading about cloud user data protection
+* *1.5 hours* Preparing for the meeting with supervisor
+* *2 hours* Idea gathering
