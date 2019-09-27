@@ -19,3 +19,9 @@
 * *1.5 hours* Research and reading about cloud user data protection
 * *1.5 hours* Preparing for the meeting with supervisor
 * *2 hours* Idea gathering
+
+### 26th September 2019
+* *1 hour* Research and reading about data breaches and user negligence
+* *0.5 hours* Supervisor meeting
+* *1 hour* Idea gathering
+
