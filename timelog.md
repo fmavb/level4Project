@@ -29,3 +29,6 @@
  * *1 hour* Research and reading about social network encryption
  * *1 hour* Idea gathering
  
+ ### 28th September 2019
+ * *1 hour* Long term planning
+ * *1 hour* High level design
