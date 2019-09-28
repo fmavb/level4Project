@@ -25,3 +25,7 @@
 * *0.5 hours* Supervisor meeting
 * *1 hour* Idea gathering
 
+### 27th September 2019
+ * *1 hour* Research and reading about social network encryption
+ * *1 hour* Idea gathering
+ 
