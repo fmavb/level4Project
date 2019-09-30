@@ -32,3 +32,8 @@
  ### 28th September 2019
  * *1 hour* Long term planning
  * *1 hour* High level design
+
+ ### 29th September 2019
+ * *2 hours* Research with people
+ * *1 hour* Decision making
+
