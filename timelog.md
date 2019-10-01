@@ -37,3 +37,6 @@
  * *2 hours* Research with people
  * *1 hour* Decision making
 
+### 30th September 2019
+* *1 hour* Planning
+* *1 hour* Requirements gathering
