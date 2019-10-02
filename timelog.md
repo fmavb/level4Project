@@ -37,6 +37,13 @@
  * *2 hours* Research with people
  * *1 hour* Decision making
 
+## Week 2
+
 ### 30th September 2019
 * *1 hour* Planning
 * *1 hour* Requirements gathering
+
+### 1st October 2019
+* *1 hour* Preparing for meeting
+* *2 hours* Starting to outline the storyline
+* *1 hour* Reading and trying out cybersecurity games
