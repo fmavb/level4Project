@@ -47,3 +47,9 @@
 * *1 hour* Preparing for meeting
 * *2 hours* Starting to outline the storyline
 * *1 hour* Reading and trying out cybersecurity games
+
+### 2nd October 2019
+* *0.5 hours* Supervisor meeting
+
+### 3rd October 2019
+* *2 hours* Research and reading about games and cybersecurity
