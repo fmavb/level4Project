@@ -58,4 +58,9 @@
 * *1 hour* Research and reading about games and cybersecurity
 
 ### 6th October 2019
-* *0.5 hours*  Research and reading about games and cybersecurity
+* *0.5 hours* Research and reading about games and cybersecurity
+
+## Week 3
+
+### 7th October 2019
+* *1 hour* Research and reading about games and cybersecurity
