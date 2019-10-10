@@ -64,3 +64,9 @@
 
 ### 7th October 2019
 * *1 hour* Research and reading about games and cybersecurity
+
+### 8th October 2019
+* *1 hour* Research and reading about games and cybersecurity
+
+### 9th October 2019
+* *1 hour* Preparing for the meeting
