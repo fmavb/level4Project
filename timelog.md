@@ -70,3 +70,9 @@
 
 ### 9th October 2019
 * *1 hour* Preparing for the meeting
+
+### 10th October 2019
+* *0.5 hours* Supervisor meeting
+
+### 11th October 2019
+* *2 hours* Research and reading about gamification
