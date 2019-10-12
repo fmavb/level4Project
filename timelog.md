@@ -76,3 +76,8 @@
 
 ### 11th October 2019
 * *2 hours* Research and reading about gamification
+
+### 12th October 2019
+* *2 hours* Research and reading about gamification and cryptography
+* *1 hour* Going over cryptography slides
+* *2 hours* Searching, playing, and reviewing cybersecurity games
