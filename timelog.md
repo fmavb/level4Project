@@ -85,3 +85,9 @@
 ### 13th October 2019
 * *2 hours* Searching, playing, and reviewing cybersecurity games
 * *1 hour* Research and reading about failed cryptography implementations
+
+## Week 4
+
+### 15th October 2019
+* *3 hours* Reading about cryptographic design failures
+* *3 hours* Searching, playing, and reviewing cybersecurity games
