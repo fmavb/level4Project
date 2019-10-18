@@ -94,4 +94,10 @@
 
 ### 16th October 2019
 * *0.5 hours* Preparing for the meeting
-* *0.5 hour* Requirement, idea gathering
+* *0.5 hours* Requirement, idea gathering
+
+### 17th October 2019
+* *0.5 hours* Supervisor meeting
+
+### 18th October 2019
+* *1 hour* Game meeting
