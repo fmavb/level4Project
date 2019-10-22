@@ -101,3 +101,14 @@
 
 ### 18th October 2019
 * *1 hour* Game meeting
+
+## Week 5
+
+### 21st October 2019
+* *1 hour* Searching, playing, and reviewing cybersecurity games
+
+### 22nd October 2019
+* *1 hour* Reading cybersecurity fundamentals slides
+* *1 hour* Research and reading about games and cybersecurity
+* *2 hour* Research about learning, and games
+* *1 hour* Searching, playing, and reviewing cybersecurity games
