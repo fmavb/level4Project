@@ -110,7 +110,7 @@
 ### 22nd October 2019
 * *1 hour* Reading cybersecurity fundamentals slides
 * *1 hour* Research and reading about games and cybersecurity
-* *2 hour* Research about learning, and games
+* *2 hours* Research about learning, and games
 * *1 hour* Searching, playing, and reviewing cybersecurity games
 
 ### 23rd October 2019
