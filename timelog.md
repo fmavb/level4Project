@@ -112,3 +112,7 @@
 * *1 hour* Research and reading about games and cybersecurity
 * *2 hour* Research about learning, and games
 * *1 hour* Searching, playing, and reviewing cybersecurity games
+
+### 23rd October 2019
+* *1 hour* Playing and trying out the base game
+* *1 hour* Reading the lab and tutorial exercises for the cybersecurity fundamentals course
