@@ -116,3 +116,10 @@
 ### 23rd October 2019
 * *1 hour* Playing and trying out the base game
 * *1 hour* Reading the lab and tutorial exercises for the cybersecurity fundamentals course
+
+### 24th October 2019
+* *0.5 hours* Supervisor meeting
+* *1 hour* Searching, playing, and reviewing cybersecurity games
+
+### 25th October 2019
+* *2 hours* Writing up the literature review
