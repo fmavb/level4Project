@@ -123,3 +123,8 @@
 
 ### 25th October 2019
 * *2 hours* Writing up the literature review
+
+### Week 6
+
+### 28th October 2019
+* *2 hours* Writing up the literature review
