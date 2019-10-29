@@ -128,3 +128,6 @@
 
 ### 28th October 2019
 * *2 hours* Writing up the literature review
+
+### 29th October 2019
+* *5 hours* Writing up the literature review
