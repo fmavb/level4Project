@@ -155,42 +155,38 @@ read these, but they will improve how you write.
 %==================================================================================================================================
 \chapter{Background}
 
-In this chapter, we are going to go over the research that has been done in the area of gamification and serious games applied to cybersecurity and more precisely cryptography.
-We will focus on the applications of cryptography and not the building of a cryptographic algorithm.
-
-In the first section of this chapter, we will discuss gamification and serious games. We will demonstrate why it is a good system for education and prove why it is a good approach.
-Finally, we will show a couple of good attempts at using gamifications to educate people.
-
-In the next section of this chapter, we will analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
-
-In the third section of this chapter, we will explore some games that have been built in the domain of cybersecurity, and criticise them according to the previous sections of this chapter.
-
-Finally, we will conclude section by stating the reasons why there is a need to delve into more research in the domain of cryptography and educational games.
+This chapter is going to go over the research that has been done in the area of gamification and serious games applied to cybersecurity and more precisely cryptography.
+The main focus will be on the applications of cryptography and not the building of a cryptographic algorithm.
+The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a good system for education and prove why it is a good approach.
+Finally, a couple of attempts at using gamifications to educate people will be shown.
+The next section of this chapter will analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
+The third section of this chapter will explore some games that have been built in the domain of cybersecurity, and these games will be reviewed according to the previous sections of this chapter.
+Finally, this section will be concluded by stating the reasons why there is a need to delve into more research in the domain of cryptography and educational games.
 
 \section{Gamification and Serious Games}
 
 \subsection{Gamification}
 Gamification is the usage of game like elements in a non-gaming situation \citep{aparicio_analysis_2012}.
 \citet{aparicio_analysis_2012} claim that it used to attract people to tasks that are not normally considered as entertaining, like education for example.
-We will mostly focus on gamifications applied to education as we are planning to apply game like elements to cryptography.
-We will identify some gamification characteristics and provide some examples of how we could apply them to cryptography.
+The research will mostly focus on gamifications applied to education as game like elements are going to be applied to cryptography.
+Some gamification characteristics will be identified and some examples provided of how the characteristics could be applied to cryptography.
 
 According to Hsiao (2007), motivation is important for learning as learning requires a considerable amount of effort. 
 Games have the following traits: they are fun, they have a goal, they are interactive, they have outcomes and provide feedback, they have some form of challenge, 
 they have a story, they require us to solve problems. Through these elements, games motivate and engage people (Hsiao, 2007). 
 However, it is mainly through problem solving that players will be learning as people will be improving their skills through play to solve challenges (Hsiao, 2007).
 
-To apply gamification to certain context, \citet{cugelman_gamification:_2013} has identified 7 important components for a good gamification. 
-These include \textit{goal-setting, capacity to overcome challenges, providing feedback on performance, reinforcement, progress comparison, social connectivity, 
-and fun and playfulness}. We will try now to apply these ingredients in simple terms to cryptography as an example:
+To apply gamification to a certain context, \citet{cugelman_gamification:_2013} has identified 7 important components for a good gamification. 
+These include "goal-setting", "capacity to overcome challenges", "providing feedback on performance", "reinforcement", "progress comparison", "social connectivity", 
+and "fun and playfulness" \citep{cugelman_gamification:_2013}. What follows is an example of applying these ingredients in simple terms to cryptography:
 \begin{itemize}
-    \item Goal-setting: Encrypting securely and correctly some plaintext;
-    \item Capacity to overcome challenges: The challenges should be achievable by people who have never written code in their lives;
-    \item Providing feedback on performance: The feedback should be meaningful and provide explanation to why a task was accomplished incorrectly;
-    \item Reinforcement: This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
-    \item Progress comparison: A leaderboard could be created so that students could compare and compete with each other which in turn will add an extra source of motivation;
-    \item Social connectivity: Students could potentially interact with each other to solve the challenges;
-    \item Fun and playfulness: We will use an open-world game that will enable players to discover a new world.
+    \item "Goal-setting": Encrypting securely and correctly some plaintext;
+    \item "Capacity to overcome challenges": The challenges should be achievable by people who have never written code in their lives;
+    \item "Providing feedback on performance": The feedback should be meaningful and provide explanation to why a task was accomplished incorrectly;
+    \item "Reinforcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
+    \item "Progress comparison": A leaderboard could be created so that students could compare and compete with each other which in turn will add an extra source of motivation;
+    \item "Social connectivity": Students could potentially interact with each other to solve the challenges;
+    \item "Fun and playfulness": We will use an open-world game that will enable players to discover a new world.
 \end{itemize}
 
 However, \citet{nicholson_recipe_2015} claims that there are other models to motivate players to learn. Instead of providing motivation from rewards, 
@@ -208,13 +204,13 @@ and check fields where they potentially lack the necessary skills for a safe usa
 \section{Cryptography}
 
 Cryptography is an important part of a secure computer system. However, mistakes are made when these algorithms are integrated in a system,
-and this is usually the spot where cryptography fails \citep{lazar_why_nodate}. We will first investigate why cryptography itself is not the issue in most cases.
-Then, we will discuss the common mistakes that are made, and how they could be recovered from.
+and this is usually the spot where cryptography fails \citep{lazar_why_nodate}. This section will first investigate why cryptography itself is not the issue in most cases.
+Then, it will discuss the mistakes that are made, and how they could be recovered from.
 
 Cryptography is often viewed as a panacea. Focusing only on cryptography is not the way to go as that enables attackers to go around it \citep{schneier_security_nodate}.
 However, it is powerful when the whole system is designed correctly \citep{schneier_security_nodate}. 
 \citet{schneier_security_nodate} claims that most of the time attackers will not attack the cryptography itself, but they will more go after the vulnerabilities around the
-implemented cryptography. This is mostly due to attackers not having the skills, the infrastructure, or the time to do it. 
+implemented cryptography. This is mostly due to attackers not having the skills, the infrastructure, or the time to break the cryptography. 
 That said, a cryptographic algorithm relying on its secrecy is also weak \citep{schneier_security_nodate}. It could take some days at most for specialists to reverse engineer 
 the algorithm and discover the plaintext.
 

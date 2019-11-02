@@ -131,3 +131,8 @@
 
 ### 29th October 2019
 * *5 hours* Writing up the literature review
+
+### 31st October 2019
+* *0.5 hours* Supervisor meeting
+
+### 2nd November 2019
