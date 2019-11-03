@@ -136,3 +136,7 @@
 * *0.5 hours* Supervisor meeting
 
 ### 2nd November 2019
+* *1 hour* Correcting some mistakes
+
+### 3rd November 2019
+* *5 hours* Writing up the history of cryptography

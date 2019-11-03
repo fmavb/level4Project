@@ -159,7 +159,7 @@ This chapter is going to go over the research that has been done in the area of 
 The main focus will be on the applications of cryptography and not the building of a cryptographic algorithm.
 The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a good system for education and prove why it is a good approach.
 Finally, a couple of attempts at using gamifications to educate people will be shown.
-The next section of this chapter will analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
+The next section of this chapter will discuss cryptography, analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
 The third section of this chapter will explore some games that have been built in the domain of cybersecurity, and these games will be reviewed according to the previous sections of this chapter.
 Finally, this section will be concluded by stating the reasons why there is a need to delve into more research in the domain of cryptography and educational games.
 
@@ -181,9 +181,9 @@ These include "goal-setting", "capacity to overcome challenges", "providing feed
 and "fun and playfulness" \citep{cugelman_gamification:_2013}. What follows is an example of applying these ingredients in simple terms to cryptography:
 \begin{itemize}
     \item "Goal-setting": Encrypting securely and correctly some plaintext;
-    \item "Capacity to overcome challenges": The challenges should be achievable by people who have never written code in their lives;
+\item "Capacity to overcome challenges": The challenges should be achievable by people who have never written code in their lives;
     \item "Providing feedback on performance": The feedback should be meaningful and provide explanation to why a task was accomplished incorrectly;
-    \item "Reinforcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
+    \item "Reinorcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
     \item "Progress comparison": A leaderboard could be created so that students could compare and compete with each other which in turn will add an extra source of motivation;
     \item "Social connectivity": Students could potentially interact with each other to solve the challenges;
     \item "Fun and playfulness": We will use an open-world game that will enable players to discover a new world.
@@ -202,6 +202,58 @@ and check fields where they potentially lack the necessary skills for a safe usa
 \subsection{Serious Games}
 
 \section{Cryptography}
+
+Cryptography is a science of writing secret code to preserve confidentiality and integrity across time and space in the presence of an adversary \citep{kessler_overview_2016} 
+\citep{savage_cse_2019}. Cryptography is used to protect data from being stolen or modified, and it is also used for user authentication \citep{kessler_overview_2016}. 
+In this section, there will be a brief historic overview of early cryptographic algorithms; an overview of cryptographic paradigms and algorithms; 
+an analysis of current cryptographic applications and the mistakes that are made in these applications.
+
+\citet{kessler_overview_2016} claims that the first documented appearance of cryptography was as early as 1900 B.C. when an inscription was written with non-common hieroglyphs.
+Some people claim that cryptography was invented just some time after the invention of writing because diplomatic messages and war orders had to be delivered securely 
+\citep{kessler_overview_2016}. Nineteen centuries after the first documented use of cryptography, Julius Caesar used a substitution cipher to send his orders to his officers 
+\citep{anderson_security_2008}. Substitution ciphers have been widely used across the centuries, however these ciphers are quite easy to break with a pen and pencil 
+\citep{anderson_security_2008}. One way to make substitution ciphers harder to break is to use a stream cipher: the Vigenère takes two inputs, the plaintext and the key, and it
+returns a cipher \citep{anderson_security_2008}. The positions of the letters in the alphabet are summed together, then the sum is divided by the number of letters in the alphabet, 
+finally the remainder of this division defines the position of the letter in the alphabet that should be used in the cipher \citep{anderson_security_2008}. 
+A vulnerability in this algorithm is that if the plaintext is longer than the key and if the cipher is long enough, the cipher will reveal repeated letter patterns 
+that can be used to guess the key \citep{anderson_security_2008}. To make the stream cipher more secure, a plaintext and a key of equal length are used. 
+This is the basis for the One-Time Pad. The One-Time Pad works by taking a binary plaintext and a binary key and XORing them together \citep{savage_cse_2019}.
+This algorithm works as long as each key is used exactly once, all keys are equally likely, the plaintext and the key are of the same length, and there are as many plaintexts 
+as there are keys \citep{savage_cse_2019} \citep{anderson_security_2008}. This system provides perfect secrecy, however it does not provide integrity nor authenticity 
+\citep{savage_cse_2019}. The name One-Time Pad comes from World War 1 where an agent would have the key printed out on some material, and each time a key was used, the key would
+be ripped off and burnt \citep{anderson_security_2008}. Another way to make substitution cipher harder to break is to use a block cipher: the Playfair system works by placing the
+alphabet into a five by five grid without the letter j, and shifting it by the key. The plaintext is then modified by replacing "j" by "i", 
+splitting double letters with an "x" in between, and finally splitting the text into letter pairs and adding a "z" at the end if the final letter has no pair \citep{anderson_security_2008}.
+Finally, to encrypt the letter pairs, two techniques are used: if the letters are on the same row, the letters in the cipher will be the immediate next letters in the grid 
+to the letters in the plaintext; otherwise the letters from the plaintext are situated at two corners of a grid, and they are replaced by the letters that are located in the corner to the left or right of them. 
+What follows is an example of this algorithm. Suppose the key is "crypto", and the plaintext is "just shifting letters".
+The key is placed in a grid represented in Table \ref{tab:key}. Then, by applying the rules to plaintext, "iu" "st" "sh" "if" "ti" "ng" "le" "tx" "te" "rs" "is" obtained.
+Finally, by using the table, the cipher "fx" "ze" "nk" "kg" "pk" "mh" "so" "pz" "ek" "tm" is obtained. An issue with this algorithm is that a single letter is changed in the plaintext,
+then a single letter will change in the cipher, this allows the grid to be figured out if enough cipher text is given or some probable words are given \citep{anderson_security_2008}.
+A block cipher can become much more secure if a larger block length is used (in the example above, the block size is two), this makes an important foundation for modern block cipher algorithms
+\citep{anderson_security_2008}. 
+
+    \begin{table}[]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        c & r & y & p & t \\
+        \hline
+        o & a & b & d & e \\
+        \hline
+        f & g & h & i & k \\
+        \hline
+        l & m & n & q & s \\
+        \hline
+        u & v & w & x & z \\
+        \hline
+    \end{tabular}
+    \caption{Grid for the key}\label{tab:key}
+    \end{table}
+
+There are three main families of cryptographic algorithms: Secret Key Cryptography (or symmetric cryptography), Public Key Cryptography (or asymmetric cryptography), and
+Hash Functions \citep{kessler_overview_2016} \citep{savage_cse_2019}. Symmetric cryptography uses one key to encrypt and decrypt data.
+
 
 Cryptography is an important part of a secure computer system. However, mistakes are made when these algorithms are integrated in a system,
 and this is usually the spot where cryptography fails \citep{lazar_why_nodate}. This section will first investigate why cryptography itself is not the issue in most cases.
