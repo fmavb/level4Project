@@ -140,3 +140,8 @@
 
 ### 3rd November 2019
 * *5 hours* Writing up the history of cryptography
+
+## Week 7
+
+### 5th November 2019
+* *4 hours* Writing up cryptography concepts

@@ -181,9 +181,9 @@ These include "goal-setting", "capacity to overcome challenges", "providing feed
 and "fun and playfulness" \citep{cugelman_gamification:_2013}. What follows is an example of applying these ingredients in simple terms to cryptography:
 \begin{itemize}
     \item "Goal-setting": Encrypting securely and correctly some plaintext;
-\item "Capacity to overcome challenges": The challenges should be achievable by people who have never written code in their lives;
+    \item "Capacity to overcome challenges": The challenges should be achievable by people who have never written code in their lives;
     \item "Providing feedback on performance": The feedback should be meaningful and provide explanation to why a task was accomplished incorrectly;
-    \item "Reinorcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
+    \item "Reinforcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
     \item "Progress comparison": A leaderboard could be created so that students could compare and compete with each other which in turn will add an extra source of motivation;
     \item "Social connectivity": Students could potentially interact with each other to solve the challenges;
     \item "Fun and playfulness": We will use an open-world game that will enable players to discover a new world.
@@ -231,7 +231,15 @@ The key is placed in a grid represented in Table \ref{tab:key}. Then, by applyin
 Finally, by using the table, the cipher "fx" "ze" "nk" "kg" "pk" "mh" "so" "pz" "ek" "tm" is obtained. An issue with this algorithm is that a single letter is changed in the plaintext,
 then a single letter will change in the cipher, this allows the grid to be figured out if enough cipher text is given or some probable words are given \citep{anderson_security_2008}.
 A block cipher can become much more secure if a larger block length is used (in the example above, the block size is two), this makes an important foundation for modern block cipher algorithms
-\citep{anderson_security_2008}. 
+\citep{anderson_security_2008}. This example demonstrates the Electronic Code Book (ECB) mode of encryption: the key encrypts a block of plaintext to make a block of cipher \citep{kessler_overview_2016}.
+This mode of encryption is the most common, however if two plaintext blocks are the same and are encrypted using this method, the cipher block will be the same, 
+and this makes this mode of encryption vulnerable \citep{kessler_overview_2016}. Another mode that uses the concept of block ciphers is called Cipher Block Chaining (CBC).
+Cipher Block Chaining works by xORing the previous cipher block with the current plaintext block, and by using afterwards a block cipher encryption algorithm
+on the result of that operation to create a new cipher block \citep{savage_cse_2019} \citep{kessler_overview_2016}. 
+Finally, another mode that uses block ciphers is called the Message Authentication Code. Rather than encrypting data, the primary goal of this mode is to protect the integrity
+and authenticity of the encrypted message \citep{anderson_security_2008}. MAC relies on CBC mode by only using the last block of the resulting cipher, 
+the other blocks must remain secret \citep{anderson_security_2008}. 
+This paragraph presented some concepts that are used in modern cryptography which will now be explored.
 
     \begin{table}[]
     \centering
@@ -252,8 +260,43 @@ A block cipher can become much more secure if a larger block length is used (in 
     \end{table}
 
 There are three main families of cryptographic algorithms: Secret Key Cryptography (or symmetric cryptography), Public Key Cryptography (or asymmetric cryptography), and
-Hash Functions \citep{kessler_overview_2016} \citep{savage_cse_2019}. Symmetric cryptography uses one key to encrypt and decrypt data.
-
+Hash Functions \citep{kessler_overview_2016} \citep{savage_cse_2019}. Symmetric cryptography uses one key to encrypt and decrypt data, therefore both the sender and the 
+receiver must know the key which is secret, and distributing it becomes the main difficulty \citep{kessler_overview_2016}. Keys are defined as binary strings, 
+and their space is expressed in bits \citep{savage_cse_2019}. 
+For example, if someone would want to find a 128-bit key using brute force, it will require 2\textsuperscript{128} attempts. 
+Symmetric cryptography algorithms can be split into two groups: stream ciphers and block ciphers \citep{kessler_overview_2016}, 
+these two schemes have been discussed in the previous paragraph. 
+Commonly used Secret Key Algorithms include Data Encryption Standard (DES), and Advanced Encryption Standard (AES) \citep{kessler_overview_2016}. 
+DES was invented by IBM in the 1970s, and is a block cipher algorithm using 64-bit blocks and 56-bit keys \citep{kessler_overview_2016}. 
+DES is no longer considered secure today, however there are two variants to make DES make more secure: 3DES and DESX \citep{kessler_overview_2016}.
+AES is a successor to DES, and it uses a scheme called Rijndael invented by Belgian cryptographers Joan Daeman and Vincent Rijmen \citep{kessler_overview_2016}.
+It is a block cipher algorithm that does not have a fixed size block length and key length; the key length could be either 128, 192, or 256 bits;
+and the block length could be also 128, 192 bits, or 256 bits \citep{kessler_overview_2016}. AES is used in BitLocker which is a hard drive encryption software \citep{noauthor_bitlocker_2019}.
+Public Key Cryptography relies on two keys: the public key and the private key. 
+A public key is used to send some encrypted plaintext of fixed size that can only be decrypted with the private key \citep{savage_cse_2019}. 
+Also, a public key can be used to verify that a message was sent by the owner of the private key, 
+and hence the owner can use his private key to digitally sign a message to provide authenticity \citep{savage_cse_2019}.
+Asymmetric cryptography relies on one-way functions: these are functions for which an inverse is hard to compute \citep{kessler_overview_2016}.
+One type of one-way function is multiplication and its inverse is factorization: suppose there are two prime numbers 7 and 13, and their product is 91; 
+to take the inverse of this operation, all that is known is that the number is 91 and it factors out into two prime numbers \citep{kessler_overview_2016}.
+Therefore, computing a product is much faster than factoring a number into prime numbers \citep{kessler_overview_2016}. 
+This whole idea relies on the fundamental theorem of arithmetic: 
+"Each natural number greater than 1 factors into prime numbers in a way that is unique up to the order of the factors" \citep{anderson_security_2008}.
+The second type of one-way function is exponentiation and its inverse, logarithm \citep{kessler_overview_2016}. Suppose computing 2\textsuperscript{5} which is equal
+to 32, then computing the inverse requires to find two integers, x and y such that log\textsubscript{x} 32 = y. This computation requires more time than the exponentiation \citep{kessler_overview_2016}.
+RSA is a public key cryptographic algorithm invented by Ronald Rivest, Adi Shamir, and Leonard Adleman in 1978, and it depends on the hardness of factorization.
+RSA is used in web browsers for secure communication with websites (SSL and its successor TLS) \citep{anderson_security_2008}.
+Finally, Hash Functions are used to create a string of fixed size from some input of arbitrary length \citep{savage_cse_2019}. 
+They have two important characteristics: knowing the hash, it must be difficult to find an input to the hash function so that it matches the hash;
+it must also be difficult to find to input that generate the same hash \citep{savage_cse_2019}. 
+Hash functions rely on block ciphers to work and are used in a similar fashion as in symmetric cryptography \citep{anderson_security_2008}. 
+Hash functions are used to ensure the integrity of a file, and are commonly used to encrypt passwords \citep{kessler_overview_2016}. What follows are two currently used hash functions. 
+Message Digest algorithms (MD) are hash functions that take an arbitrary-length string and generate a 128-bit hash \citep{kessler_overview_2016}.
+There are several versions of this hash function (MD2, MD4, MD5) and vulnerabilities were found the MD5 algorithm such that collisions can v \citep{kessler_overview_2016}.
+The Secure Hash Algorithm (SHA) is a hash function defined by the National Institute of Standards and Technology (NIST) \citep{kessler_overview_2016}. 
+SHA-1 is the first version of SHA and it produced a 160-bit hash, it was broken in 2015 \citep{kessler_overview_2016}. SHA-2 relies on five different algorithms
+SHA-1, SHA-224, SHA-256, SHA-384, and SHA-512 to generate hash values of 224, 256, 384, or 512 bits. 
+SHA-3 (or Keccak) is a hash function that does not rely on its predecessors as the NIST found it necessary to have a different algorithm in case SHA-2 is broken \citep{kessler_overview_2016}.
 
 Cryptography is an important part of a secure computer system. However, mistakes are made when these algorithms are integrated in a system,
 and this is usually the spot where cryptography fails \citep{lazar_why_nodate}. This section will first investigate why cryptography itself is not the issue in most cases.
