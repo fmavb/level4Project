@@ -144,4 +144,4 @@
 ## Week 7
 
 ### 5th November 2019
-* *4 hours* Writing up cryptography concepts
+* *6 hours* Writing up cryptography concepts
