@@ -145,3 +145,12 @@
 
 ### 5th November 2019
 * *6 hours* Writing up cryptography concepts
+
+### 10th November 2019
+* *1 hour* Going over meeting notes and modifying literature review
+
+## Week 8
+
+### 13th November 2019
+* *1 hour* Modifying the cryptography section of the literature review
+

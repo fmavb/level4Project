@@ -157,9 +157,10 @@ read these, but they will improve how you write.
 
 This chapter is going to go over the research that has been done in the area of gamification and serious games applied to cybersecurity and more precisely cryptography.
 The main focus will be on the applications of cryptography and not the building of a cryptographic algorithm.
-The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a good system for education and prove why it is a good approach.
+The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a possible system for education and prove why it is a workable approach.
 Finally, a couple of attempts at using gamifications to educate people will be shown.
 The next section of this chapter will discuss cryptography, analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
+As the game is designed for people who have no prior knowledge of cryptography, some cryptographic fundamentals will be discussed in this section.
 The third section of this chapter will explore some games that have been built in the domain of cybersecurity, and these games will be reviewed according to the previous sections of this chapter.
 Finally, this section will be concluded by stating the reasons why there is a need to delve into more research in the domain of cryptography and educational games.
 
@@ -186,7 +187,7 @@ and "fun and playfulness" \citep{cugelman_gamification:_2013}. What follows is a
     \item "Reinforcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
     \item "Progress comparison": A leaderboard could be created so that students could compare and compete with each other which in turn will add an extra source of motivation;
     \item "Social connectivity": Students could potentially interact with each other to solve the challenges;
-    \item "Fun and playfulness": We will use an open-world game that will enable players to discover a new world.
+    \item "Fun and playfulness": An open-world game will be used which will enable players to discover a new world.
 \end{itemize}
 
 However, \citet{nicholson_recipe_2015} claims that there are other models to motivate players to learn. Instead of providing motivation from rewards, 
@@ -266,7 +267,7 @@ and their space is expressed in bits \citep{savage_cse_2019}.
 For example, if someone would want to find a 128-bit key using brute force, it will require 2\textsuperscript{128} attempts. 
 Symmetric cryptography algorithms can be split into two groups: stream ciphers and block ciphers \citep{kessler_overview_2016}, 
 these two schemes have been discussed in the previous paragraph. 
-Commonly used Secret Key Algorithms include Data Encryption Standard (DES), and Advanced Encryption Standard (AES) \citep{kessler_overview_2016}. 
+Due to time, only two commonly used Secret Key Algorithms will be presented: Data Encryption Standard (DES), and Advanced Encryption Standard (AES) \citep{kessler_overview_2016}. 
 DES was invented by IBM in the 1970s, and is a block cipher algorithm using 64-bit blocks and 56-bit keys \citep{kessler_overview_2016}. 
 DES is no longer considered secure today, however there are two variants to make DES make more secure: 3DES and DESX \citep{kessler_overview_2016}.
 AES is a successor to DES, and it uses a scheme called Rijndael invented by Belgian cryptographers Joan Daeman and Vincent Rijmen \citep{kessler_overview_2016}.
@@ -284,13 +285,15 @@ This whole idea relies on the fundamental theorem of arithmetic:
 "Each natural number greater than 1 factors into prime numbers in a way that is unique up to the order of the factors" \citep{anderson_security_2008}.
 The second type of one-way function is exponentiation and its inverse, logarithm \citep{kessler_overview_2016}. Suppose computing 2\textsuperscript{5} which is equal
 to 32, then computing the inverse requires to find two integers, x and y such that log\textsubscript{x} 32 = y. This computation requires more time than the exponentiation \citep{kessler_overview_2016}.
-RSA is a public key cryptographic algorithm invented by Ronald Rivest, Adi Shamir, and Leonard Adleman in 1978, and it depends on the hardness of factorization.
+RSA is the most common public key cryptographic algorithm invented by Ronald Rivest, Adi Shamir, and Leonard Adleman in 1978, 
+and it depends on the hardness of factorization \citep{kessler_overview_2016} \citep{savage_cse_2019}.
 RSA is used in web browsers for secure communication with websites (SSL and its successor TLS) \citep{anderson_security_2008}.
 Finally, Hash Functions are used to create a string of fixed size from some input of arbitrary length \citep{savage_cse_2019}. 
 They have two characteristics: knowing the hash, it must be difficult to find an input to the hash function so that it matches the hash;
 it must also be difficult to find two inputs that generate the same hash \citep{savage_cse_2019}. 
 Hash functions rely on block ciphers to work and are used in a similar fashion as in symmetric cryptography \citep{anderson_security_2008}. 
 Hash functions are used to ensure the integrity of a file, and are commonly used to encrypt passwords \citep{kessler_overview_2016}. What follows are two currently used hash functions. 
+Due to the nature of this paper, only two families of hash function will be presented: Message Digest (MD) and Secure Hash Algorithm (SHA).
 Message Digest algorithms (MD) are hash functions that take an arbitrary-length string and generate a 128-bit hash \citep{kessler_overview_2016}.
 There are several versions of this hash function (MD2, MD4, MD5) and collision vulnerabilities were found in the MD5 algorithm \citep{kessler_overview_2016}.
 Collisions occur when two different plaintext generate an identical hash and this violates one of the characteristics of hash functions.
@@ -328,7 +331,23 @@ They also think that the easier it is to use a cryptographic library, the better
 Finally, they noticed that some developers said that their code is secure when it was not. This shows a lack of recognition for some security issues \citep{lazar_why_nodate}.
 
 In conclusion, this section provided a small history of cryptography, some cryptographic fundamentals and algorithms. 
-Finally, it explored issues that occur when cryptography is implemented, and why there is a need to educate people in cryptography. 
+As most students taking the Cyber Security Fundamentals do not know much about cryptography, 
+it is essential to give them some background about it so that they have some understanding.
+Finally, it explored issues that occur when cryptography is implemented, and why there is a need to educate people in cryptography.
+In the previous paragraph, the following mistakes were identified in different research papers:
+\begin{itemize}
+    \item Cryptographic algorithm relying on its secrecy;
+    \item Failure to delete the plaintext;
+    \item Poor use of random numbers;
+    \item Use of weak keys;
+    \item Use of outdated algorithms;
+    \item Poor choice of cryptographic APIs;
+    \item Poor general security awareness.
+\end{itemize}
+\citet{eggleton_value_2001} claim that problem solving is a process that requires iterations, and each iteration allows
+people to reach a better solution by learning from their previous iterations. 
+Therefore, the above mistakes present to students an early solution to a problem, show that it is not optimal, and
+finally present a better solution to that problem. 
 The next section will analyse some cybersecurity games, and demonstrate why games should be developed for cryptography.
 
 \section{Cryptography Games Analysis}
