@@ -156,3 +156,4 @@
 
 ### 16th November 2019
 * *2 hours* Writing up the gamification section
+* *4 hours* Writing up the Serious Games section and conclusion
