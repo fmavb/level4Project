@@ -154,3 +154,5 @@
 ### 13th November 2019
 * *1 hour* Modifying the cryptography section of the literature review
 
+### 16th November 2019
+* *2 hours* Writing up the gamification section
