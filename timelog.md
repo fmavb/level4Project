@@ -159,4 +159,4 @@
 * *4 hours* Writing up the Serious Games section and conclusion
 
 ### 17th November 2019
-* *1 hour* Writing up the game review
+* *6 hours* Writing up the game review
