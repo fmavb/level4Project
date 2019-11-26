@@ -165,3 +165,8 @@
 
 ### 19th November 2019
 * *3 hours* Finishing up the game reviews
+
+## Week 10
+
+### 26th November 2019
+* *2 hours* High-level quest design
