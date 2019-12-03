@@ -170,3 +170,8 @@
 
 ### 26th November 2019
 * *2 hours* High-level quest design
+
+## Week 11
+
+### 3rd December 2019
+* *3 hours* Quest line design 
