@@ -180,3 +180,7 @@
 
 ### 9th December 2019
 * *4 hours* Quest line design
+
+### 10th December 2019
+* *6 hours* Quest line design
+* *2 hours* Lecture
