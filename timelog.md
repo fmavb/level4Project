@@ -184,3 +184,8 @@
 ### 10th December 2019
 * *6 hours* Quest line design
 * *2 hours* Lecture
+
+### 11th December 2019
+* *3 hours* Quest line design
+* *2 hours* Wire-framing
+* *1 hour* Methodology
