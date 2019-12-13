@@ -176,7 +176,7 @@
 ### 3rd December 2019
 * *3 hours* Quest line design 
 
-## Week 15
+## Week 12
 
 ### 9th December 2019
 * *4 hours* Quest line design
@@ -189,3 +189,6 @@
 * *3 hours* Quest line design
 * *2 hours* Wire-framing
 * *1 hour* Methodology
+
+### 12th December 2019
+* *1 hour* Preparing the status report
