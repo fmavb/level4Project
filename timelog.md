@@ -195,3 +195,4 @@
 
 ### 13th December 2019
 * *2 hours* Status Report
+* *0.5 hours* Supervisor meeting
