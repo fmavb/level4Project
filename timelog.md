@@ -192,3 +192,6 @@
 
 ### 12th December 2019
 * *1 hour* Preparing the status report
+
+### 13th December 2019
+* *2 hours* Status Report
