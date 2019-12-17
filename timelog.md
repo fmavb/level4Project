@@ -196,10 +196,12 @@
 ### 13th December 2019
 * *2 hours* Status Report
 * *0.5 hours* Supervisor meeting
-* *1.5 hours* Uploading the game source code to gitlab
+* *1.5 hours* Uploading the game source code to GitLab
 
 ## Week 13
 
 ### 16th December 2019
 * *2 hours* Trying out the base game on personal computer
 
+### 17th December 2019
+* *6 hours* Developing the first challenge
