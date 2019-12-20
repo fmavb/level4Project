@@ -209,3 +209,6 @@
 ### 18th December 2019
 * *1 hour* Final adjustments for status report
 * *2 hours* Searching for a good flowchart library
+
+### 19th December 2019
+* *2 hours* Challenge 2 Part 1 development 
