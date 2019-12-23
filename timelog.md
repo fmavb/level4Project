@@ -214,4 +214,7 @@
 * *2 hours* Challenge 2 Part 1 development 
 
 ### 20th December 2019
-* *2 hours* Challenge 2 Part 1 development 
+* *2 hours* Challenge 2 Part 1 development
+
+### 22nd December 2019
+* *2 hours* Challenge 2 Part 2 development
