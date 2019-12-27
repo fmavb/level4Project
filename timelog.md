@@ -218,3 +218,14 @@
 
 ### 22nd December 2019
 * *2 hours* Challenge 2 Part 2 development
+
+## Week 14
+
+### 23rd December 2019
+* *1 hour* Challenge 2 Part 2 development
+
+### 26th December 2019
+* *2 hours* Challenge 2 Part 2 development
+
+### 27th December 2019
+* *2 hours* Challenge 2 Part 2 development
