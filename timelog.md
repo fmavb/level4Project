@@ -237,3 +237,20 @@
 
 ### 31st December 2019
 * *2 hours* Challenge 3 development
+
+### 2nd January 2020
+* *2 hours* challenge 3 development
+
+## Week 16
+
+### 6th January 2020
+* *2 hours* Challenge 3 development
+
+### 8th January 2020
+* *2 hours* Challenge 3 development
+
+### 9th January 2020
+* *2 hours* Learning unreal engine
+
+### 10th January 2020
+* *1 hour* Connecting challenges with the world
