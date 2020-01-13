@@ -254,3 +254,8 @@
 
 ### 10th January 2020
 * *1 hour* Connecting challenges with the world
+
+## Week 17
+
+### 13th January 2019
+* *4 hours* Challenge 3 development
