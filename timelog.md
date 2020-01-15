@@ -259,3 +259,6 @@
 
 ### 13th January 2019
 * *4 hours* Challenge 3 development
+
+### 14th January 2019
+* *4 hours* Challenge 3 development
