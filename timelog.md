@@ -257,8 +257,11 @@
 
 ## Week 17
 
-### 13th January 2019
+### 13th January 2020
 * *4 hours* Challenge 3 development
 
-### 14th January 2019
+### 14th January 2020
 * *4 hours* Challenge 3 development
+
+### 17th January 2020
+* *2 hours* Challenge 3 development
