@@ -265,3 +265,7 @@
 
 ### 17th January 2020
 * *2 hours* Challenge 3 development
+
+### 18th January 2020
+* *3 hours* Challenge 3 development
+* *3 hours* Challenge 2 development
