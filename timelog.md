@@ -273,3 +273,8 @@
 ### 19th January 2020
 * *2 hours* Challenge 2 development
 * *4 hours* Connecting web app to the game
+
+## Week 18
+
+### 20th January 2020
+* *4 hours* Connecting the web app to the game
