@@ -278,3 +278,7 @@
 
 ### 20th January 2020
 * *4 hours* Connecting the web app to the game
+
+### 24th January 2020
+* *4 hours* Finishing up challenge 1
+* *0.5 hours* Supervisor meeting
