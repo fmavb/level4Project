@@ -282,3 +282,13 @@
 ### 24th January 2020
 * *4 hours* Finishing up challenge 1
 * *0.5 hours* Supervisor meeting
+
+## Week 19
+
+### 30th January 2020
+* *1 hour* Final polish for challenge 1
+
+### 31st January 2020
+* *2.5 hours* Challenge 2 validation
+* *0.5 hours* Supervisor meeting
+
