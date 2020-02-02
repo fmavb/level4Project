@@ -292,3 +292,5 @@
 * *2.5 hours* Challenge 2 validation
 * *0.5 hours* Supervisor meeting
 
+### 1st February 2020
+* *4 hours* Challenge 2 fixes
