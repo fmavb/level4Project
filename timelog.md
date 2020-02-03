@@ -294,3 +294,6 @@
 
 ### 1st February 2020
 * *4 hours* Challenge 2 fixes
+
+### 2nd February 2020
+* *4 hours* Fixes and adding explanations
