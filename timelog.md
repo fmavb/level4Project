@@ -297,3 +297,8 @@
 
 ### 2nd February 2020
 * *4 hours* Fixes and adding explanations
+
+## Week 20
+
+### 3rd January 2020
+* *2 hours* Adding explanations and fixes to challenges
