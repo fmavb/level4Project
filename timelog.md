@@ -302,3 +302,9 @@
 
 ### 3rd January 2020
 * *2 hours* Adding explanations and fixes to challenges
+
+### 4th January 2020
+* *1 hour* Adding explanations and fixes to challenges
+
+### 5th January 2019
+* *1 hour* Adding explanations and fixes to challenges
