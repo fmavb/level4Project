@@ -306,5 +306,12 @@
 ### 4th January 2020
 * *1 hour* Adding explanations and fixes to challenges
 
-### 5th January 2019
+### 5th January 2020
 * *1 hour* Adding explanations and fixes to challenges
+
+### 6th January 2020
+* *1 hour* Adding explanations and fixes to challenges
+
+### 7th January 2020
+* *1 hour* Adding explanations and fixes to challenges
+* *0.5 hours* Advisor meeting
