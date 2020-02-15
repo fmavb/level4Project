@@ -300,18 +300,24 @@
 
 ## Week 20
 
-### 3rd January 2020
+### 3rd February 2020
 * *2 hours* Adding explanations and fixes to challenges
 
-### 4th January 2020
+### 4th February 2020
 * *1 hour* Adding explanations and fixes to challenges
 
-### 5th January 2020
+### 5th February 2020
 * *1 hour* Adding explanations and fixes to challenges
 
-### 6th January 2020
+### 6th February 2020
 * *1 hour* Adding explanations and fixes to challenges
 
-### 7th January 2020
+### 7th February 2020
 * *1 hour* Adding explanations and fixes to challenges
 * *0.5 hours* Advisor meeting
+
+## Week 21
+
+### 14th February 2020
+* *3 hours* Connecting challenges and final fixes
+* *0.5 hours* Supervisor meeting
