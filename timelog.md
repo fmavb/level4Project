@@ -321,3 +321,10 @@
 ### 14th February 2020
 * *3 hours* Connecting challenges and final fixes
 * *0.5 hours* Supervisor meeting
+
+### 15th February 2020
+* *1 hour* Porting the challenges to the newer version
+* *3 hours* Writing the character and the storyline
+
+### 16th February 2020
+* *5 hours* Writing the character and the storyline
