@@ -328,3 +328,9 @@
 
 ### 16th February 2020
 * *5 hours* Writing the character and the storyline
+
+## Week 22
+
+### 17th February 2020
+* *3 hours* Writing the character and the storyline
+* *1 hour* Building a REST API and adapting the web app for it
