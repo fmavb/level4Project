@@ -340,3 +340,6 @@
 
 ### 19th February 2020
 * *3 hours* Connecting the base game to the RESTful backend
+
+### 20th February 2020
+* *2 hours* Evaluation draft
