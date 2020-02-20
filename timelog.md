@@ -334,3 +334,9 @@
 ### 17th February 2020
 * *3 hours* Writing the character and the storyline
 * *1 hour* Building a REST API and adapting the web app for it
+
+### 18th February 2020
+* *2 hours* Creating a RESTful backend and hooking up the web app to it
+
+### 19th February 2020
+* *3 hours* Connecting the base game to the RESTful backend
