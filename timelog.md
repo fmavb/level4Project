@@ -343,3 +343,7 @@
 
 ### 20th February 2020
 * *2 hours* Evaluation draft
+
+### 21th February 2020
+* *2 hours* Finalising the storyline
+* *0.5 hours* Advisor meeting
