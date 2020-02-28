@@ -347,3 +347,9 @@
 ### 21th February 2020
 * *2 hours* Finalising the storyline
 * *0.5 hours* Advisor meeting
+
+## Week 23
+
+### 24th February 2020
+* *0.5 hours* Group meeting
+* *4 hours* Writing the evaluation scripts
