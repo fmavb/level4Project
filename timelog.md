@@ -360,3 +360,8 @@
 ### 28th February 2020
 * *2 hours* Finalising the Google Forms
 * *0.5 hours* Supervisor meeting
+
+## Week 24
+
+### 7th March 2020
+* *5 hours* Research and creating the learning evaluation forms
