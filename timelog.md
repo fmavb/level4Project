@@ -353,3 +353,10 @@
 ### 24th February 2020
 * *0.5 hours* Group meeting
 * *4 hours* Writing the evaluation scripts
+
+### 27th February 2020
+* *3 hours* Finishing the evaluation scripts
+
+### 28th February 2020
+* *2 hours* Finalising the Google Forms
+* *0.5 hours* Supervisor meeting
