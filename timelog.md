@@ -369,3 +369,9 @@
 ### 8th March 2020
 * *1 hour* Added explanation to challenge 1
 * *1 hour* Trying to join up the crypto challenges with the new quest system.
+
+## Week 25
+
+### 9th March 2020
+* *0.5 hours* Supervisor meeting
+* *3 hours* Preparing software for evaluation
