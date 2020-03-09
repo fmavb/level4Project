@@ -365,3 +365,7 @@
 
 ### 7th March 2020
 * *5 hours* Research and creating the learning evaluation forms
+
+### 8th March 2020
+* *1 hour* Added explanation to challenge 1
+* *1 hour* Trying to join up the crypto challenges with the new quest system.
