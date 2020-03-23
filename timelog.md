@@ -375,3 +375,15 @@
 ### 9th March 2020
 * *0.5 hours* Supervisor meeting
 * *3 hours* Preparing software for evaluation
+
+### 13th March 2020
+* *0.5 hours* Supervisor meeting
+* *3 hours* Setting up pc for evaluation and merging quest lines
+
+## Week 26
+
+### 20th March 2020
+* *0.5 hours* Supervisor meeting
+
+### 22nd March 2020
+* *1 hour* Group meeting
