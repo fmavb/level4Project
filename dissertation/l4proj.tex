@@ -6,7 +6,7 @@
 %
 % put any additional packages here
 %
-
+\usepackage{graphicx}
 \begin{document}
 
 %==============================================================================
@@ -76,7 +76,7 @@
 % however. 
 %
 %==================================================================================================================================
-\chapter{Introduction}
+\chapter{Introduction} \label{sec:Introduction}
 
 % reset page numbering. Don't remove this!
 \pagenumbering{arabic} 
@@ -155,13 +155,14 @@ read these, but they will improve how you write.
 %==================================================================================================================================
 \chapter{Background}
 
-This chapter is going to go over the research that has been done in the area of gamification and serious games applied to cybersecurity and more precisely cryptography.
+This chapter is going to go over the research that has been done in the area of gamification and serious games applied to cyber security and more precisely cryptography.
 The main focus will be on the applications of cryptography and not the building of a cryptographic algorithm.
 The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a possible system for education and prove why it is a workable approach.
 Finally, an attempt at using gamifications to educate people will be shown.
-The next section of this chapter will discuss cryptography, analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
-As the game is designed for people who have no prior knowledge of cryptography, some cryptographic fundamentals will be discussed in this section.
-The third section of this chapter will explore some games that have been built in the domain of cybersecurity, and these games will be reviewed according to the previous sections of this chapter.
+The next part of this chapter will discuss cryptography, analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
+As the game is designed for people who have no prior knowledge of cryptography, some cryptographic fundamentals will be discussed.
+The third section of this chapter will explore some games that have been built in the domain of cybersecurity, and these games will be reviewed according to 
+their gamification and cyber security content.
 Finally, this section will be concluded by stating the reasons why there is a need to delve into more research in the domain of cryptography and educational games.
 
 \section{Gamification and Serious Games}
@@ -170,12 +171,12 @@ Finally, this section will be concluded by stating the reasons why there is a ne
 Gamification is the usage of game like elements in a non-gaming situation \citep{aparicio_analysis_2012}.
 \citet{aparicio_analysis_2012} claim that it used to attract people to tasks that are not normally considered as entertaining, like education for example.
 The research will mostly focus on gamifications applied to education as game like elements are going to be applied to cryptography.
-Some gamification characteristics will be identified and some proof provided to demonstrate that gamification works.
+Some gamification characteristics will be identified and some examples will be demonstrated to show that gamification works.
 
 According to Hsiao (2007), motivation is important for learning as learning requires a considerable amount of effort. 
 Games have the following traits: they are fun, they have a goal, they are interactive, they have outcomes and provide feedback, they have some form of challenge, 
 they have a story, they require us to solve problems. Through these elements, games motivate and engage people (Hsiao, 2007). 
-However, it is mainly through problem solving that players will be learning as people will be improving their skills through play to solve challenges (Hsiao, 2007).
+However, it is mainly through problem solving that players will be learning as people will be improving their skills by playing and solving challenges (Hsiao, 2007).
 To apply gamification to a certain context, \citet{cugelman_gamification:_2013} has identified 7 important components for a good gamification. 
 These include "goal-setting", "capacity to overcome challenges", "providing feedback on performance", "reinforcement", "progress comparison", "social connectivity", 
 and "fun and playfulness" \citep{cugelman_gamification:_2013}. 
@@ -185,7 +186,7 @@ willing to advance the storyline of the character since they identify themselves
 Also, gamification allows to put concepts into practice, especially in the field of cybersecurity \citep{wolfenden_gamification_2019}. 
 This is true since people apply learned concepts in a potentially real environment which improves knowledge retention. 
 People struggle to apply concepts if they are not used in practice, and gamification allows to put these theoretically learned skills into practice.
-In addition, gamification in cybersecurity allows to screen people,
+In addition, gamification in cyber security allows to screen people,
 and check fields where they potentially lack the necessary skills for a safe usage \citep{adams_cybersecurity_2015}.
 
 \citet{akpolat_enhancing_2014} conducted a study about the gamification of extreme software engineering practices. These practices were pair programming, testing, and refactoring.
@@ -200,11 +201,12 @@ Some gamification characteristics described by \citet{cugelman_gamification:_201
 \begin{itemize}
     \item "Goal-setting": Each week, team would apply a software engineering practice;
     \item "Capacity to overcome challenges": The challenges could be completed by applying the practice of the week;
-    \item "Providing feedback on performance": The evaluators picked out a team member of each to evaluate their team's understanding of the concept;
+    \item "Providing feedback on performance": The evaluators picked out a team member of each to evaluate their team's understanding of the concept, 
+    hence providing feedback on how well the whole team understood the material presented that week;
     \item "Reinforcement": A team would win a cup every week for the best use of a software practice;
     \item "Progress comparison": Teams were competing against each other and there was an overall leaderboard for students to compare their progress;
     \item "Social connectivity": Since people were working in teams to complete a challenge, there was a lot of "social connectivity";
-    \item "Fun and playfulness": Students were having a real day in industry every week which is a totally different environment than university.
+    \item "Fun and playfulness": Students were having a real day in industry every week which is a totally different environment than a monotonous lecture at the university. 
 \end{itemize}
 \citet{akpolat_enhancing_2014} found out that students engaged more with a practice when it was the practice of the week. Moreover, once that weekly challenge was over, 
 students would still use that practice the following weeks. They also found out that when students were confronted a second time with a practice, 
@@ -213,16 +215,6 @@ They concluded that students thought that their learning through this game was a
 Another conclusion was that students' opinion about their learning and coding performance was much better than it was before the challenge.
 
 In conclusion, this section provided a definition of gamification, introduced some characteristics of gamification. 
-These characteristics from \citet{cugelman_gamification:_2013} are:
-\begin{itemize}
-    \item "Goal-setting";
-    \item "Capacity to overcome challenges";
-    \item "Providing feedback on performance";
-    \item "Reinforcement";
-    \item "Progress comparison";
-    \item "Social connectivity";
-    \item "Fun and playfulness".
-\end{itemize}
 At the end, a study of an application of gamification was described in a software engineering environment as a proof that gamification works.
 The next section will cover serious games and its applications.
 
@@ -247,13 +239,36 @@ Moreover, \citet{susi_serious_2007} claim that entertainment is also a character
 They also claim that pedagogy is what differentiates serious games from a simple game. However, they say that pedagogy should come after entertainment, and not before.
 The next paragraph will be a case study of a serious game as a proof of concept.
 
-
+What follows is an application of the serious games methodology. \citet{panzoli_interaction_2017} present some games that aim to replicate real life interactions between doctors
+in a simulated operating room environment. In their research paper, they featured a game called "3D Virtual Operating Room" \citep{panzoli_interaction_2017}.
+Its main aim is to encourage communication and cooperation between the different actors in a surgery room.
+The problem the game is solving, is the following: the main cause of failures in an operating room environment is due to miscommunication 
+which can have dramatic consequences like the patient's death \citep{panzoli_interaction_2017}. 
+The game models several rooms that are important during a surgery (pre-operating room, operating room, and post-operating), 
+is a first person point of view game.
+Throughout the gaming session, the players actions are recorded and they receive some feedback at the end of the session.
+The game tries to replicate real-life scenarios where mistakes often occur, 
+and its aim is to assess the reaction of the participants to the mistakes that might arise \citep{panzoli_interaction_2017}.
+The game presents the following serious game characteristics identified by \citet{blumberg_serious_2012}:
+\begin{itemize}
+    \item "Immersion": Immersion is provided by the realistic environment, presence of surgical protocols, and the first person point of view;
+    \item "Identity": Identity is provided via the first person point of view, and the multiplayer nature of this game;
+    \item "Interactivity": There are a set of interactions the player can do, each of those will have their own set of consequences down the line, 
+    the player is also interacting with other people in real-time to solve the challenge;
+    \item "Agency or Control": The player can interact with the environment (drawers, for example), but also with other players
+    \item "Challenge": The aim of this game is to avoid recreating the mistakes that are commonly made in a surgery;
+    \item "Narrative": The patient being operated on provides some narrative (his disease, for example);
+    \item "Feedback": At the end of the session, the players are given feedback concerning their in-game actions.
+\end{itemize}
+\citet{panzoli_interaction_2017} claim that "3D Virtual Operating Room" is a successful game due to its immersiveness, and its multiplayer nature.
+Hence, they decided to implement their own game based on the successful design choices of that game.  
 
 \subsection{Conclusion}
 
 In conclusion, this section about Gamification and Serious Games presented a definition of these two concepts, provided their characteristics, 
 and demonstrated an example of both concepts. Although both ideas seem to be similar, they are not. 
-Gamification is created to target a large audience of people that do not especially have the required knowledge in the field by adding game-like elements tp the activity.
+Gamification is created to target a large audience of people that do not especially have the required knowledge in the field by adding game-like elements 
+to make the learning activity less boring.
 On the other hand, Serious Games are created to simulate the real world, and prepare the players of that game for a real world environment in which they are going to act.
 The next section will present cryptography under its many forms, and explain why there is a need to educate people in this field.
 
@@ -263,6 +278,8 @@ Cryptography is a science of writing secret code to preserve confidentiality and
 \citep{savage_cse_2019}. Cryptography is used to protect data from being stolen or modified, and it is also used for user authentication \citep{kessler_overview_2016}. 
 In this section, there will be a brief historic overview of early cryptographic algorithms; an overview of cryptographic paradigms and algorithms; 
 an analysis of current cryptographic applications and the mistakes that are made in these applications.
+
+\subsection{Origins of Cryptography}
 
 \citet{kessler_overview_2016} claims that the first documented appearance of cryptography was as early as 1900 B.C. when an inscription was written with non-common hieroglyphs.
 Some people claim that cryptography was invented just some time after the invention of writing because diplomatic messages and war orders had to be delivered securely 
@@ -277,16 +294,21 @@ This is the basis for the One-Time Pad. The One-Time Pad works by taking a binar
 This algorithm works as long as each key is used exactly once, all keys are equally likely, the plaintext and the key are of the same length, and there are as many plaintexts 
 as there are keys \citep{savage_cse_2019} \citep{anderson_security_2008}. This system provides perfect secrecy, however it does not provide integrity nor authenticity 
 \citep{savage_cse_2019}. The name One-Time Pad comes from World War 1 where an agent would have the key printed out on some material, and each time a key was used, the key would
-be ripped off and burnt \citep{anderson_security_2008}. Another way to make substitution cipher harder to break is to use a block cipher: the Playfair system works by placing the
+be ripped off and burnt \citep{anderson_security_2008}. 
+
+Another way to make substitution cipher harder to break is to use a block cipher: the Playfair system works by placing the
 alphabet into a five by five grid without the letter j, and shifting it by the key. The plaintext is then modified by replacing "j" by "i", 
 splitting double letters with an "x" in between, and finally splitting the text into letter pairs and adding a "z" at the end if the final letter has no pair \citep{anderson_security_2008}.
 Finally, to encrypt the letter pairs, two techniques are used: if the letters are on the same row, the letters in the cipher will be the immediate next letters in the grid 
 to the letters in the plaintext; otherwise the letters from the plaintext are situated at two corners of a grid, and they are replaced by the letters that are located in the corner to the left or right of them. 
 What follows is an example of this algorithm. Suppose the key is "crypto", and the plaintext is "just shifting letters".
 The key is placed in a grid represented in Table \ref{tab:key}. Then, by applying the rules to plaintext, "iu" "st" "sh" "if" "ti" "ng" "le" "tx" "te" "rs" "is" obtained.
-Finally, by using the table, the cipher "fx" "ze" "nk" "kg" "pk" "mh" "so" "pz" "ek" "tm" is obtained. An issue with this algorithm is that a single letter is changed in the plaintext,
-then a single letter will change in the cipher, this allows the grid to be figured out if enough cipher text is given or some probable words are given \citep{anderson_security_2008}.
-A block cipher can become much more secure if a larger block length is used (in the example above, the block size is two), this makes an important foundation for modern block cipher algorithms
+Finally, by using the table, the cipher "fx" "ze" "nk" "kg" "pk" "mh" "so" "pz" "ek" "tm" is obtained. 
+An issue with this algorithm is that a single letter is changed in the plaintext,
+then a single letter will change in the cipher, 
+this allows the grid to be figured out if enough cipher text is given or some probable words are given \citep{anderson_security_2008}.
+A block cipher can become much more secure if a larger block length is used (in the example above, the block size is two), 
+this makes an important foundation for modern block cipher algorithms
 \citep{anderson_security_2008}. This example demonstrates the Electronic Code Book (ECB) mode of encryption: the key encrypts a block of plaintext to make a block of cipher \citep{kessler_overview_2016}.
 This mode of encryption is the most common, however if two plaintext blocks are the same and are encrypted using this method, the cipher block will be the same, 
 and this makes this mode of encryption vulnerable \citep{kessler_overview_2016}. Another mode that uses the concept of block ciphers is called Cipher Block Chaining (CBC).
@@ -295,7 +317,6 @@ on the result of that operation to create a new cipher block \citep{savage_cse_2
 Finally, another mode that uses block ciphers is called the Message Authentication Code. Rather than encrypting data, the primary goal of this mode is to protect the integrity
 and authenticity of the encrypted message \citep{anderson_security_2008}. MAC relies on CBC mode by only using the last block of the resulting cipher, 
 the other blocks must remain secret \citep{anderson_security_2008}. 
-This paragraph presented some concepts that are used in modern cryptography which will now be explored.
 
     \begin{table}[]
     \centering
@@ -315,19 +336,22 @@ This paragraph presented some concepts that are used in modern cryptography whic
     \caption{Grid for the key}\label{tab:key}
     \end{table}
 
+\subsection{Three Types of Cryptographic Algorithms}
+
 There are three main families of cryptographic algorithms: Secret Key Cryptography (or symmetric cryptography), Public Key Cryptography (or asymmetric cryptography), and
 Hash Functions \citep{kessler_overview_2016} \citep{savage_cse_2019}. Symmetric cryptography uses one key to encrypt and decrypt data, therefore both the sender and the 
 receiver must know the key which is secret, and distributing it becomes the main difficulty \citep{kessler_overview_2016}. Keys are defined as binary strings, 
 and their space is expressed in bits \citep{savage_cse_2019}. 
 For example, if someone would want to find a 128-bit key using brute force, it will require 2\textsuperscript{128} attempts. 
 Symmetric cryptography algorithms can be split into two groups: stream ciphers and block ciphers \citep{kessler_overview_2016}, 
-these two schemes have been discussed in the previous paragraph. 
+these two schemes have been discussed in the previous paragraphs. 
 Due to time, only two commonly used Secret Key Algorithms will be presented: Data Encryption Standard (DES), and Advanced Encryption Standard (AES) \citep{kessler_overview_2016}. 
 DES was invented by IBM in the 1970s, and is a block cipher algorithm using 64-bit blocks and 56-bit keys \citep{kessler_overview_2016}. 
 DES is no longer considered secure today, however there are two variants to make DES make more secure: 3DES and DESX \citep{kessler_overview_2016}.
 AES is a successor to DES, and it uses a scheme called Rijndael invented by Belgian cryptographers Joan Daeman and Vincent Rijmen \citep{kessler_overview_2016}.
 It is a block cipher algorithm that does not have a fixed size block length and key length; the key length could be either 128, 192, or 256 bits;
 and the block length could be also 128, 192 bits, or 256 bits \citep{kessler_overview_2016}. AES is used in BitLocker which is a hard drive encryption software \citep{noauthor_bitlocker_2019}.
+
 Public Key Cryptography relies on two keys: the public key and the private key. 
 A public key is used to send some encrypted plaintext of fixed size that can only be decrypted with the private key \citep{savage_cse_2019}. 
 Also, a public key can be used to verify that a message was sent by the owner of the private key, 
@@ -343,6 +367,7 @@ to 32, then computing the inverse requires to find two integers, x and y such th
 RSA is the most common public key cryptographic algorithm invented by Ronald Rivest, Adi Shamir, and Leonard Adleman in 1978, 
 and it depends on the hardness of factorization \citep{kessler_overview_2016} \citep{savage_cse_2019}.
 RSA is used in web browsers for secure communication with websites (SSL and its successor TLS) \citep{anderson_security_2008}.
+
 Finally, Hash Functions are used to create a string of fixed size from some input of arbitrary length \citep{savage_cse_2019}. 
 They have two characteristics: knowing the hash, it must be difficult to find an input to the hash function so that it matches the hash;
 it must also be difficult to find two inputs that generate the same hash \citep{savage_cse_2019}. 
@@ -356,6 +381,10 @@ The Secure Hash Algorithm (SHA) is a hash function defined by the National Insti
 SHA-1 is the first version of SHA and it produced a 160-bit hash, it was broken in 2015 \citep{kessler_overview_2016}. SHA-2 relies on five different algorithms
 SHA-1, SHA-224, SHA-256, SHA-384, and SHA-512 to generate hash values of 224, 256, 384, or 512 bits. 
 SHA-3 (or Keccak) is a hash function that does not rely on its predecessors as the NIST found it necessary to have a different algorithm in case SHA-2 is broken \citep{kessler_overview_2016}.
+Finally, bcrypt is a hash function that has been specifically designed for password hashing \citep{noauthor_1999_nodate}. 
+\citet{savage_cse_2019-2} claims that this hashing algorithm should be used among others for storing passwords as it is slower than SHA-2 for example.
+
+\subsection{Mistakes in Cryptography}
 
 Cryptography is an important part of a secure computer system. However, mistakes are made when these algorithms are integrated in a system,
 and this is usually the spot where cryptography fails \citep{lazar_why_nodate}. This section will first investigate why cryptography itself is not the issue in most cases.
@@ -385,9 +414,11 @@ Therefore, good documentation for cryptographic APIs is needed for it to be used
 They also think that the easier it is to use a cryptographic library, the better the security results are.
 Finally, they noticed that some developers said that their code is secure when it was not. This shows a lack of recognition for some security issues \citep{lazar_why_nodate}.
 
+\subsection{Conclusion}
+
 In conclusion, this section provided a small history of cryptography, some cryptographic fundamentals and algorithms. 
-As most students taking the Cyber Security Fundamentals do not know much about cryptography, 
-it is essential to give them some background about it so that they have some understanding.
+As most students taking the Cyber Security Fundamentals (presented in the \ref{sec:Introduction}) do not know much about cryptography, 
+it is essential to have some understanding about cryptography so that the resulting game replicated the real world.
 Finally, it explored issues that occur when cryptography is implemented, and why there is a need to educate people in cryptography.
 In the previous paragraph, the following mistakes were identified in different research papers:
 \begin{itemize}
@@ -399,6 +430,7 @@ In the previous paragraph, the following mistakes were identified in different r
     \item Poor choice of cryptographic APIs;
     \item Poor general security awareness.
 \end{itemize}
+All the mistakes presented are due to wrong choices made by developers when they were implementing it in their systems.
 \citet{eggleton_value_2001} claim that problem solving is a process that requires iterations, and each iteration allows
 people to reach a better solution by learning from their previous iterations. 
 Therefore, the above mistakes present to students an early solution to a problem, show that they are not optimal, and
@@ -428,7 +460,7 @@ In summary, CyberCIEGE is a game that presents some gamification characteristics
 
 Targeted Attack is a game developed by TrendMicro, and it covers general cybersecurity concepts.
 The player takes the role of Dave, the CIO of a company called "Fugle Incorporated" which is about to release a "revolutionary payment application".
-The player watches some videos, and has to answer a multiple choice questions to make the application as secure as possible. 
+The player watches some videos, and has to answer multiple choice questions to make the application as secure as possible. 
 Each answer to a question is a decision, and each decision will affect the overall outcome. 
 For some decisions, the player is also influenced by the financial constraints of his decisions just like in the real world.
 One of the decisions mentions encryption, and thus cryptography: the player is asked whether he should encrypt the intellectual property of the company, 
@@ -438,7 +470,7 @@ This demonstrates that cryptography does not solve a problem if the threat model
 At the end of the game, the player is told whether he succeeded. If he failed, the game would go over the mistakes the player made, 
 and is given the opportunity to play again to set things right.
 
-In broad terms, Targeted Attack is a gamification that presents some cybersecurity concepts and little to none cryptography concepts.
+In broad terms, Targeted Attack is a gamification that presents some cybersecurity concepts and limited cryptographic concepts.
 
 \subsection{The Weakest Link}
 
@@ -455,7 +487,7 @@ The game is situated in a fictitious city called Cyber City, and presents open w
 This game familiarizes the player with the Computer Misuse Act by making some people stand in front of a court for some computer misdemeanors they did.
 The player has to determine if the accused are guilty of a crime, and the player gets feedback on their judgment.
 Another challenge in this game demonstrates why public WiFi networks might not be secure. The player is tasked with determining the person who is spoofing a cafe WiFi.
-At the end of this challenge, the player receives some feedback about how he accomplished the challenge.
+At the end of this challenge, the player receives some feedback about how they accomplished the challenge.
 A third challenge for the player is to determine whether some emails are phishing email. At the end, user gets feedback.
 The last challenge is to setup a firewall in a factory. The player is introduced to how a firewall works, and sets up some firewall rules.
 
@@ -465,10 +497,11 @@ In summary, this game has some gamification concepts, introduces players to some
 
 Nite Team 4 is a game developed by Alice \& Smith, and provides a UNIX style operating system interface. 
 The player is introduced to some cybersecurity tools used in the real world, 
-and allows the player to develop their skills in hacking while exploring at the same time the world of cyberwarfare.
+and allows the player to develop their skills in hacking while exploring at the same time the world of cyber warfare.
 However, as the demo version has very limited features, nothing more can be said about this game in the sense of content.
 
-In summary, this game resembles a lot to a serious game, however due to limitations, more cannot be said.
+In summary, this game resembles a lot to a serious game as it contains a real UNIX terminal and software used by cyber security professionals, 
+however due to limitations, more cannot be said.
 
 \subsection{CIA Cryptography Game (Break the Code)}
 
@@ -479,9 +512,9 @@ Unfortunately, the website was no longer accessible when this section was writte
 
 In essence, this game is a gamification, and it presents one cryptography component, substitution ciphers. 
 
-\subsection{University of Edinburgh Cybersecurity Game}
+\subsection{University of Edinburgh Cyber security Game}
 
-This game is a firewall setup game. It is based upon the "iptables" program in Linux. 
+This game is a firewall setup game. It is based upon the "iptables" software in Linux. 
 The player has to set up some rules in the firewall so that two users can communicate securely over the network.
 Some information, like ip addresses, applications that are being used, is given to the player so that he can setup the rules correctly.
 The player is given some choices which are arguments to the "iptables" command so that the rules are set up correctly.
@@ -530,36 +563,28 @@ In summary, this game has some gamification characteristics, but does not have a
 \subsection{Summary}
 
 This section presented ten cybersecurity games, they have been summarized in Table \ref{tab:games}.
-The main thing to notice is that there are not many games that cover cryptography, and none that cover cryptography in depth.
+The main fact to notice is that there are not many games that cover cryptography, and none that cover cryptography in depth.
 This shows that there is a lack of games about cryptography, 
 and shows that there is a gap in the market where an educational game about cryptography could fit in.
 
 \begin{table}[]
-    \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{Game Name} & \textbf{Gamification or Serious Game} & \textbf{Cryptography Content} \\
-        \hline
-        CyberCiege & Gamification & High-level (symmetric and asymmetric) \\
-        \hline
-        Targeted Attack & Gamification & Mentioned once (high-level) \\
-        \hline
-        The Weakest Link & Gamification & None \\
-        \hline
-        Cyber City Demo & Gamification & None \\
-        \hline
-        Nite Team 4 & Serious Game & Only demo version played, not enough to conclude \\
-        \hline
-        CIA Cryptography Game & Gamification & Introduction to substitution cyphers \\
-        \hline
-        University of Edinburgh Game & Serious Game & None \\
-        \hline
-        Data Centre Attack & Gamification & None \\
-        \hline
-        Cyber Challenge & Gamification & None \\
-        \hline
-        Cyber Lab & Gamification & None \\
-        \hline      
-    \end{tabular}
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Game Name}           & \multicolumn{1}{c|}{\textbf{Gamification or Serious Game}}                                                                                   & \multicolumn{1}{c|}{\textbf{Cryptography Content}} \\ \hline
+    CyberCiege                   & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices and buy infrastructure \\ to make a system secure \\ in a simulated office\end{tabular} & High-level (symmetric and asymmetric)              \\ \hline
+    Targeted Attack              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices to create a secure version of an app\end{tabular}                                    & Mentioned once (high-level)                        \\ \hline
+    TheWeakest Link              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Multiple Choice Questions to make employees \\ more aware about security\end{tabular}             & None                                               \\ \hline
+    Cyber City Demo              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Inform people about the daily \\ cyber security risks\end{tabular}                                & None                                               \\ \hline
+    Nite Team 4                  & \begin{tabular}[c]{@{}l@{}}Serious Game:\\ Train people into using real life \\ cyber security tools\end{tabular}                            & Only demo version played, not enough to conclude   \\ \hline
+    CIA Cryptography Game        & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Present cryptography fundamentals \\ to children\end{tabular}                                     & Introduction to substitution ciphers               \\ \hline
+    University of Edinburgh Game & \begin{tabular}[c]{@{}l@{}}Serious Game:\\ Learn how to use the "iptables" program\end{tabular}                                           & None                                               \\ \hline
+    Data Centre Attack           & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices to secure the data of a hospital\end{tabular}                                     & None                                               \\ \hline
+    Cyber Challenge              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Learn the basics of network security\end{tabular}                                              & None                                               \\ \hline
+    Cyber Lab                    & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Learn the risks of weak passwords and phishing \\ through simple games\end{tabular}               & None                                               \\ \hline
+    \end{tabular}%
+    }
     \caption{Summary of the Games}\label{tab:games}
 \end{table}
 
@@ -568,7 +593,8 @@ and shows that there is a gap in the market where an educational game about cryp
 This literature review and market research presented some important concepts which are going to be used to build the cryptographic part of the cybersecurity game.
 The first section presented gamification and serious games, their characteristics and proof that they work. 
 The second section presented some cryptographic fundamentals, algorithms, and mistakes which are going to be used in the cryptography quest line.
-Finally, the last section presented ten cybersecurity games, and they were analysed on their cryptographic content. 
+Finally, the last section presented ten cybersecurity games, and they were analysed on their cryptographic content.
+These games were found after an extensive week of google searches, and they were chosen because of their content in either gamification or serious games, and cyber security. 
 This section demonstrated that more can be done in this field, and justifies the project approach.
 
 %==================================================================================================================================

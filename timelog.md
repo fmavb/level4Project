@@ -387,3 +387,8 @@
 
 ### 22nd March 2020
 * *1 hour* Group meeting
+
+## Week 26
+
+### 26th March 2020
+* *3 hours* Reviewing the literature, and adding some final modifications to it
