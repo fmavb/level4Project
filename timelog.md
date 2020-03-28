@@ -392,3 +392,7 @@
 
 ### 26th March 2020
 * *3 hours* Reviewing the literature, and adding some final modifications to it
+
+### 27th March 2020
+* *3 hours* Writing the Analysis/Requirements
+* *0.5 hours* Supervisor meeting

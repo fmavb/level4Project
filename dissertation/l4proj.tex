@@ -11,9 +11,9 @@
 
 %==============================================================================
 %% METADATA
-\title{Level 4 Project Report Template}
+\title{Learning cryptography through gaming}
 \author{Alexander Behrmann}
-\date{September 25, 2019}
+\date{April 6th, 2020}
 
 \maketitle
 
@@ -44,7 +44,7 @@
 %
 \educationalconsent
 \def\consentname {Alexander Behrmann} % your full name
-\def\consentdate {20 March 2019} % the date you agree
+\def\consentdate {20 March 2020} % the date you agree
 
 %==============================================================================
 \tableofcontents
@@ -572,17 +572,17 @@ and shows that there is a gap in the market where an educational game about cryp
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{|l|l|l|}
     \hline
-    \textbf{Game Name}           & \multicolumn{1}{c|}{\textbf{Gamification or Serious Game}}                                                                                   & \multicolumn{1}{c|}{\textbf{Cryptography Content}} \\ \hline
+    \textbf{Game Name}           & \multicolumn{1}{c|}{\textbf{Gamification or Serious Game}}                                                                                      & \multicolumn{1}{c|}{\textbf{Cryptography Content}} \\ \hline
     CyberCiege                   & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices and buy infrastructure \\ to make a system secure \\ in a simulated office\end{tabular} & High-level (symmetric and asymmetric)              \\ \hline
-    Targeted Attack              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices to create a secure version of an app\end{tabular}                                    & Mentioned once (high-level)                        \\ \hline
-    TheWeakest Link              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Multiple Choice Questions to make employees \\ more aware about security\end{tabular}             & None                                               \\ \hline
-    Cyber City Demo              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Inform people about the daily \\ cyber security risks\end{tabular}                                & None                                               \\ \hline
-    Nite Team 4                  & \begin{tabular}[c]{@{}l@{}}Serious Game:\\ Train people into using real life \\ cyber security tools\end{tabular}                            & Only demo version played, not enough to conclude   \\ \hline
-    CIA Cryptography Game        & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Present cryptography fundamentals \\ to children\end{tabular}                                     & Introduction to substitution ciphers               \\ \hline
-    University of Edinburgh Game & \begin{tabular}[c]{@{}l@{}}Serious Game:\\ Learn how to use the "iptables" program\end{tabular}                                           & None                                               \\ \hline
-    Data Centre Attack           & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices to secure the data of a hospital\end{tabular}                                     & None                                               \\ \hline
-    Cyber Challenge              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Learn the basics of network security\end{tabular}                                              & None                                               \\ \hline
-    Cyber Lab                    & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Learn the risks of weak passwords and phishing \\ through simple games\end{tabular}               & None                                               \\ \hline
+    Targeted Attack              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices to create a secure version of an app\end{tabular}                                       & Mentioned once (high-level)                        \\ \hline
+    TheWeakest Link              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Multiple Choice Questions to make employees \\ more aware about security\end{tabular}                & None                                               \\ \hline
+    Cyber City Demo              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Inform people about the daily \\ cyber security risks\end{tabular}                                   & None                                               \\ \hline
+    Nite Team 4                  & \begin{tabular}[c]{@{}l@{}}Serious Game:\\ Train people into using real life \\ cyber security tools\end{tabular}                               & Only demo version played, not enough to conclude   \\ \hline
+    CIA Cryptography Game        & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Present cryptography fundamentals \\ to children\end{tabular}                                        & Introduction to substitution ciphers               \\ \hline
+    University of Edinburgh Game & \begin{tabular}[c]{@{}l@{}}Serious Game:\\ Learn how to use the "iptables" program\end{tabular}                                                 & None                                               \\ \hline
+    Data Centre Attack           & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Make choices to secure the data of a hospital\end{tabular}                                           & None                                               \\ \hline
+    Cyber Challenge              & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Learn the basics of network security\end{tabular}                                                    & None                                               \\ \hline
+    Cyber Lab                    & \begin{tabular}[c]{@{}l@{}}Gamification:\\ Learn the risks of weak passwords and phishing \\ through simple games\end{tabular}                  & None                                               \\ \hline
     \end{tabular}%
     }
     \caption{Summary of the Games}\label{tab:games}
@@ -599,7 +599,62 @@ This section demonstrated that more can be done in this field, and justifies the
 
 %==================================================================================================================================
 \chapter{Analysis/Requirements}
-What is the problem that you want to solve, and how did you arrive at it?
+
+Lectures tend to lack interaction and some questions that the students might have, are left unanswered \citep{lehmann_theory-driven_2014}.
+Moreover, as a high number of students tend to attend lectures, it is impractical to give feedback concerning their understanding of a subject 
+which is an important factor in learning \citep{lehmann_theory-driven_2014}.
+Hence, the idea is to supplement the lecture material in the Cyber Security Fundamentals with an open world game that would test students' understanding
+of topics presented in this course.
+In early 2019, a group of students completing their master's degree in cyber security decided to build a game that would go
+beyond the material presented in the Cyber Security Fundamentals Course.
+This game is an open-world game, and features the main character called "Mike the Panda" who learns cyber security concepts by
+interacting with various characters in the city. Since this course presents cryptography in a limited way, and the principal goal is to give more material about this subject,
+The students built challenges in the following subjects which were primed during the lectures:
+\begin{itemize}
+    \item Web Applications Attacks (XSS, CSRF);
+    \item Cryptography;
+    \item Digital Forensics.
+\end{itemize}
+Unfortunately, the challenges lacked cohesion, and some did not go beyond the material.
+Lack of cohesion was due to the fact that each challenge had its own flow, and its own means of interaction with the user 
+(for example, the key binding varied between quests). 
+Hence, it has been decided to maintain to keep the already built map, to improve existing quests, and to construct new challenges where required.
+This chapter will first present the Intended Learning Outcomes (ILOs) for the cryptography quest, and then will proceed towards a more specific 
+formulation of those requirements.
+
+\section{Intended Learning Outcomes (ILOs)}
+
+
+The Intended Learning Outcomes are the following:
+\begin{itemize}
+    \item Go beyond the lecture material presented in the course;
+    \item Present cryptography origins;
+    \item Present the three cryptographic algorithms;
+    \item Demonstrate commonly made mistakes in cryptographic applications.
+\end{itemize}
+
+The reasons behind each of these requirements will be discussed in the following sections.
+
+\subsection{Beyond the lecture material}
+
+As stated in the introduction of this chapter, lectures lack in interactions and feedback.
+Hence, a core requirement of the game is to verify students' knowledge in cryptography, 
+and to supplement it where possible.
+The CSF course introduces students to cryptography basics. 
+It presents and explains the two main operations in cryptography: encryption, decryption, and hashing.
+
+It then proceeds to demonstrate how symmetric and asymmetric cryptography work and where they are applied
+
+\subsection{Cryptography origins}
+
+\subsection{Three cryptographic algorithms}
+
+\subsection{Mistakes in cryptography}
+
+\section{Towards a more specific set of requirements}
+
+\section{Conclusion}
+
 \section{Guidance}
 Make it clear how you derived the constrained form of your problem via a clear and logical process. 
 
