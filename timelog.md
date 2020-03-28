@@ -396,3 +396,6 @@
 ### 27th March 2020
 * *3 hours* Writing the Analysis/Requirements
 * *0.5 hours* Supervisor meeting
+
+### 28th March 2020
+* *5 hours* Finishing first draft 

@@ -617,8 +617,8 @@ The students built challenges in the following subjects which were primed during
 \end{itemize}
 Unfortunately, the challenges lacked cohesion, and some did not go beyond the material.
 Lack of cohesion was due to the fact that each challenge had its own flow, and its own means of interaction with the user 
-(for example, the key binding varied between quests). 
-Hence, it has been decided to maintain to keep the already built map, to improve existing quests, and to construct new challenges where required.
+(for example, the key bindings varied between quests). 
+Hence, it has been decided to maintain the already built map, to improve existing quests, and to construct new challenges where required.
 This chapter will first present the Intended Learning Outcomes (ILOs) for the cryptography quest, and then will proceed towards a more specific 
 formulation of those requirements.
 
@@ -628,8 +628,8 @@ formulation of those requirements.
 The Intended Learning Outcomes are the following:
 \begin{itemize}
     \item Go beyond the lecture material presented in the course;
-    \item Present cryptography origins;
-    \item Present the three cryptographic algorithms;
+    \item Present what cryptography is about;
+    \item Present the three types of cryptographic algorithms;
     \item Demonstrate commonly made mistakes in cryptographic applications.
 \end{itemize}
 
@@ -639,24 +639,106 @@ The reasons behind each of these requirements will be discussed in the following
 
 As stated in the introduction of this chapter, lectures lack in interactions and feedback.
 Hence, a core requirement of the game is to verify students' knowledge in cryptography, 
-and to supplement it where possible.
-The CSF course introduces students to cryptography basics. 
-It presents and explains the two main operations in cryptography: encryption, decryption, and hashing.
+and to supplement it where possible. To understand what concepts should be supplemented, 
+a quick overview of the cryptography material in the CSF is described.
+The CSF course introduces students to cryptography basics.
+It first introduces primitive algorithms like Caesar's cipher and the Vigenère cipher which are both
+examples of stream ciphers. 
+In the background section of this paper, these two algorithms have been presented.
+It then presents and explains the three operations in cryptography: encryption, decryption, and hashing.
+It then proceeds to demonstrate how symmetric and asymmetric cryptography work, what keys are used, and where they are applied.
 
-It then proceeds to demonstrate how symmetric and asymmetric cryptography work and where they are applied
+This requirement is the parent of the other intended learning outcomes. 
+Indeed, the question that has been asked for every idea that came to mind is the following:
+"How does it improve the students' learning experience and what new concepts does it bring to the table?"
+With this in mind, the other ILOs will be now presented.
 
-\subsection{Cryptography origins}
+\subsection{Purrpose of cryptography}
 
-\subsection{Three cryptographic algorithms}
+The purpose of cryptography requirement is all about algorithms that have been used in the past to understand its purpose.
+The core goal of this requirement is for the student to gain understanding what cryptography is about, and where it has come from.
+A consequential goal of this requirement is to understand why these algorithms are not longer in use.
+A good algorithm to fullfil these goals is the Caesar's cipher because it is easy to explain, 
+understand, and to break as claimed by \citet{anderson_security_2008}.
+
+Going in this direction, an exercise that will be proposed to the student is
+the student receives a cipher and a number (the key) associated with it, and use these two pieces of information to decrypt the message.
+To accomplish this, the students will have to complete the following tasks:
+\begin{itemize}
+    \item 1. Determine what algorithm was used to encrypt the message;
+    \item 2. Determine what the key is to decrypt the message;
+    \item 3. Decrypt the message itself.
+\end{itemize}
+
+\subsection{Three types of cryptographic algorithms}
+
+The course presents the three cryptographic algorithm in use: symmetric cryptography,
+asymmetric cryptography, and hashing. 
+The goal of this requirement is to understand the purpose of each of these algorithms,
+and why there are three of these. As mentioned by \citet{kessler_overview_2016},
+symmetric and asymmetric cryptography complement each other. 
+Symmetric cryptography is used for message transmission, and public key cryptography 
+is used for key exchange. Hashing is used to store passwords and to verify file integrity.
+Hence, this ILO will develop the idea of why there is a need for symmetric and asymmetric
+cryptography, and how it is accomplished in practice.
+Finally, this requirement will present to the student commonly used algorithms for each
+type of cryptographic algorithm as this is not covered in detail in the course.
+
+Since the course does not go into details about how all of these algorithms are 
+linked together, the following requirements can be formulated:
+\begin{itemize}
+    \item Present symmetric cryptography, the keys it uses, and its commonly used algorithms;
+    \item Present asymmetric cryptography, the keys it uses, and its commonly used algorithms;
+    \item Present hashing, and its commonly used algorithms;
+    \item Present how symmetric and asymmetric cryptography are combined together
+    to establish secure communication.
+\end{itemize}
 
 \subsection{Mistakes in cryptography}
 
-\section{Towards a more specific set of requirements}
+\citet{eggleton_value_2001} claim that learning from mistakes is important as it allows people to 
+learn why their solutions were incorrect. Hence, presenting mistakes in 
+cryptographic implementations would help people to see why they were incorrect.
+This would in turn avoid people to make mistakes further on in their careers.
+This fits in the main goal of supplementing the lecture material as these mistakes 
+have not been explained in lectures.
+
+In the Background chapter, some common mistakes were identified. 
+Some of them are more likely to happen than others
+The following mistakes were chosen as requirements for this Intended Learning Outcome:
+\begin{itemize}
+    \item Cryptographic algorithm relying on its secrecy;
+    \item Failure to delete the plaintext;
+    \item Poor use of random numbers;
+    \item Use of weak keys;
+    \item Use of outdated algorithms.
+\end{itemize}
+Security awareness was not chosen because it is too broad of a subject to be implemented. 
+Poor choice of cryptographic APIs was not chosen because there are many APIs available,
+and because it requires a specific framework to determine which APIs are better than others.
+Since the latter point is beyond the scope of this paper, it has not been implemented. 
 
 \section{Conclusion}
 
-\section{Guidance}
-Make it clear how you derived the constrained form of your problem via a clear and logical process. 
+First, this chapter presented the existing framework in which the cryptography challenges will be
+built. Then, it presented the main goal which to enhance and go beyond the material presented in lectures.
+Finally, it presented the Intended Learning Outcomes and their more specific requirements.
+They have all been summarized in the table \ref{tab:requirements}:
+
+\begin{table}[]
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Intended Learning Outcomes}                    & \textbf{Specific Requirements}                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
+    Go beyond the lecture material presented in the course & This is the ILO that spawns off the the other ones                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+    Present cryptography origins                           & \begin{tabular}[c]{@{}l@{}}1. Determine what algorithm was used to encrypt the message;\\ 2. Determine what the key is to decrypt the message;\\ 3. Decrypt the message itself\\ .\end{tabular}                                                                                                                                                                                                           \\ \hline
+    Present the three types of cryptographic algorithms    & \begin{tabular}[c]{@{}l@{}}1. Present symmetric cryptography, the keys it uses, \\ and its commonly used algorithms;\\ 2. Present asymmetric cryptography, the keys it uses, \\ and its commonly used algorithms;\\ 3. Present hashing, and its commonly used algorithms;\\ 4. Present how symmetric and asymmetric cryptography \\ are combined together to establish secure communication.\end{tabular} \\ \hline
+    Mistakes in cryptography                               & \begin{tabular}[c]{@{}l@{}}1. Cryptographic algorithm relying on its secrecy;\\ 2. Failure to delete the plaintext;\\ 3. Poor use of random numbers;\\ 4. Use of weak keys;\\ 5. Use of outdated algorithms.\end{tabular}                                                                                                                                                                                 \\ \hline
+    \end{tabular}%
+    }
+    \caption{Summary of the Intended Learning Outcomes and their specific requirements}
+    \label{tab:requirements}
+\end{table}
 
 %==================================================================================================================================
 \chapter{Design}
