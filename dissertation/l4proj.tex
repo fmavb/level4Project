@@ -804,7 +804,11 @@ and obtain the points.
 For the xOR cipher, the same philosophy was used. The user would input a character and a key (a number).
 Then, he would see the character converted in bits, the key converted in bits, and the resulting character.
 An answer text box was added to the interface so that the user can input their answer even though
-the One-Time Pad algorithm is not the correct solution to this problem. 
+the One-Time Pad algorithm is not the correct solution to this problem.
+After the challenge is completed, 
+the user gets some explanation about stream and block ciphers and how they function.
+Block ciphers have been added so that the student knows that stream cipers are not 
+the only type of primitive cryptography.
 Figure \ref{fig:Caesar} presents the wire frame for the Caesar cipher 
 and Figure \ref{fig:xOR} presents the wire frame for the One-Time Pad.
 \begin{figure}
@@ -827,17 +831,20 @@ and Figure \ref{fig:xOR} presents the wire frame for the One-Time Pad.
 \end{figure}
 
 \subsection{Gamification Characteristics}
+
 This section will examine how this challenge satisfies the gamification characteristics identified
 by \citet{cugelman_gamification:_2013}.
 \begin{itemize}
     \item "Goal-setting": The goal of this challenge is to decrypt the cipher. 
-    A higher-level goal of this challenge is to find the meaning of the message, 
-    and gain points by decrypting it correctly.
+    A higher-level goal of this challenge is to find the meaning of the message, gain points by decrypting it correctly, 
+    and to advance the cryptography quest.
     \item "Capacity to overcome challenges": The challenge has been designed in such way 
     that it is not too difficult for the student by including the key to the cipher for example.
     \item "Providing feedback on performance": When the student thinks he completed the challenge and submits his answer,
     he receives feedback whether he decrypted the message correctly, 
-    and the number of points he obtained if the message is decrypted successfully.
+    and the number of points he obtained if the message is decrypted successfully. 
+    The explanation at the end of the challenge provides some supplementing feedback, 
+    and allows the user to retry if he wishes to do so.
     \item "Reinforcement": The number of points and feedback reinforce whether the student understood how streams ciphers work.
     \item "Progress comparison": The points system opens the door for a potential discussion and comparison between students.
     \item "Social connectivity": Students could potentially interact with each other to solve the challenge.
@@ -851,7 +858,102 @@ it can be implemented and evaluated according to these points.
 
 \subsection{Storyline}
 
+This challenge starts off by Mike meeting the Crypto Jedi at the coffee shop after completing the first challenge.
+Crypto Jedi tells Mike that he was asked by a company to design a secure messaging service. 
+Crypto Jedi asks Mike to design the sign in, send message, and receive message functionality
+using correct algorithms. Once he completes the challenge, Mike should meet Crypto Jedi at the office.
+
 \subsection{Challenge Design}
+
+This challenge is split into three distinct parts: sign in, send message, and receive message.
+All three challenges have been designed in a flowchart style. 
+Each box contains either an input to an algorithm, the choice of an algorithm, 
+or the output of the algorithm. 
+The choice between algorithms remains the same throughout the three parts of the challenge.
+The player has the choice between the following hashing algorithms: MD5, SHA-2, and bcrypt.
+The player can also choose these secret-key algorithms: DES, and AES.
+Finally, the player can only choose one public-key algorithm: RSA.
+Every time the student chooses an algorithm requiring a key, 
+he must choose an appropriate key for that algorithm. 
+These details will be described in detail for each part of this challenge.
+Finally, the whole challenge is worth 300 points, and each subsection is hence worth 100 points.
+
+The sign in design task asks the user to find a secure way to validate or to store user passwords.
+The user gets as input the user password 
+and his goal is to ensure that the password is stored or validated securely.
+To accomplish this, he has the choice between the algorithms described above, 
+Also, he has the possibility to combine the password with either the username of a user,
+or a salt that is unique to the password.
+The correct solution to this problem is to choose bcrypt for the password hashing and
+to combine with the password a unique salt.
+If the player chooses an incorrect type of algorithm (symmetric or asymmetric), he loses 25 points.
+If the player chooses MD5 as hashing algorithm, he would lose 15 points because MD5 is considered
+as vulnerable. If the player chooses SHA-2 as hashing algorithm, he would lose 5 points because 
+SHA-2 is not the optimal solution to this problem. 
+At the end of the design exercise, the player is given an explanation about the solution to this problem.
+
+The send message design task requires the student to transmit a message and its key securely using
+the RSA key exchange framework (TO BE ADDED TO THE BACKGROUND CHAPTER). 
+The player receives as input a message, and can choose up to three algorithms. 
+If they choose symmetric or asymmetric encryption, they will have a choice between the following keys:
+recipient's private key, recipient's public key, sender's private key, sender's public key, 
+sender's password, and randomly generated key. 
+Figure \ref{fig:Challenge2} presents a solution to this solution. To obtain this solution,
+the student has to implement correctly the RSA key exchange mechanism. 
+They must generate a random key to encrypt the message using AES encryption, 
+and then they must encrypt the key using RSA encryption with the recipient's public key.
+If the player chooses an incorrect algorithm type, he loses 25 points. 
+If the player chooses an incorrect key type, he loses 15 points.
+If the player chooses the correct algorithm type, but it is an outdated one, he loses 5 points. 
+Finally, this challenge also presents to the student another use of hashing, file integrity verification.
+This can be accomplished by mapping the input message into a hash function.
+However, the player will not be deducted any points if he does not do this 
+as this is beyond the scope of the exercise.
+At the end of this part, the student is debriefed concerning the task and what should have been done.
+He is also given the opportunity to retry the challenge.
+
+The receive message design task asks the player to do the opposite of the second part which
+is to decrypt the received message. The RSA key exchange framework is still used.
+The player receives two inputs which are the encrypted message and the encrypted key.
+His goal is to decrypt the message.
+Solving this problem is almost like reversing the graph presented in \ref{fig:Challenge2}
+To achieve the correct solution, the player has to firstly decrypt the encryption correctly.
+This involves using the RSA algorithm with the receiver's private key to decrypt the message encryption key.
+Then, they must use that decrypted key to decrypt the message using AES encryption.
+The same scoring scheme applies as in the second part of the challenge. 
+At the end of this part, the student is given some explanations about the tasks of the challenge and
+they are given the opportunity to retry the challenge.
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\textwidth, frame]{images/Questline2Part2Cropped.pdf}
+    \caption{Sample solution to the second part of the second challenge. 
+    Specific algorithms are not specified.}
+    \label{fig:Challenge2}
+\end{figure}
+
+\subsection{Gamification Characteristics}
+
+This section will double check whether this challenge satisfies \citet{cugelman_gamification:_2013}'s
+gamification characteristics.
+\begin{itemize}
+    \item "Goal-setting": The goal of this challenge is to design the cryptographic systems correctly. 
+    A higher-level goal of this challenge is to gain points by completing the challenge, 
+    and advance the cryptography quest.
+    \item "Capacity to overcome challenges": The challenge has been designed in such way 
+    that it is not too difficult for the student. There was an idea of making this exercise a coding exercise
+    which would make this challenge more like a serious game than a gamification. 
+    However, since most students taking CSF do not know how to code, it was decided to keep this format.
+    \item "Providing feedback on performance": When the student thinks he completed the challenge and submits his answer,
+    he receives feedback whether he designed the system correctly, some explanation is given about what should have been done,
+    and allows the user to retry if he wishes to do so.
+    \item "Reinforcement": The number of points and feedback reinforce whether the student understood how streams ciphers work.
+    \item "Progress comparison": The points system opens the door for a potential discussion and comparison between students.
+    \item "Social connectivity": Students could potentially interact with each other to solve the challenge.
+    \item "Fun and playfulness": The open-world game enables players to discover a new world, 
+    and there could be some playfulness by advancing the quest.
+\end{itemize}
+Hence, this challenge satisfies the gamification characteristics.
 
 \section{Challenge 3}
 

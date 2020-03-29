@@ -401,3 +401,4 @@
 * *5 hours* Finishing first draft
 
 ### 29th March 2020
+* *6 hours* Writing the design chapter
