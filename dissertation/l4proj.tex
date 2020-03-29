@@ -7,6 +7,7 @@
 % put any additional packages here
 %
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}
 \begin{document}
 
 %==============================================================================
@@ -612,6 +613,7 @@ interacting with various characters in the city. Since this course presents cryp
 The students built challenges in the following subjects which were primed during the lectures:
 \begin{itemize}
     \item Web Applications Attacks (XSS, CSRF);
+    \item Penetration testing;
     \item Cryptography;
     \item Digital Forensics.
 \end{itemize}
@@ -723,7 +725,7 @@ Since the latter point is beyond the scope of this paper, it has not been implem
 First, this chapter presented the existing framework in which the cryptography challenges will be
 built. Then, it presented the main goal which to enhance and go beyond the material presented in lectures.
 Finally, it presented the Intended Learning Outcomes and their more specific requirements.
-They have all been summarized in the table \ref{tab:requirements}:
+They have all been summarized in table \ref{tab:requirements}:
 
 \begin{table}[]
     \resizebox{\textwidth}{!}{%
@@ -742,7 +744,123 @@ They have all been summarized in the table \ref{tab:requirements}:
 
 %==================================================================================================================================
 \chapter{Design}
-How is this problem to be approached, without reference to specific implementation details? 
+
+The previous chapter analysed the core problem, presented the important requirements for the challenges,
+and described the existing context in which the game is built. 
+Since there are three major concepts in cryptography which have to be developed, 
+the cryptography quest line will be defined in three different challenges. 
+The first challenge will be about primitive stream ciphers; 
+the player will receive an encrypted message, and will have to decrypt it using 
+Caesar's cipher or the One-Time Pad cipher. 
+The second challenge will test the student's knowledge of cryptographic algorithms;
+the student will have to design on a high level secure cryptographic systems.
+The final challenge will introduce the student to cryptographic mistakes; 
+he will have to browse a file system to find files that have been compromised due to poor use off
+cryptography. All these challenges are to be completed in the order they are presented
+and will be linked together with an in-game character called "Crypto Jedi". 
+Finally, all challenges have been designed with \citet{cugelman_gamification:_2013}'s characteristics
+presented in the background chapter.
+
+\section{Challenge 1}
+
+\subsection{Storyline}
+
+This challenge kicks off the cryptography quest line. It starts with Mike (the player character) 
+meeting Crypto Jedi at home. Crypto Jedi asks Mike to decrypt a message he received. Mike accepts, and goes
+to a laptop to read the email, and to decrypt the message. Once decrypted, 
+the message instructs the player to go to the coffee shop where the second challenge awaits.
+
+\subsection{Challenge Design}
+
+This challenge has two important design parts. The cipher message design and the "decryptor" design.
+This challenge is about primitive stream ciphers. Hence, the challenge was designed in such way that
+the student would have the choice between Caesar's cipher and the One-Time Pad cipher. Eventually,
+the message was encrypted with Caesar's cipher because the One-Time Pad uses the xOR operation which requires
+characters being rewritten in their bit representation using the ASCII scheme. 
+Hence, there is a possibility that some characters obtained after encryption cannot be mapped in their ASCII form.
+However, the xOR encryption was kept in the final design of the challenge to give the students some exposure
+to this algorithm and to add some "noise" to the challenge so that it is not too easy.
+Finally, it was decided that the challenge would be worth 100 points, and each time the user would input
+a wrong answer, he would lose 25 points.
+
+Once these points were clarified, the message to be decrypted had to be written. 
+The message has to fit in with the storyline described above. 
+Thus, it was decided that the message will be the following: "Meet me at the coffee shop. Crypto Jedi".
+Afterwards, the message was encrypted with Caesar's cipher to obtain this cipher: "TLLA TL HA AOL JVMMLL ZOVW. JYFWAV QLKP."
+(alphabet is shifted by 7 characters to the right). 
+Finally, the cipher and the key was added to the email which the player will see.
+There was discussion whether the key should be added to the email 
+or the player has to figure it out himself. 
+Eventually, it was kept because it was deemed that the challenge might become too difficult for the student.
+
+Finally, the "decryptor" had to be designed. Since both Caesar's cipher and the One-Time Pad are stream ciphers,
+they can hence be encrypted and decrypted character by character. 
+Therefore, an interface was designed in such way where the player can see how the algorithms work.
+For the Caesar cipher, the user would input a character, and a shift key. 
+In turn, he would see how the alphabet was shifted, and what the resulting character is. Eventually,
+the user would decrypt the message character by character. 
+Once the message is encrypted, he would have to input it in a dedicated text box to get the message validated
+and obtain the points. 
+For the xOR cipher, the same philosophy was used. The user would input a character and a key (a number).
+Then, he would see the character converted in bits, the key converted in bits, and the resulting character.
+An answer text box was added to the interface so that the user can input their answer even though
+the One-Time Pad algorithm is not the correct solution to this problem. 
+Figure \ref{fig:Caesar} presents the wire frame for the Caesar cipher 
+and Figure \ref{fig:xOR} presents the wire frame for the One-Time Pad.
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth, frame]{images/CaesarCipher.png}
+        \caption{Wire frame for the Caesar cipher interface.}
+        \label{fig:Caesar}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth, frame]{images/xOR.png}
+        \caption{Wire frame for the One-Time Pad interface.}
+        \label{fig:xOR}
+    \end{subfigure}
+    
+    \caption{Wire frames for the first challenge}
+    \label{fig:Challenge1}
+
+\end{figure}
+
+\subsection{Gamification Characteristics}
+This section will examine how this challenge satisfies the gamification characteristics identified
+by \citet{cugelman_gamification:_2013}.
+\begin{itemize}
+    \item "Goal-setting": The goal of this challenge is to decrypt the cipher. 
+    A higher-level goal of this challenge is to find the meaning of the message, 
+    and gain points by decrypting it correctly.
+    \item "Capacity to overcome challenges": The challenge has been designed in such way 
+    that it is not too difficult for the student by including the key to the cipher for example.
+    \item "Providing feedback on performance": When the student thinks he completed the challenge and submits his answer,
+    he receives feedback whether he decrypted the message correctly, 
+    and the number of points he obtained if the message is decrypted successfully.
+    \item "Reinforcement": The number of points and feedback reinforce whether the student understood how streams ciphers work.
+    \item "Progress comparison": The points system opens the door for a potential discussion and comparison between students.
+    \item "Social connectivity": Students could potentially interact with each other to solve the challenge.
+    \item "Fun and playfulness": The open-world game enables players to discover a new world, 
+    and decrypting the message might be considered as a fun activity by some.
+\end{itemize}
+As this challenge satisfies the above points, 
+it can be implemented and evaluated according to these points.
+
+\section{Challenge 2}
+
+\subsection{Storyline}
+
+\subsection{Challenge Design}
+
+\section{Challenge 3}
+
+\subsection{Storyline}
+
+\subsection{Challenge Design}
+
+\section{Conclusion}
+
 What follows is an example of applying these ingredients in simple terms to cryptography:
 \begin{itemize}
     \item "Goal-setting": Encrypting securely and correctly some plaintext;

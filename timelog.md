@@ -398,4 +398,6 @@
 * *0.5 hours* Supervisor meeting
 
 ### 28th March 2020
-* *5 hours* Finishing first draft 
+* *5 hours* Finishing first draft
+
+### 29th March 2020
