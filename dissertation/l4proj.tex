@@ -156,10 +156,10 @@ read these, but they will improve how you write.
 %==================================================================================================================================
 \chapter{Background}
 
-This chapter is going to go over the research that has been done in the area of gamification and serious games applied to cyber security and more precisely cryptography.
+This chapter is going to go over the research that has been completed in the area of gamification and serious games applied to cyber security and more precisely cryptography.
 The main focus will be on the applications of cryptography and not the building of a cryptographic algorithm.
 The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a possible system for education and prove why it is a workable approach.
-Finally, an attempt at using gamifications to educate people will be shown.
+Finally, an attempt at using gamification to educate people will be shown.
 The next part of this chapter will discuss cryptography, analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
 As the game is designed for people who have no prior knowledge of cryptography, some cryptographic fundamentals will be discussed.
 The third section of this chapter will explore some games that have been built in the domain of cybersecurity, and these games will be reviewed according to 
@@ -169,9 +169,9 @@ Finally, this section will be concluded by stating the reasons why there is a ne
 \section{Gamification and Serious Games}
 
 \subsection{Gamification}
-Gamification is the usage of game like elements in a non-gaming situation \citep{aparicio_analysis_2012}.
+Gamification is the usage of game-like elements in a non-gaming situation \citep{aparicio_analysis_2012}.
 \citet{aparicio_analysis_2012} claim that it used to attract people to tasks that are not normally considered as entertaining, like education for example.
-The research will mostly focus on gamifications applied to education as game like elements are going to be applied to cryptography.
+The research will mostly focus on gamifications applied to education as game-like elements are going to be applied to cryptography.
 Some gamification characteristics will be identified and some examples will be demonstrated to show that gamification works.
 
 According to Hsiao (2007), motivation is important for learning as learning requires a considerable amount of effort. 
@@ -183,7 +183,7 @@ These include "goal-setting", "capacity to overcome challenges", "providing feed
 and "fun and playfulness" \citep{cugelman_gamification:_2013}. 
 However, \citet{nicholson_recipe_2015} claims that there are other models to motivate players to learn. Instead of providing motivation from rewards, 
 users can find their own reasons to play the game. This could come from their desire to improve their skills in cryptography, their interest in cryptography, or 
-willing to advance the storyline of the character since they identify themselves to him.
+willing to advance the storyline of the character since they identify themselves to him for example.
 Also, gamification allows to put concepts into practice, especially in the field of cybersecurity \citep{wolfenden_gamification_2019}. 
 This is true since people apply learned concepts in a potentially real environment which improves knowledge retention. 
 People struggle to apply concepts if they are not used in practice, and gamification allows to put these theoretically learned skills into practice.
@@ -192,7 +192,7 @@ and check fields where they potentially lack the necessary skills for a safe usa
 
 \citet{akpolat_enhancing_2014} conducted a study about the gamification of extreme software engineering practices. These practices were pair programming, testing, and refactoring.
 For six weeks, they studied 50 students taking a university course held over 14 weeks. During this course, they learned these software engineering practices,
-and have an opportunity to apply these ideas to develop a software system. Students were split into five teams, each person had a specific role in the team,
+and had the opportunity to apply these ideas to develop a software system. Students were split into five teams, each person had a specific role in the team,
 and they would have an eight hour work day per week to work on their project. For six weeks, students engaged with this game. Each week, the teams competed for a "challenge cup", 
 and this cup was awarded to the team who won the challenge for that week. At the end of the course, there would be a final winner (the team who won the most challenges),
 and each team member was allowed to print something using a 3D printer. Each week, students were assigned a challenge, 
@@ -268,8 +268,9 @@ Hence, they decided to implement their own game based on the successful design c
 
 In conclusion, this section about Gamification and Serious Games presented a definition of these two concepts, provided their characteristics, 
 and demonstrated an example of both concepts. Although both ideas seem to be similar, they are not. 
-Gamification is created to target a large audience of people that do not especially have the required knowledge in the field by adding game-like elements 
-to make the learning activity less boring.
+Both try to educate people through the use of technology and converting technical ideas into games.
+However, gamification is created to target a large audience of people that do not especially have the required knowledge in the field by adding game-like elements 
+to make the learning activity more exciting.
 On the other hand, Serious Games are created to simulate the real world, and prepare the players of that game for a real world environment in which they are going to act.
 The next section will present cryptography under its many forms, and explain why there is a need to educate people in this field.
 
@@ -353,6 +354,15 @@ AES is a successor to DES, and it uses a scheme called Rijndael invented by Belg
 It is a block cipher algorithm that does not have a fixed size block length and key length; the key length could be either 128, 192, or 256 bits;
 and the block length could be also 128, 192 bits, or 256 bits \citep{kessler_overview_2016}. AES is used in BitLocker which is a hard drive encryption software \citep{noauthor_bitlocker_2019}.
 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\textwidth]{images/SymEnc.PNG}
+    \caption{This figure presents how symmetric cryptography works.
+     The identical colour of the key indicates that the same key is used for encryption and decryption 
+     \citep{kessler_overview_2016}.}
+    \label{fig:sym}
+\end{figure}
+
 Public Key Cryptography relies on two keys: the public key and the private key. 
 A public key is used to send some encrypted plaintext of fixed size that can only be decrypted with the private key \citep{savage_cse_2019}. 
 Also, a public key can be used to verify that a message was sent by the owner of the private key, 
@@ -369,7 +379,16 @@ RSA is the most common public key cryptographic algorithm invented by Ronald Riv
 and it depends on the hardness of factorization \citep{kessler_overview_2016} \citep{savage_cse_2019}.
 RSA is used in web browsers for secure communication with websites (SSL and its successor TLS) \citep{anderson_security_2008}.
 
-Finally, Hash Functions are used to create a string of fixed size from some input of arbitrary length \citep{savage_cse_2019}. 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\textwidth]{images/AsymEnc.PNG}
+    \caption{This figure presents how asymmetric cryptography works.
+    The different key colours indicate that two different keys are used for encryption and decryption 
+    \citep{kessler_overview_2016}.}
+    \label{fig:asym}
+\end{figure}
+
+Hash Functions are used to create a string of fixed size from some input of arbitrary length \citep{savage_cse_2019}. 
 They have two characteristics: knowing the hash, it must be difficult to find an input to the hash function so that it matches the hash;
 it must also be difficult to find two inputs that generate the same hash \citep{savage_cse_2019}. 
 Hash functions rely on block ciphers to work and are used in a similar fashion as in symmetric cryptography \citep{anderson_security_2008}. 
@@ -384,6 +403,16 @@ SHA-1, SHA-224, SHA-256, SHA-384, and SHA-512 to generate hash values of 224, 25
 SHA-3 (or Keccak) is a hash function that does not rely on its predecessors as the NIST found it necessary to have a different algorithm in case SHA-2 is broken \citep{kessler_overview_2016}.
 Finally, bcrypt is a hash function that has been specifically designed for password hashing \citep{noauthor_1999_nodate}. 
 \citet{savage_cse_2019-2} claims that this hashing algorithm should be used among others for storing passwords as it is slower than SHA-2 for example.
+
+Finally, each of these algorithms has a specific purpose in cryptography.
+Hashing is usually used fingerprinting data to ensure that it has not been modified \citep{kessler_overview_2016}.
+If the receiver does not compute the same hash as the sender of a message, 
+this means that the message has been modified. 
+Symmetric cryptography is used to encrypt messages \citep{kessler_overview_2016}. 
+The sender and the receiver of the message will have to use the same key.
+Asymmetric cryptography is used for key exchange \citep{kessler_overview_2016}.
+The sender uses the receiver's public key to transmit the key used to encrypt the message.
+The receiver then uses his private key to decrypt the key, and thus the message.
 
 \subsection{Mistakes in Cryptography}
 
@@ -609,7 +638,7 @@ of topics presented in this course.
 In early 2019, a group of students completing their master's degree in cyber security decided to build a game that would go
 beyond the material presented in the Cyber Security Fundamentals Course.
 This game is an open-world game, and features the main character called "Mike the Panda" who learns cyber security concepts by
-interacting with various characters in the city. Since this course presents cryptography in a limited way, and the principal goal is to give more material about this subject,
+interacting with various characters in the city. 
 The students built challenges in the following subjects which were primed during the lectures:
 \begin{itemize}
     \item Web Applications Attacks (XSS, CSRF);
@@ -621,11 +650,13 @@ Unfortunately, the challenges lacked cohesion, and some did not go beyond the ma
 Lack of cohesion was due to the fact that each challenge had its own flow, and its own means of interaction with the user 
 (for example, the key bindings varied between quests). 
 Hence, it has been decided to maintain the already built map, to improve existing quests, and to construct new challenges where required.
+Moreover, since this course presents cryptography in a limited way, and the principal goal is to give more material about this subject,
+a cryptography quest is going to be built into the game. This would allow the students to learn more about it, 
+and to receive feedback about what was covered in lectures.
 This chapter will first present the Intended Learning Outcomes (ILOs) for the cryptography quest, and then will proceed towards a more specific 
 formulation of those requirements.
 
 \section{Intended Learning Outcomes (ILOs)}
-
 
 The Intended Learning Outcomes are the following:
 \begin{itemize}
@@ -635,7 +666,8 @@ The Intended Learning Outcomes are the following:
     \item Demonstrate commonly made mistakes in cryptographic applications.
 \end{itemize}
 
-The reasons behind each of these requirements will be discussed in the following sections.
+Each of these will be elaborated in the following sections in detail, 
+and how these were established, will be explained.
 
 \subsection{Beyond the lecture material}
 
@@ -655,7 +687,7 @@ Indeed, the question that has been asked for every idea that came to mind is the
 "How does it improve the students' learning experience and what new concepts does it bring to the table?"
 With this in mind, the other ILOs will be now presented.
 
-\subsection{Purrpose of cryptography}
+\subsection{Purpose of cryptography}
 
 The purpose of cryptography requirement is all about algorithms that have been used in the past to understand its purpose.
 The core goal of this requirement is for the student to gain understanding what cryptography is about, and where it has come from.
@@ -700,13 +732,13 @@ linked together, the following requirements can be formulated:
 
 \citet{eggleton_value_2001} claim that learning from mistakes is important as it allows people to 
 learn why their solutions were incorrect. Hence, presenting mistakes in 
-cryptographic implementations would help people to see why they were incorrect.
+cryptographic implementations would help people to see why these were incorrect.
 This would in turn avoid people to make mistakes further on in their careers.
 This fits in the main goal of supplementing the lecture material as these mistakes 
 have not been explained in lectures.
 
 In the Background chapter, some common mistakes were identified. 
-Some of them are more likely to happen than others
+Some of them are more likely to happen than others.
 The following mistakes were chosen as requirements for this Intended Learning Outcome:
 \begin{itemize}
     \item Cryptographic algorithm relying on its secrecy;
@@ -717,7 +749,7 @@ The following mistakes were chosen as requirements for this Intended Learning Ou
 \end{itemize}
 Security awareness was not chosen because it is too broad of a subject to be implemented. 
 Poor choice of cryptographic APIs was not chosen because there are many APIs available,
-and because it requires a specific framework to determine which APIs are better than others.
+and because it requires a specific decision criteria to determine which APIs are better than others.
 Since the latter point is beyond the scope of this paper, it has not been implemented. 
 
 \section{Conclusion}
@@ -725,7 +757,7 @@ Since the latter point is beyond the scope of this paper, it has not been implem
 First, this chapter presented the existing framework in which the cryptography challenges will be
 built. Then, it presented the main goal which to enhance and go beyond the material presented in lectures.
 Finally, it presented the Intended Learning Outcomes and their more specific requirements.
-They have all been summarized in table \ref{tab:requirements}:
+They have all been summarized in table \ref{tab:requirements}.
 
 \begin{table}[]
     \resizebox{\textwidth}{!}{%
@@ -766,8 +798,8 @@ presented in the background chapter.
 \subsection{Storyline}
 
 This challenge kicks off the cryptography quest line. It starts with Mike (the player character) 
-meeting Crypto Jedi at home. Crypto Jedi asks Mike to decrypt a message he received. Mike accepts, and goes
-to a laptop to read the email, and to decrypt the message. Once decrypted, 
+meeting Crypto Jedi at home. Crypto Jedi asks Mike to decrypt a message he received. Mike accepts, goes
+to a laptop to read the email, and decrypts the message. Once decrypted, 
 the message instructs the player to go to the coffee shop where the second challenge awaits.
 
 \subsection{Challenge Design}
@@ -795,7 +827,7 @@ Eventually, it was kept because it was deemed that the challenge might become to
 
 Finally, the "decryptor" had to be designed. Since both Caesar's cipher and the One-Time Pad are stream ciphers,
 they can hence be encrypted and decrypted character by character. 
-Therefore, an interface was designed in such way where the player can see how the algorithms work.
+Therefore, an interface was designed in such way that the player can see how the algorithms work.
 For the Caesar cipher, the user would input a character, and a shift key. 
 In turn, he would see how the alphabet was shifted, and what the resulting character is. Eventually,
 the user would decrypt the message character by character. 
@@ -815,13 +847,13 @@ and Figure \ref{fig:xOR} presents the wire frame for the One-Time Pad.
     \centering
     \begin{subfigure}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth, frame]{images/CaesarCipher.png}
-        \caption{Wire frame for the Caesar cipher interface.}
+        \caption{Wire frame for the Caesar cipher decryptor interface.}
         \label{fig:Caesar}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth, frame]{images/xOR.png}
-        \caption{Wire frame for the One-Time Pad interface.}
+        \caption{Wire frame for the One-Time Pad decryptor interface.}
         \label{fig:xOR}
     \end{subfigure}
     
@@ -893,13 +925,13 @@ SHA-2 is not the optimal solution to this problem.
 At the end of the design exercise, the player is given an explanation about the solution to this problem.
 
 The send message design task requires the student to transmit a message and its key securely using
-the RSA key exchange framework (TO BE ADDED TO THE BACKGROUND CHAPTER). 
+the key exchange framework. 
 The player receives as input a message, and can choose up to three algorithms. 
 If they choose symmetric or asymmetric encryption, they will have a choice between the following keys:
 recipient's private key, recipient's public key, sender's private key, sender's public key, 
 sender's password, and randomly generated key. 
-Figure \ref{fig:Challenge2} presents a solution to this solution. To obtain this solution,
-the student has to implement correctly the RSA key exchange mechanism. 
+Figure \ref{fig:Challenge2} presents a solution to this exercise. To obtain this solution,
+the student has to implement correctly the key exchange mechanism. 
 They must generate a random key to encrypt the message using AES encryption, 
 and then they must encrypt the key using RSA encryption with the recipient's public key.
 If the player chooses an incorrect algorithm type, he loses 25 points. 
@@ -910,13 +942,15 @@ This can be accomplished by mapping the input message into a hash function.
 However, the player will not be deducted any points if he does not do this 
 as this is beyond the scope of the exercise.
 At the end of this part, the student is debriefed concerning the task and what should have been done.
+A disclaimer is also provided so that the student does not implement their own cryptographic algorithm.
+This is to address the mistake of creating one's own cryptographic algorithm mentioned in the requirements chapter.
 He is also given the opportunity to retry the challenge.
 
 The receive message design task asks the player to do the opposite of the second part which
-is to decrypt the received message. The RSA key exchange framework is still used.
+is to decrypt the received message. The key exchange framework is still used.
 The player receives two inputs which are the encrypted message and the encrypted key.
 His goal is to decrypt the message.
-Solving this problem is almost like reversing the graph presented in \ref{fig:Challenge2}
+Solving this problem is almost similar to reversing the graph presented in \ref{fig:Challenge2}.
 To achieve the correct solution, the player has to firstly decrypt the encryption correctly.
 This involves using the RSA algorithm with the receiver's private key to decrypt the message encryption key.
 Then, they must use that decrypted key to decrypt the message using AES encryption.
@@ -947,7 +981,7 @@ gamification characteristics.
     \item "Providing feedback on performance": When the student thinks he completed the challenge and submits his answer,
     he receives feedback whether he designed the system correctly, some explanation is given about what should have been done,
     and allows the user to retry if he wishes to do so.
-    \item "Reinforcement": The number of points and feedback reinforce whether the student understood how streams ciphers work.
+    \item "Reinforcement": The number of points and feedback reinforce whether the student understood how cryptographic algorithms work.
     \item "Progress comparison": The points system opens the door for a potential discussion and comparison between students.
     \item "Social connectivity": Students could potentially interact with each other to solve the challenge.
     \item "Fun and playfulness": The open-world game enables players to discover a new world, 
@@ -959,23 +993,67 @@ Hence, this challenge satisfies the gamification characteristics.
 
 \subsection{Storyline}
 
+After completing the second challenge, Mike joins Crypto Jedi at the office. 
+There, Crypto Jedi asks Mike to investigate a hospital because there were claims of leaked confidentiality
+patient data. This is the final challenge of the cryptography quest.
+
 \subsection{Challenge Design}
+
+In this challenge, the player has access to the hospital's data 
+and his task is to find four files that prove that the hospital has been using bad cryptography practices.
+This challenge will highlight the different mistakes presented in the requirements chapter.
+The first file to be found is a file that has been encrypted, but the plaintext has been not been deleted.
+Secondly, the user must find the random key generator in the file system, and test it out. 
+He will eventually notice that it does not generate numbers randomly.
+Then, he will also find another file that explains to the people using the system of the hospital
+how to encrypt and decrypt files. There, the student will notice that the encryption algorithm used is 
+DES which is considered as obsolete. 
+Finally, he will notice a directory that contains an encrypted file and the key associated with this file.
+The student will have to use the provided decrypting software to decrypt the file using the key.
+Other files will be added to the simulated file system to provide some noise.
+
+Once the player find an incriminating file, he must add it to the basket. 
+Each time he adds a correct file to the basket, he must answer to a multiple choice question.
+This multiple choice question will ask the student why he is adding the file to the basket.
+He must hence choose the correct answer among the four possibilities. 
+This is to avoid the player brute forcing the challenge and to ensure that they understood the material.
+The whole challenge is worth 100 points. Each time the player selects an incorrect answer in the multiple
+choice question he loses 10 points.
+
+\subsection{Gamification Characteristics}
+
+This section will double check whether this challenge satisfies \citet{cugelman_gamification:_2013}'s
+gamification characteristics.
+\begin{itemize}
+    \item "Goal-setting": The goal of this challenge is to find mistakes in cryptographic implementations. 
+    A higher-level goal of this challenge is to gain points by completing the challenge, 
+    and finishing the cryptography quest.
+    \item "Capacity to overcome challenges": The challenge has been designed in such way 
+    that it is not too difficult for the student. 
+    Students could have been penalized if they would try including every file to the basket, but that
+    could have made the challenge to difficult for them.
+    \item "Providing feedback on performance": When the student adds a file to the basket, he is asked
+    a question about the reason why he added that file. Answering correctly to the question provides 
+    feedback to the student whether he understood the reason correctly.
+    \item "Reinforcement": The number of points and feedback reinforce whether the student understood the mistakes correctly.
+    \item "Progress comparison": The points system opens the door for a potential discussion and comparison between students.
+    \item "Social connectivity": Students could potentially interact with each other to solve the challenge.
+    \item "Fun and playfulness": The open-world game enables players to discover a new world, 
+    and there could be some playfulness by finishing the quest.
+\end{itemize}
+Hence, this challenge satisfies the gamification characteristics.
 
 \section{Conclusion}
 
-What follows is an example of applying these ingredients in simple terms to cryptography:
-\begin{itemize}
-    \item "Goal-setting": Encrypting securely and correctly some plaintext;
-    \item "Capacity to overcome challenges": The challenges should be achievable by people who have never written code in their lives;
-    \item "Providing feedback on performance": The feedback should be meaningful and provide explanation to why a task was accomplished incorrectly;
-    \item "Reinforcement": This could be as simple as gaining points or \textit{unlocking} a new cryptographic algorithm for each task solved correctly;
-    \item "Progress comparison": A leaderboard could be created so that students could compare and compete with each other which in turn will add an extra source of motivation;
-    \item "Social connectivity": Students could potentially interact with each other to solve the challenges;
-    \item "Fun and playfulness": An open-world game will be used which will enable players to discover a new world.
-\end{itemize}
-
-\section{Guidance}
-Design should cover the abstract design in such a way that someone else might be able to do what you did, but with a different language or library or tool.
+This chapter presented the high-level design of the three challenges.
+The first challenge presents the cryptographic fundamentals to students by examining simple algorithms.
+The next challenge develops concepts (symmetric, asymmetric cryptography and hashing) presented in lectures,
+and allows students to test their understanding in these fields.
+The final challenge introduces students to common cryptography mistakes and how they can be avoided.
+Hence, the challenges fit the requirements established beforehand.
+Finally, the challenges satisfy the gamification characteristics that were established in the background chapter of this paper.
+The next chapter will present the implementation of these challenges 
+and how they were connected to the the open world game.
 
 %==================================================================================================================================
 \chapter{Implementation}

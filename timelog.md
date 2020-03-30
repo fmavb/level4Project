@@ -402,3 +402,8 @@
 
 ### 29th March 2020
 * *6 hours* Writing the design chapter
+
+## Week 27
+
+### 30th March 2020
+* *5 hours* Finishing the design chapter
