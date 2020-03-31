@@ -1057,193 +1057,131 @@ and how they were connected to the the open world game.
 
 %==================================================================================================================================
 \chapter{Implementation}
-What did you do to implement this idea, and what technical achievements did you make?
-\section{Guidance}
-You can't talk about everything. Cover the high level first, then cover important, relevant or impressive details.
 
+To implement the design presented above, the implementation has been split into three steps.
+The first step was to implement the challenges. The challenges were implemented in a web application
+which used the React library \footnote{https://reactjs.org/} and some other small packages found on npm.
+The second step was to implement the quest in the open-world game. 
+The open-world game is built using Unreal Engine 4 \footnote{https://www.unrealengine.com/}. 
+The final step was to connect the web application with the open-world game. 
+To accomplish this, a backend was used to transfer information between the web application and the open-world game.
+This backend was built using Express.js \footnote{https://expressjs.com/}.
+The following sections will dive into more detail on the development of these three parts.
 
+\section{Web Application}
 
-\section{General points}
+The challenges were implemented in a web application. 
+This allowed more flexibility and freedom than directly implementing these in Unreal Engine 4.
+React applications are built with html, css, and javascript. 
+This gives the developer more freedom by combining the structure, the look, and the logic together.
+Certainly, Unreal Engine 4 provides a widget feature allowing the developer to implement simple user interfaces, 
+but this feature is limited in functionality, 
+and the design presented above is easier to implement in a web application.
+Finally, Unreal Engine 4 provides the developer with a limited, but functional web browser.
+This key feature allows the development of the challenges in a web application.
+The next paragraphs will present the development of the challenges, and some interesting details concerning them.
 
-These points apply to the whole dissertation, not just this chapter.
+The first challenge has the following flow. 
+The player would first see the email that Crypto Jedi sent him. 
+This email was implemented as a screenshot from an email provider and pasted into the web application.
+Once they read the email, they proceed to the "decryptor" interface. 
+The "decryptor" interface was designed as a form. 
+Figures \ref{fig:CaesarImp} and \ref{fig:xORImp} are screenshots of the implementation of this "decryptor".
+The user types in a character and key in their respective fields. 
+Then, he must press the "decrypt" button to get the decrypted character.
+Initially, the "decrypt" button was not part of the design. 
+It was planned that the whole operation would happen without the need for the user to press a button.
+However, since each text box has an event listener associated with, 
+each time a character would be modified in these text boxes, an event would be triggered. 
+This event would call React's \textit{setState} \footnote{https://reactjs.org/docs/react-component.html\#setstate} function 
+which would store the contents of these text boxes in variables.
+\textit{setState} is an asynchronous function which means that code after the call to that function would be executed 
+before it returns a value. Hence, there was a bug where the alphabet would be shifted by one number less than the user typed in.
+This is the reason why a "decrypt" button has been added which would call setState once everything has settled. 
+Once the user has submitted the message into the answer text box, the text is validated, 
+and the user gets a pop up text box telling them whether they completed the challenge successfully and the points they obtained.
+Finally, they are redirected to a page where they can read through the explanation of the challenge, or return to the "decryptor".
 
-
-
-\subsection{Figures}
-\emph{Always} refer to figures included, like Figure \ref{fig:relu}, in the body of the text. Include full, explanatory captions and make sure the figures look good on the page.
-You may include multiple figures in one float, as in Figure \ref{fig:synthetic}, using \texttt{subcaption}, which is enabled in the template.
-
-
-
-% Figures are important. Use them well.
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{images/relu.pdf}    
+    \begin{subfigure}[b]{0.65\textwidth}
+        \includegraphics[width=\textwidth, frame]{images/CaesarImplementation.PNG}
+        \caption{Implementation of the Caesar cipher exercise.}
+        \label{fig:CaesarImp}
+    \end{subfigure}
 
-    \caption{In figure captions, explain what the reader is looking at: ``A schematic of the rectifying linear unit, where $a$ is the output amplitude,
-    $d$ is a configurable dead-zone, and $Z_j$ is the input signal'', as well as why the reader is looking at this: 
-    ``It is notable that there is no activation \emph{at all} below 0, which explains our initial results.'' 
-    \textbf{Use vector image formats (.pdf) where possible}. Size figures appropriately, and do not make them over-large or too small to read.
-    }
-
-    % use the notation fig:name to cross reference a figure
-    \label{fig:relu} 
+    \begin{subfigure}[b]{0.65\textwidth}
+        \includegraphics[width=\textwidth, frame]{images/xORImplementation.PNG}
+        \caption{Implementation of the One-Time Pad exercise.}
+        \label{fig:xORImp}
+    \end{subfigure}
+    \caption{Screenshots of the implementation of the first challenge.}
+    \label{fig:Challenge1Imp}
 \end{figure}
 
+The second challenge asks the player to design on a high-level cryptographic systems.
+It was divided in three parts as described in the design chapter.
+For each part, the player would see three pages. 
+The first page they would see is the directives to what they should do.
+The next page is the challenge itself. 
+The final page provides some explanation concerning the challenge and allows the user to try again if he wishes to do so.
+Figure \ref{fig:Challenge2Imp} presents the implementation of the second part of this challenge with its solution.
+The challenge is implemented as a flowchart as mentioned in the design chapter.
+The user can choose key types and algorithm types using the dropdown elements as seen on figure \ref{fig:Challenge2Imp}.
+An algorithm choice might reveal another element in the flowchart which might be the key to solve the challenge.
+The arrows were implemented using Scalable Vector Graphics (SVG), and some of them appear or disappear according to the player's choices.
+Finally, when the student has committed to a solution, a pop up box would appear telling the user whether they were correct.
+If they were not, an explanation is provided, and they are invited to try again.
+The final page provides a walk-through through the solution and explanation of the different algorithms used.
 
-\begin{figure}
+\begin{figure}[b]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{images/synthetic.png}
-        \caption{Synthetic image, black on white.}
-        \label{fig:syn1}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{images/synthetic_2.png}
-        \caption{Synthetic image, white on black.}
-        \label{fig:syn2}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)    
-    \caption{Synthetic test images for edge detection algorithms. \subref{fig:syn1} shows various gray levels that require an adaptive algorithm. \subref{fig:syn2}
-    shows more challenging edge detection tests that have crossing lines. Fusing these into full segments typically requires algorithms like the Hough transform.
-    This is an example of using subfigures, with \texttt{subref}s in the caption.
-    }\label{fig:synthetic}
+    \includegraphics[width=\textwidth, frame]{images/Challenge2Imp.PNG}
+    \caption{Screenshot of the implementation of the second part of the second challenge.}
+    \label{fig:Challenge2Imp}
 \end{figure}
 
-\clearpage
+The final challenge is about finding mistakes in cryptographic implementations.
+It was designed using the npm "react-keyed-file-browser" package which was used to implement the simulated file browser.
+This package provides a convenient structure to display directories and files.
+Each time the player would click on a file, it would "open" the file and show it as a popup.
+Each file is implemented as a separate React component.
+The player would then have the possibility to either add the file to the basket, or to close it.
+Figure \ref{fig:Challenge3Imp} shows this feature. 
+In the background of this figure, the file explorer can be seen. 
+If the player decides to add the file to the basket, 
+he will see a multiple choice question where he will have to choose the correct answer.
+Once the correct answer is chosen, the file is shown in the basket, and all the popups are closed.
+The user can also open "programs" using this file browser.
+There are two such "programs": key generator, and the file decryptor.
+The purpose of the key generator is to generate random keys.
+However, it is implemented in such way that it would circle over five keys, 
+hence not being random. This one of the files that can be added to the basket.
+The purpose of the file decryptor is to decrypt files. 
+The program contains two dropdown menus: the first one is used to select the file to decrypt,
+and the second one is used to select a key among the provided choices. 
+This "program" can be used to decrypt a file once the user finds the file containing the key.
+This decrypted file will then appear in the simulated file system and can be subsequently added to the basket.
+Once the user finds the four files, a popup would appear indicating the user he completed the challenge, and the points he scored.
 
-\subsection{Equations}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\textwidth, frame]{images/Challenge3Imp.PNG}
+    \caption{Screenshot of the implementation of the third challenge.}
+    \label{fig:Challenge3Imp}
+\end{figure}
 
-Equations should be typeset correctly and precisely. Make sure you get parenthesis sizing correct, and punctuate equations correctly 
-(the comma is important and goes \textit{inside} the equation block). Explain any symbols used clearly if not defined earlier. 
+\section{Open-world game}
 
-For example, we might define:
-\begin{equation}
-    \hat{f}(\xi) = \frac{1}{2}\left[ \int_{-\infty}^{\infty} f(x) e^{2\pi i x \xi} \right],
-\end{equation}    
-where $\hat{f}(\xi)$ is the Fourier transform of the time domain signal $f(x)$.
 
-\subsection{Algorithms}
-Algorithms can be set using \texttt{algorithm2e}, as in Algorithm \ref{alg:metropolis}.
 
-% NOTE: line ends are denoted by \; in algorithm2e
-\begin{algorithm}
-    \DontPrintSemicolon
-    \KwData{$f_X(x)$, a probability density function returing the density at $x$.\; $\sigma$ a standard deviation specifying the spread of the proposal distribution.\;
-    $x_0$, an initial starting condition.}
-    \KwResult{$s=[x_1, x_2, \dots, x_n]$, $n$ samples approximately drawn from a distribution with PDF $f_X(x)$.}
-    \Begin{
-        $s \longleftarrow []$\;
-        $p \longleftarrow f_X(x)$\;
-        $i \longleftarrow 0$\;
-        \While{$i < n$}
-        {
-            $x^\prime \longleftarrow \mathcal{N}(x, \sigma^2)$\;
-            $p^\prime \longleftarrow f_X(x^\prime)$\;
-            $a \longleftarrow \frac{p^\prime}{p}$\;
-            $r \longleftarrow U(0,1)$\;
-            \If{$r<a$}
-            {
-                $x \longleftarrow x^\prime$\;
-                $p \longleftarrow f_X(x)$\;
-                $i \longleftarrow i+1$\;
-                append $x$ to $s$\;
-            }
-        }
-    }
-    
-\caption{The Metropolis-Hastings MCMC algorithm for drawing samples from arbitrary probability distributions, 
-specialised for normal proposal distributions $q(x^\prime|x) = \mathcal{N}(x, \sigma^2)$. The symmetry of the normal distribution means the acceptance rule takes the simplified form.}\label{alg:metropolis}
-\end{algorithm}
+\section{Connecting everything together}
 
-\subsection{Tables}
 
-If you need to include tables, like Table \ref{tab:operators}, use a tool like https://www.tablesgenerator.com/ to generate the table as it is
-extremely tedious otherwise. 
 
-\begin{table}[]
-    \caption{The standard table of operators in Python, along with their functional equivalents from the \texttt{operator} package. Note that table
-    captions go above the table, not below. Do not add additional rules/lines to tables. }\label{tab:operators}
-    %\tt 
-    \rowcolors{2}{}{gray!3}
-    \begin{tabular}{@{}lll@{}}
-    %\toprule
-    \textbf{Operation}    & \textbf{Syntax}                & \textbf{Function}                            \\ %\midrule % optional rule for header
-    Addition              & \texttt{a + b}                          & \texttt{add(a, b)}                                    \\
-    Concatenation         & \texttt{seq1 + seq2}                    & \texttt{concat(seq1, seq2)}                           \\
-    Containment Test      & \texttt{obj in seq}                     & \texttt{contains(seq, obj)}                           \\
-    Division              & \texttt{a / b}                          & \texttt{div(a, b) }  \\
-    Division              & \texttt{a / b}                          & \texttt{truediv(a, b) } \\
-    Division              & \texttt{a // b}                         & \texttt{floordiv(a, b)}                               \\
-    Bitwise And           & \texttt{a \& b}                         & \texttt{and\_(a, b)}                                  \\
-    Bitwise Exclusive Or  & \texttt{a \textasciicircum b}           & \texttt{xor(a, b)}                                    \\
-    Bitwise Inversion     & \texttt{$\sim$a}                        & \texttt{invert(a)}                                    \\
-    Bitwise Or            & \texttt{a | b}                          & \texttt{or\_(a, b)}                                   \\
-    Exponentiation        & \texttt{a ** b}                         & \texttt{pow(a, b)}                                    \\
-    Identity              & \texttt{a is b}                         & \texttt{is\_(a, b)}                                   \\
-    Identity              & \texttt{a is not b}                     & \texttt{is\_not(a, b)}                                \\
-    Indexed Assignment    & \texttt{obj{[}k{]} = v}                 & \texttt{setitem(obj, k, v)}                           \\
-    Indexed Deletion      & \texttt{del obj{[}k{]}}                 & \texttt{delitem(obj, k)}                              \\
-    Indexing              & \texttt{obj{[}k{]}}                     & \texttt{getitem(obj, k)}                              \\
-    Left Shift            & \texttt{a \textless{}\textless b}       & \texttt{lshift(a, b)}                                 \\
-    Modulo                & \texttt{a \% b}                         & \texttt{mod(a, b)}                                    \\
-    Multiplication        & \texttt{a * b}                          & \texttt{mul(a, b)}                                    \\
-    Negation (Arithmetic) & \texttt{- a}                            & \texttt{neg(a)}                                       \\
-    Negation (Logical)    & \texttt{not a}                          & \texttt{not\_(a)}                                     \\
-    Positive              & \texttt{+ a}                            & \texttt{pos(a)}                                       \\
-    Right Shift           & \texttt{a \textgreater{}\textgreater b} & \texttt{rshift(a, b)}                                 \\
-    Sequence Repetition   & \texttt{seq * i}                        & \texttt{repeat(seq, i)}                               \\
-    Slice Assignment      & \texttt{seq{[}i:j{]} = values}          & \texttt{setitem(seq, slice(i, j), values)}            \\
-    Slice Deletion        & \texttt{del seq{[}i:j{]}}               & \texttt{delitem(seq, slice(i, j))}                    \\
-    Slicing               & \texttt{seq{[}i:j{]}}                   & \texttt{getitem(seq, slice(i, j))}                    \\
-    String Formatting     & \texttt{s \% obj}                       & \texttt{mod(s, obj)}                                  \\
-    Subtraction           & \texttt{a - b}                          & \texttt{sub(a, b)}                                    \\
-    Truth Test            & \texttt{obj}                            & \texttt{truth(obj)}                                   \\
-    Ordering              & \texttt{a \textless b}                  & \texttt{lt(a, b)}                                     \\
-    Ordering              & \texttt{a \textless{}= b}               & \texttt{le(a, b)}                                     \\
-    % \bottomrule
-    \end{tabular}
-    \end{table}
-\subsection{Code}
+\section{Conclusion}
 
-Avoid putting large blocks of code in the report (more than a page in one block, for example). Use syntax highlighting if possible, as in Listing \ref{lst:callahan}.
 
-\begin{lstlisting}[language=python, float, caption={The algorithm for packing the $3\times 3$ outer-totalistic binary CA successor rule into a 
-    $16\times 16\times 16\times 16$ 4 bit lookup table, running an equivalent, notionally 16-state $2\times 2$ CA.}, label=lst:callahan]
-    def create_callahan_table(rule="b3s23"):
-        """Generate the lookup table for the cells."""        
-        s_table = np.zeros((16, 16, 16, 16), dtype=np.uint8)
-        birth, survive = parse_rule(rule)
-
-        # generate all 16 bit strings
-        for iv in range(65536):
-            bv = [(iv >> z) & 1 for z in range(16)]
-            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p = bv
-
-            # compute next state of the inner 2x2
-            nw = apply_rule(f, a, b, c, e, g, i, j, k)
-            ne = apply_rule(g, b, c, d, f, h, j, k, l)
-            sw = apply_rule(j, e, f, g, i, k, m, n, o)
-            se = apply_rule(k, f, g, h, j, l, n, o, p)
-
-            # compute the index of this 4x4
-            nw_code = a | (b << 1) | (e << 2) | (f << 3)
-            ne_code = c | (d << 1) | (g << 2) | (h << 3)
-            sw_code = i | (j << 1) | (m << 2) | (n << 3)
-            se_code = k | (l << 1) | (o << 2) | (p << 3)
-
-            # compute the state for the 2x2
-            next_code = nw | (ne << 1) | (sw << 2) | (se << 3)
-
-            # get the 4x4 index, and write into the table
-            s_table[nw_code, ne_code, sw_code, se_code] = next_code
-
-        return s_table
-
-\end{lstlisting}
 
 %==================================================================================================================================
 \chapter{Evaluation} 
