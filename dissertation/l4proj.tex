@@ -1015,10 +1015,17 @@ Other files will be added to the simulated file system to provide some noise.
 Once the player find an incriminating file, he must add it to the basket. 
 Each time he adds a correct file to the basket, he must answer to a multiple choice question.
 This multiple choice question will ask the student why he is adding the file to the basket.
-He must hence choose the correct answer among the four possibilities. 
+They must hence choose the correct answer among the four possibilities. 
 This is to avoid the player brute forcing the challenge and to ensure that they understood the material.
 The whole challenge is worth 100 points. Each time the player selects an incorrect answer in the multiple
 choice question he loses 10 points.
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/WireframeChallenge3.png}
+    \caption{Wire frame for the third challenge}
+    \label{fig:Challenge3}
+\end{figure}
 
 \subsection{Gamification Characteristics}
 
@@ -1171,62 +1178,85 @@ Once the user finds the four files, a popup would appear indicating the user he 
     \label{fig:Challenge3Imp}
 \end{figure}
 
-\section{Open-world game}
-
-
-
 \section{Connecting everything together}
 
+Once the web app was implemented, it had to be connected to the the open-world game.
+This involved three steps. The first step was to put into the map the Crypto Jedi character and the laptops 
+where the user was going to do the challenges. Then, the web browser widget had to be implemented. 
+The final step was to transport the challenge data from the application to the open-world game.
+The next three paragraphs will describe these three steps in detail.
 
+There were three places where a laptop and the Crypto Jedi had to be placed: Mike's home, the coffee shop, and the office.
+For each of these places, the character and the laptop were placed next to each other.
+Once these elements were placed, collision boxes had to be designed.
+Collision boxes are events listeners which wait for the user character to walk into them so that an event can be triggered.
+One collision box was added to each element. 
+The collision box associated with the Crypto Jedi is used to trigger the start of the dialog.
+The dialog was implemented in a widget and consists of a couple of sentences.
+To trigger the dialog, the user has to be inside the collision box and then press the "F" key.
+The other collision box was added to the laptop. 
+This laptop is used to trigger the challenges, and guide the user towards the web application.
+This point will be more developed in the next paragraph.
+
+The laptop is associated with a web browser widget. 
+The web browser widget \footnote{https://docs.unrealengine.com/en-US/Engine/UMG/UserGuide/WidgetTypeReference/WebBrowser/index.html} 
+is an experimental feature present in Unreal Engine 4.
+This feature allows the developer to point this web browser to any URL on the internet.
+The only features present in this web browser are the following: set initial url, and load url.
+Set initial url allows to set the url where the web browser will navigate first when it is opened.
+Load url allows the developer to specify a new url to which the web browser will navigate once it is opened.
+For the purpose of this project, only set initial url was used as the player only needs to navigate to the first page of each challenge.
+Navigation between pages in a challenge are provided through clickable links in the webpage.
+Once the player decides to start the challenge (by entering into the collision box and pressing the "F" key), 
+the widget fills all the screen and the control from the mouse and keyboard are transferred to the browser.
+The user can hence manipulate the webpage with their mouse and keyboard. 
+A "Close" button has been added to the master widget (the widget that contains the web browser) so that
+the player can close it to return to the game.
+Since the web browser API is very limited, the points the player scored in the challenge, 
+could not be transferred easily to the game. Hence, a workaround had to be found.
+This is what the next paragraph will explore.
+
+Two different tools were used to transfer the points between the game and the challenges.
+VaREST is a plugin for Unreal Engine 4 which allows the developer to make RESTful calls through Unreal Engine 4 blueprints.
+Even though the developer can program with C++ in Unreal Engine 4, 
+Blueprints \footnote{https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html} 
+provide an easy programming interface so that the developer does not have to write C++ code.
+VaREST allows the developer to make API calls through the Blueprints. 
+Therefore, the developer does not have to install Visual Studio to make these calls in C++.
+The second tool that was used to solve the problem is the Express.js backend.
+Express.js \footnote{https://expressjs.com/} is Node.js web framework which allows the developer to build an API.
+The Express.js backend had three routes: one for each challenge. Each challenge would have a GET and a POST route.
+The POST route is used by the web application to pass the points. 
+The GET route is used by the open-world game to fetch the points.
+Now that these two tools have been clarified, the implementation will be presented.
+Firstly, the web application was deployed on Amazon Web Services (AWS) so that a url could be obtained.
+Then, the initial URLs were assigned to the three web browser widgets (one for each challenge).
+Afterwards, the backend was implemented and also deployed on AWS.
+That done, the web application would send the points to the backend each time the player would complete a challenge.
+Finally, when the user would press the "Close" button in the widget in the game, 
+this would trigger a request to the backend, the points would be fetched, and added to the overall points in the game.
+Figure \ref{fig:pointsImp} presents a visualisation of how this whole system works.
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\textwidth, frame]{images/PointsImplementation.pdf}
+    \caption{This chart presents how points are transferred from the web application to the open-world game.}
+    \label{fig:pointsImp}
+\end{figure}
 
 \section{Conclusion}
 
-
+This chapter presented the implementation of the project where the three implementation steps wwere presented. 
+Firstly, the web application containing the challenges was implemented.
+Then, the objects were placed on the map in locations where the users was to interact with them.
+Finally, everything was connected together using a backend and RESTful calls.
+The next chapter will present the planned evaluation of this implementation.
 
 %==================================================================================================================================
 \chapter{Evaluation} 
-How good is your solution? How well did you solve the general problem, and what evidence do you have to support that?
 
-\section{Guidance}
-\begin{itemize}
-    \item
-        Ask specific questions that address the general problem.
-    \item
-        Answer them with precise evidence (graphs, numbers, statistical
-        analysis, qualitative analysis).
-    \item
-        Be fair and be scientific.
-    \item
-        The key thing is to show that you know how to evaluate your work, not
-        that your work is the most amazing product ever.
-\end{itemize}
-
-\section{Evidence}
-Make sure you present your evidence well. Use appropriate visualisations, reporting techniques and statistical analysis, as appropriate.
-
-If you visualise, follow the basic rules, as illustrated in Figure \ref{fig:boxplot}:
-\begin{itemize}
-\item Label everything correctly (axis, title, units).
-\item Caption thoroughly.
-\item Reference in text.
-\item \textbf{Include appropriate display of uncertainty (e.g. error bars, Box plot)}
-\item Minimize clutter.
-\end{itemize}
-
-See the file \texttt{guide\_to\_visualising.pdf} for further information and guidance.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\linewidth]{images/boxplot_finger_distance.pdf}    
-
-    \caption{Average number of fingers detected by the touch sensor at different heights above the surface, averaged over all gestures. Dashed lines indicate
-    the true number of fingers present. The Box plots include bootstrapped uncertainty notches for the median. It is clear that the device is biased toward 
-    undercounting fingers, particularly at higher $z$ distances.
-    }
-
-    % use the notation fig:name to cross reference a figure
-    \label{fig:boxplot} 
-\end{figure}
+%This chapter will present the planned evaluation for the implementation presented above.
+%The main aim of this evaluation is to verify that the main requirement 
 
 
 %==================================================================================================================================

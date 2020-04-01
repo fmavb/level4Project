@@ -407,3 +407,9 @@
 
 ### 30th March 2020
 * *5 hours* Finishing the design chapter
+
+### 31th March 2020
+* *6 hours* Writing the implementation chapter
+
+### 1st April 2020
+* *6 hours* Finishing the implementation chapter
