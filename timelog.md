@@ -413,3 +413,7 @@
 
 ### 1st April 2020
 * *6 hours* Finishing the implementation chapter
+
+### 2nd April 2020
+* *0.5 hours* Supervisor meeting
+* *1 hour* Group meeting
