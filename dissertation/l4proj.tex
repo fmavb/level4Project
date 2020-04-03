@@ -171,20 +171,20 @@ Finally, this section will be concluded by stating the reasons why there is a ne
 \subsection{Gamification}
 Gamification is the usage of game-like elements in a non-gaming situation \citep{aparicio_analysis_2012}.
 \citet{aparicio_analysis_2012} claim that it used to attract people to tasks that are not normally considered as entertaining, like education for example.
-The research will mostly focus on gamifications applied to education as game-like elements are going to be applied to cryptography.
+The research will mostly focus on gamification applied to education as game-like elements are going to be applied to cryptography.
 Some gamification characteristics will be identified and some examples will be demonstrated to show that gamification works.
 
-According to Hsiao (2007), motivation is important for learning as learning requires a considerable amount of effort. 
+According to \citet{hsiao_brief_2007}, motivation is important for learning as learning requires a considerable amount of effort. 
 Games have the following traits: they are fun, they have a goal, they are interactive, they have outcomes and provide feedback, they have some form of challenge, 
-they have a story, they require us to solve problems. Through these elements, games motivate and engage people (Hsiao, 2007). 
-However, it is mainly through problem solving that players will be learning as people will be improving their skills by playing and solving challenges (Hsiao, 2007).
+they have a story, they require us to solve problems. Through these elements, games motivate and engage people \citep{hsiao_brief_2007}. 
+However, it is mainly through problem solving that players will be learning as people will be improving their skills by playing and solving challenges \citep{hsiao_brief_2007}.
 To apply gamification to a certain context, \citet{cugelman_gamification:_2013} has identified 7 important components for a good gamification. 
 These include "goal-setting", "capacity to overcome challenges", "providing feedback on performance", "reinforcement", "progress comparison", "social connectivity", 
 and "fun and playfulness" \citep{cugelman_gamification:_2013}. 
 However, \citet{nicholson_recipe_2015} claims that there are other models to motivate players to learn. Instead of providing motivation from rewards, 
 users can find their own reasons to play the game. This could come from their desire to improve their skills in cryptography, their interest in cryptography, or 
 willing to advance the storyline of the character since they identify themselves to him for example.
-Also, gamification allows to put concepts into practice, especially in the field of cybersecurity \citep{wolfenden_gamification_2019}. 
+Also, gamification allows to put concepts into practice, especially in the field of cyber security \citep{wolfenden_gamification_2019}. 
 This is true since people apply learned concepts in a potentially real environment which improves knowledge retention. 
 People struggle to apply concepts if they are not used in practice, and gamification allows to put these theoretically learned skills into practice.
 In addition, gamification in cyber security allows to screen people,
@@ -1221,7 +1221,7 @@ VaREST is a plugin for Unreal Engine 4 which allows the developer to make RESTfu
 Even though the developer can program with C++ in Unreal Engine 4, 
 Blueprints \footnote{https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html} 
 provide an easy programming interface so that the developer does not have to write C++ code.
-VaREST allows the developer to make API calls through the Blueprints. 
+VaREST allows the developer to make API calls and parse JSON objects through the Blueprints. 
 Therefore, the developer does not have to install Visual Studio to make these calls in C++.
 The second tool that was used to solve the problem is the Express.js backend.
 Express.js \footnote{https://expressjs.com/} is Node.js web framework which allows the developer to build an API.
@@ -1232,10 +1232,10 @@ Now that these two tools have been clarified, the implementation will be present
 Firstly, the web application was deployed on Amazon Web Services (AWS) so that a url could be obtained.
 Then, the initial URLs were assigned to the three web browser widgets (one for each challenge).
 Afterwards, the backend was implemented and also deployed on AWS.
-That done, the web application would send the points to the backend each time the player would complete a challenge.
+That done, the web application would send the points in a JSON object to the backend each time the player would complete a challenge.
 Finally, when the user would press the "Close" button in the widget in the game, 
 this would trigger a request to the backend, the points would be fetched, and added to the overall points in the game.
-Figure \ref{fig:pointsImp} presents a visualisation of how this whole system works.
+Figure \ref{fig:pointsImp} presents a visualisation of how this system works.
 
 \begin{figure}[b]
     \centering
@@ -1246,7 +1246,7 @@ Figure \ref{fig:pointsImp} presents a visualisation of how this whole system wor
 
 \section{Conclusion}
 
-This chapter presented the implementation of the project where the three implementation steps wwere presented. 
+This chapter presented the implementation of the project where the three implementation steps were presented. 
 Firstly, the web application containing the challenges was implemented.
 Then, the objects were placed on the map in locations where the users was to interact with them.
 Finally, everything was connected together using a backend and RESTful calls.
@@ -1255,9 +1255,152 @@ The next chapter will present the planned evaluation of this implementation.
 %==================================================================================================================================
 \chapter{Evaluation} 
 
-%This chapter will present the planned evaluation for the implementation presented above.
-%The main aim of this evaluation is to verify that the main requirement 
+This chapter will present the planned evaluation for the implementation presented above.
+The evaluation was planned to be face-to-face as the whole game was planned to be run on one computer.
+This is to avoid wasting time by asking the subjects to install the game on their computers.
+Each subject was to be assigned a unique number to keep their responses anonymous.
+The main aim of this evaluation is to verify that the goals set out in the requirements chapter have been completed successfully.
+Also, another goal is to check how well the gamification characteristics identified by \citet{cugelman_gamification:_2013} were designed 
+and implemented.
+In this perspective, three different evaluation strategies were used.
+The first one was two evaluation forms that would ask the subjects questions about cryptography and concepts presented in the game.
+The first form would have been presented before the subject plays the game, and the second one after they play the game.
+Secondly, one form has been used to evaluate the gamification characteristics for each challenge identified by \citet{cugelman_gamification:_2013}.
+Finally, the web application was to collect some data concerning the challenges.
+Each of these evaluation methods will be developed in the following sections.
+Finally, due to the 2020 Coronavirus pandemic, the evaluation could not have been run as it involved face-to-face meetings which 
+were prohibited by the University of Glasgow.
 
+\section{Learning evaluation}
+
+To design the learning evaluation, research was done to find methodologies used to evaluate learning progression.
+\citet{akpolat_enhancing_2014}'s work was presented in the background chapter of this paper. 
+They developed a game where extreme software engineering practices (pair programming, for example) were encouraged.
+Students were split up into teams and each week they had to adopt a new practice.
+To check whether a group understood the practices correctly, they would pick one person out of the team 
+to evaluate the understanding of the team about the practice of the week.
+Also, \citet{akpolat_enhancing_2014} ran two surveys: the former after midterm, and the latter after the end of term.
+At both occasion, they asked students to evaluate their learning experience and their coding performance.
+These ideas have been incorporated into the evaluation of this project.
+\citet{su_mobile_2015} implemented a mobile game to teach fourth graders (10-11 years old) about insects.
+To evaluate their learning experience, they ran two surveys. 
+The first survey was run before they play the mobile game to gather information about what the students know about insects.
+The second survey was run after they play the mobile game to gather information about what that students have learned after four weeks.
+For both tests, they computed their scores and ran hypothesis tests on it.
+Thanks to these tests, they concluded that learning has occurred.
+
+Using the methodologies presented above, the questionnaires were designed.
+To evaluate learning, two separate surveys were used.
+The first survey was to be taken before the subject play the game.
+It asked ten questions concerning material present in all challenges and all of them were multiple choice questions 
+except the last one which was "select all that apply".
+The first two questions concerned the first challenge. 
+These questions were asked: "What is a stream cipher?" and "In what of the following groups does the stream cipher belong?".
+The subjects had to choose the correct among the possible choices.
+The next seven questions were about the second challenge.
+In this set of questions, the subject is asked about the following material:
+\begin{itemize}
+    \item Purpose of each type cryptographic algorithm (symmetric, asymmetric, and hashing);
+    \item What key should be used with what algorithm;
+    \item Specific algorithms and their vulnerabilities ("Among these algorithms, which one is outdated?", for example).
+\end{itemize}
+Finally, the last question targeted the last challenge.
+For this question, the subject was to choose among all the choices he is given, the ones that are a serious vulnerability.
+Among the possible choices were for example: writing your own algorithm or keeping the plaintext that has just been encrypted.
+At the end of this survey, a total score was to be computed.
+
+The first part of the second survey asked the same questions as in the first survey.
+The purpose is to compute a total score and then run a hypothesis test to determine whether learning has occurred.
+This idea has been implemented by \citet{su_mobile_2015}.
+The second part of the survey asked questions about learning quality 
+and opinions about student's feelings concerning the game being a complement to the CSF course.
+For both of these evaluation goals, a mix of Likert scale, qualitative, and binary (yes or no) questions were used.
+For Likert scale questions, the subjects were to choose a value between one and ten.
+For qualitative questions, the subjects were to be asked open-ended questions 
+where they would have full control over their answer.
+For learning quality, the subjects were to be asked to rate the improvement of their knowledge in cryptography
+on a scale from 1 to 10. Then, they were to be asked to write what they knew about cryptography before playing the game, 
+and what they know after playing it. This is to see whether students believe that playing this game will improve their skills.
+The next questions concerned the game complementing the CSF course.
+These set of questions aim to evaluate whether the main goal set out in the Requirements chapter was completed successfully. 
+The subjects were asked to rate on a scale from 1 to 10 whether they think the game is a good supplement for the CSF course 
+and to explain their rating.
+Then, they were asked whether their understanding of cryptography improved regarding to the material presented in lectures, 
+to specify what they understand after playing it, and they still do not understand.
+The second-to-last question asked if the game created any confusion concerning the material, 
+and if it did to specify what caused it.
+Finally, the last question asked about what the subjects wished was covered in the game.
+This is to see what future work could be done to extend the game.
+
+The two forms presented in this section were meant to evaluate the Intended Learning Outcomes identified in the Requirements chapter.
+A two-step evaluation was implemented so that a hypothesis test could be run.
+The null hypothesis is: the game does not improve the learning in cryptography in students taking CSF.
+The alternative hypothesis is: the game does not improve the learning in cryptography in students taking CSF.
+Unfortunately, due to the lack of results, the test was not run.
+For more details, the two evaluation forms are included in the appendices of this paper.
+
+\section{Gamification Characteristics Evaluation}
+
+This section presents the evaluation form of the gamification characteristics identified by \citet{cugelman_gamification:_2013}.
+These provide a good framework to check whether the goals were clearly defined, the challenges were not too difficult,
+the feedback of the challenges was clear, the challenges motivated players to continue playing, 
+the player were motivated to communicate about the challenges, and whether the challenges were fun to play.
+For each of the three challenges, the same questions were asked.
+The form has been included in the appendices of this paper.
+
+The first question asked whether the goals were clearly established. 
+The subjects had to rate it on a scale from one through ten, one being not clear at all, and ten being very clear.
+This allows to check how clear the goals were described to the players.
+The second question was a modified Likert scale question: 
+the subjects were asked whether the challenge was too easy, too difficult, or just alright.
+Feedback from this question gives perspective about how difficult the challenges were to the students,
+and if they should be redesigned to make them more accessible or more complicated.
+Then, subjects were asked whether the feedback from the challenges was clear. 
+If it is not, it would a good idea to think about why it is not, and redesign it.
+Afterwards, subjects were asked if they felt motivated to continue playing the game.
+This question not only evaluates the challenge, but also the whole open-world game quest system since 
+points and unlocking new skills are supposed to motivate the player to keep going.
+The next two questions evaluated the interaction between subjects.
+The first question asked whether subjects talked with each other about the challenges, and, if they did, 
+to specify what they talked about. This is to see how the game influences cooperation and exchange of knowledge.
+The second question asked whether they compared their performance. 
+This enables to check whether there is competition between subjects to outperform each other, 
+and hence more motivation to play the game.
+The final question of this survey was about how fun the game was to play for the subjects.
+They had to rate this question on a scale from one to ten. 
+This is also an important factor in motivation: if the game is not fun, students will not bother playing it.
+
+\section{Challenge Data}
+
+As the web application was connected with a backend, 
+this allowed to store some information about the way the user played the challenges.
+To accomplish this, the backend was hooked up with a mongodb database.
+MongoDB \footnote{https://www.mongodb.com/} is a no-SQL database system which stores JSON documents.
+This is convenient as the web application transfers data in JSON objects to the backend.
+For each of the challenges, the following elements were recorded:
+\begin{itemize}
+    \item Time it took the subject to complete the challenge;
+    \item The answers the subject tried while completing the challenges;
+    \item The number of attempts;
+    \item The points the subject obtained.
+\end{itemize}
+The time allows to see if the challenges were difficult. If the subjects spent too much time on the challenges,
+then it might be a good idea to make them easier.
+Analysing the answers and the number of attempts allows to check 
+whether subjects are trying to brute force their way through the challenges and to check the difficulty.
+Finally, the number of points allows to see how well the subjects did in a challenge.
+
+\section{Conclusion}
+
+This section presented the evaluation techniques that were to be used to the evaluate the project.
+Firstly, the learning experience evaluation was discussed. 
+The aim of this part was to establish if the intended learning outcomes were met.
+Then, the gamification characteristics evaluation was described.
+The goal was to check whether the game was enjoyable to the player.
+Finally, the challenge data evaluation was presented.
+Its purpose was to supplement the information collected in the first and second parts of the whole evaluation.
+Unfortunately, due to the 2020 Coronavirus pandemic, the evaluation has not been run.
+The next and final chapter will summarise and conclude this paper.
 
 %==================================================================================================================================
 \chapter{Conclusion}    
