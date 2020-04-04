@@ -8,6 +8,7 @@
 %
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
+\usepackage{float}
 \begin{document}
 
 %==============================================================================
@@ -21,12 +22,7 @@
 %==============================================================================
 %% ABSTRACT
 \begin{abstract}
-    Every abstract follows a similar pattern. Motivate; set aims; describe work; explain results.
-    \vskip 0.5em
-    ``XYZ is bad. This project investigated ABC to determine if it was better. 
-    ABC used XXX and YYY to implement ZZZ. This is particularly interesting as XXX and YYY have
-    never been used together. It was found that  
-    ABC was 20\% better than XYZ, though it caused rabies in half of subjects.''
+    
 \end{abstract}
 
 %==============================================================================
@@ -115,7 +111,7 @@ but also computer scientists and people around the world who want to learn more 
 \section{Aim}
 
 The aim of this project is to complement the Cyber Security Fundamentals (CSF) with an open-world game 
-which covers material delivered in this course.
+which covers material in cryptography delivered in this course.
 The CSF course is taught at the University of Glasgow during the course of ten weeks and covers the following cyber security topics:
 Penetration Testing, Cryptography, Web Application Attacks, and Digital Forensics.
 In 2019, a group of students pursuing a master's degree in cyber security developed an open-world game 
@@ -592,8 +588,7 @@ This section presented ten cybersecurity games, they have been summarized in Tab
 The main fact to notice is that there are not many games that cover cryptography, and none that cover cryptography in depth.
 This shows that there is a lack of games about cryptography, 
 and shows that there is a gap in the market where an educational game about cryptography could fit in.
-
-\begin{table}[]
+\begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{|l|l|l|}
@@ -667,7 +662,8 @@ and how these were established, will be explained.
 
 \subsection{Beyond the lecture material}
 
-As stated in the introduction of this chapter, lectures lack in interactions and feedback.
+As stated in the introduction of this chapter, lectures lack in interactions and feedback:
+students do not have the opportunity to ask questions during lectures to confirm whether they understand a concept correctly, for example.
 Hence, a core requirement of the game is to verify students' knowledge in cryptography, 
 and to supplement it where possible. To understand what concepts should be supplemented, 
 a quick overview of the cryptography material in the CSF is described.
@@ -735,7 +731,7 @@ have not been explained in lectures.
 
 In the Background chapter, some common mistakes were identified. 
 Some of them are more likely to happen than others.
-The following mistakes were chosen as requirements for this Intended Learning Outcome:
+The following mistakes were chosen as requirements for this Intended Learning Outcome among the ones presented in the background chapter:
 \begin{itemize}
     \item Cryptographic algorithm relying on its secrecy;
     \item Failure to delete the plaintext;
@@ -783,7 +779,7 @@ Caesar's cipher or the One-Time Pad cipher.
 The second challenge will test the student's knowledge of cryptographic algorithms;
 the student will have to design on a high level secure cryptographic systems.
 The final challenge will introduce the student to cryptographic mistakes; 
-he will have to browse a file system to find files that have been compromised due to poor use off
+he will have to browse a file system to find files that have been compromised due to poor use of
 cryptography. All these challenges are to be completed in the order they are presented
 and will be linked together with an in-game character called "Crypto Jedi". 
 Finally, all challenges have been designed with \citet{cugelman_gamification:_2013}'s characteristics
@@ -839,7 +835,7 @@ Block ciphers have been added so that the student knows that stream cipers are n
 the only type of primitive cryptography.
 Figure \ref{fig:Caesar} presents the wire frame for the Caesar cipher 
 and Figure \ref{fig:xOR} presents the wire frame for the One-Time Pad.
-\begin{figure}
+\begin{figure}[]
     \centering
     \begin{subfigure}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth, frame]{images/CaesarCipher.png}
@@ -853,7 +849,12 @@ and Figure \ref{fig:xOR} presents the wire frame for the One-Time Pad.
         \label{fig:xOR}
     \end{subfigure}
     
-    \caption{Wire frames for the first challenge}
+    \caption{Wire frames for the first challenge.
+    "Close" and "Validate" are buttons.
+    The algorithm selector allows to toggle between the two encryption methods.
+    The user inputs a key and a character, 
+    and can then see the resulting decrypted character.
+    The answer is to be entered in the "Decrypted Message" text box.}
     \label{fig:Challenge1}
 
 \end{figure}
@@ -918,7 +919,8 @@ If the player chooses an incorrect type of algorithm (symmetric or asymmetric), 
 If the player chooses MD5 as hashing algorithm, he would lose 15 points because MD5 is considered
 as vulnerable. If the player chooses SHA-2 as hashing algorithm, he would lose 5 points because 
 SHA-2 is not the optimal solution to this problem. 
-At the end of the design exercise, the player is given an explanation about the solution to this problem.
+At the end of the design exercise, the player is given an explanation about the solution to this problem, 
+and why it is the optimal solution.
 
 The send message design task requires the student to transmit a message and its key securely using
 the key exchange framework. 
@@ -954,10 +956,10 @@ The same scoring scheme applies as in the second part of the challenge.
 At the end of this part, the student is given some explanations about the tasks of the challenge and
 they are given the opportunity to retry the challenge.
 
-\begin{figure}[b]
+\begin{figure}[]
     \centering
-    \includegraphics[width=\textwidth, frame]{images/Questline2Part2Cropped.pdf}
-    \caption{Sample solution to the second part of the second challenge. 
+    \includegraphics[width=0.75\textwidth, frame]{images/Questline2Part2Cropped.pdf}
+    \caption{Sample solution to the second part of the second challenge.
     Specific algorithms are not specified.}
     \label{fig:Challenge2}
 \end{figure}
@@ -1016,10 +1018,12 @@ This is to avoid the player brute forcing the challenge and to ensure that they 
 The whole challenge is worth 100 points. Each time the player selects an incorrect answer in the multiple
 choice question he loses 10 points.
 
-\begin{figure}[b]
+\begin{figure}[]
     \centering
     \includegraphics[width=0.8\textwidth]{images/WireframeChallenge3.png}
-    \caption{Wire frame for the third challenge}
+    \caption{Wire frame for the third challenge. 
+    The file explorer is located on the left hand side of the screen, 
+    and the basket is located on the right hand side of the screen.}
     \label{fig:Challenge3}
 \end{figure}
 
@@ -1063,7 +1067,7 @@ and how they were connected to the the open world game.
 
 To implement the design presented above, the implementation has been split into three steps.
 The first step was to implement the challenges. The challenges were implemented in a web application
-which used the React library \footnote{https://reactjs.org/} and some other small packages found on npm.
+which used the React library \footnote{https://reactjs.org/} and some other small packages found on the Node Package Manager (npm).
 The second step was to implement the quest in the open-world game. 
 The open-world game is built using Unreal Engine 4 \footnote{https://www.unrealengine.com/}. 
 The final step was to connect the web application with the open-world game. 
@@ -1079,12 +1083,12 @@ React applications are built with html, css, and javascript.
 This gives the developer more freedom by combining the structure, the look, and the logic together.
 Certainly, Unreal Engine 4 provides a widget feature allowing the developer to implement simple user interfaces, 
 but this feature is limited in functionality, 
-and the design presented above is easier to implement in a web application.
+and the design developed above is easier to implement in a web application.
 Finally, Unreal Engine 4 provides the developer with a limited, but functional web browser.
 This key feature allows the development of the challenges in a web application.
 The next paragraphs will present the development of the challenges, and some interesting details concerning them.
 
-The first challenge has the following flow. 
+The first challenge has the following sequence of events. 
 The player would first see the email that Crypto Jedi sent him. 
 This email was implemented as a screenshot from an email provider and pasted into the web application.
 Once they read the email, they proceed to the "decryptor" interface. 
@@ -1105,20 +1109,27 @@ Once the user has submitted the message into the answer text box, the text is va
 and the user gets a pop up text box telling them whether they completed the challenge successfully and the points they obtained.
 Finally, they are redirected to a page where they can read through the explanation of the challenge, or return to the "decryptor".
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.65\textwidth}
-        \includegraphics[width=\textwidth, frame]{images/CaesarImplementation.PNG}
+        \centering
+        \includegraphics[width=0.8\textwidth, frame]{images/CaesarImplementation.PNG}
         \caption{Implementation of the Caesar cipher exercise.}
         \label{fig:CaesarImp}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.65\textwidth}
-        \includegraphics[width=\textwidth, frame]{images/xORImplementation.PNG}
+        \centering
+        \includegraphics[width=0.8\textwidth, frame]{images/xORImplementation.PNG}
         \caption{Implementation of the One-Time Pad exercise.}
         \label{fig:xORImp}
     \end{subfigure}
-    \caption{Screenshots of the implementation of the first challenge.}
+    \caption{Screenshots of the implementation of the first challenge.
+    The "Algorithm Selector" menu is used to toggle between these two form.
+    The user enters a character and a key in their respective text boxes, a
+    and presses "Decrypt" to obtain the decrypted character. 
+    The decrypted character can be found in the "Decrypted Character" or "Resulting Character" text boxes.
+    Finally, the user can enter his solution in the "Decrypted Message" text box.}
     \label{fig:Challenge1Imp}
 \end{figure}
 
@@ -1135,12 +1146,24 @@ An algorithm choice might reveal another element in the flowchart which might be
 The arrows were implemented using Scalable Vector Graphics (SVG), and some of them appear or disappear according to the player's choices.
 Finally, when the student has committed to a solution, a pop up box would appear telling the user whether they were correct.
 If they were not, an explanation is provided, and they are invited to try again.
+The given explanations are made specifically to the player's input. 
+A key-value mapping is implemented to provide this specific feedback.
+Each dropdown menu has a key-value mapping associated with it, 
+and each option of that dropdown is a key in that mapping.
+For each key, there is an associated string which provides explanation to why the choice the player made was correct or incorrect.
+This implementation allows to give the player specific feedback concerning his solution.
+Once he has read it, he is invited to try again if he did not complete the challenge successfully.
 The final page provides a walk-through through the solution and explanation of the different algorithms used.
 
-\begin{figure}[b]
+\begin{figure}[]
     \centering
-    \includegraphics[width=\textwidth, frame]{images/Challenge2Imp.PNG}
-    \caption{Screenshot of the implementation of the second part of the second challenge.}
+    \includegraphics[width=0.9\textwidth, frame]{images/Challenge2Imp.PNG}
+    \caption{Screenshot of the implementation of the second part of the second challenge.
+    This image presents the solution to this part.
+    To interact with this challenge, the user can select options from the drop down menus.
+    Some options in the dropdown menus can make some elements disappear from the flowchart.
+    For example, suppose the player changes "Asymmetric Encryption (RSA)" to "Hash Function (MD5)",
+    then the drop down menu containing "Recipient's Public Key" will disappear.}
     \label{fig:Challenge2Imp}
 \end{figure}
 
@@ -1167,10 +1190,19 @@ This "program" can be used to decrypt a file once the user finds the file contai
 This decrypted file will then appear in the simulated file system and can be subsequently added to the basket.
 Once the user finds the four files, a popup would appear indicating the user he completed the challenge, and the points he scored.
 
-\begin{figure}[b]
+\begin{figure}[]
     \centering
-    \includegraphics[width=\textwidth, frame]{images/Challenge3Imp.PNG}
-    \caption{Screenshot of the implementation of the third challenge.}
+    \includegraphics[width=0.9\textwidth, frame]{images/Challenge3Imp.PNG}
+    \caption{Screenshot of the implementation of the third challenge. 
+    A file has been opened which shows confidential patient data.
+    This file must therefore be added to the basket.
+    The player can add it to the basket by clicking on the "Add to list" button.
+    Otherwise, he can close the file and return to the file explorer.
+    The file explorer is located on the left side screen 
+    and the basket is located on the right hand side of the screen.
+    Both of these elements are in the background. 
+    Finally, opacity is used so that the user does not interact 
+    with the file explorer while inspecting a file.}
     \label{fig:Challenge3Imp}
 \end{figure}
 
@@ -1192,7 +1224,25 @@ The dialog was implemented in a widget and consists of a couple of sentences.
 To trigger the dialog, the user has to be inside the collision box and then press the "F" key.
 The other collision box was added to the laptop. 
 This laptop is used to trigger the challenges, and guide the user towards the web application.
+Figure \ref{fig:GameStory} gives a visualisation of the characters present in the game.
 This point will be more developed in the next paragraph.
+
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.9\textwidth, frame]{images/GameImage.PNG}
+    \caption{This figure presents the main character of the cryptography quest.
+    In the foreground, Mike the Panda (the player character) can be seen.
+    In the background, Crypto Jedi (non-playable character) can be seen,
+    he is the character that assigns task to Mike.
+    On the table, a laptop can be seen. The player uses this laptop 
+    to launch the web browser to complete a challenge.
+    Finally, the player's current level and the points he collected can be seen 
+    on the top left corner of the screen. 
+    The player receives points by completing challenges. 
+    When he collects enough points, his level upgrades to a new one 
+    which unlocks new challenges present in the game}
+    \label{fig:GameStory}
+\end{figure}
 
 The laptop is associated with a web browser widget. 
 The web browser widget \footnote{https://docs.unrealengine.com/en-US/Engine/UMG/UserGuide/WidgetTypeReference/WebBrowser/index.html} 
@@ -1211,6 +1261,18 @@ the player can close it to return to the game.
 Since the web browser API is very limited, the points the player scored in the challenge, 
 could not be transferred easily to the game. Hence, a workaround had to be found.
 This is what the next paragraph will explore.
+
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.9\textwidth, frame]{images/WebBrowserDesign.PNG}
+    \caption{This figure presents the implementation of the web browser. 
+    When the player starts a challenge, the browser fills the whole screen.
+    To interact with the webpage, the player can use their mouse and keyboard.
+    Mike (player character) will remain on the same spot.
+    The "Close" button on the bottom left side of the screen is used to close the web
+    browser and fetch the points from the challenge once it is completed.}
+    \label{fig:WebBrowser}
+\end{figure}
 
 Two different tools were used to transfer the points between the game and the challenges.
 VaREST is a plugin for Unreal Engine 4 which allows the developer to make RESTful calls through Unreal Engine 4 blueprints.
@@ -1231,11 +1293,12 @@ Afterwards, the backend was implemented and also deployed on AWS.
 That done, the web application would send the points in a JSON object to the backend each time the player would complete a challenge.
 Finally, when the user would press the "Close" button in the widget in the game, 
 this would trigger a request to the backend, the points would be fetched, and added to the overall points in the game.
+The points are added to the top right progress bar seen on figure \ref{fig:GameStory}.
 Figure \ref{fig:pointsImp} presents a visualisation of how this system works.
 
-\begin{figure}[b]
+\begin{figure}[]
     \centering
-    \includegraphics[width=\textwidth, frame]{images/PointsImplementation.pdf}
+    \includegraphics[width=0.8\textwidth, frame]{images/PointsImplementation.pdf}
     \caption{This chart presents how points are transferred from the web application to the open-world game.}
     \label{fig:pointsImp}
 \end{figure}
@@ -1315,23 +1378,27 @@ For Likert scale questions, the subjects were to choose a value between one and 
 For qualitative questions, the subjects were to be asked open-ended questions 
 where they would have full control over their answer.
 For learning quality, the subjects were to be asked to rate the improvement of their knowledge in cryptography
-on a scale from 1 to 10. Then, they were to be asked to write what they knew about cryptography before playing the game, 
+on a scale from 1 to 10. It was expected that they would rate it positively (an estimate would be 7 or 8 out of 10).
+Then, they were to be asked to write what they knew about cryptography before playing the game, 
 and what they know after playing it. This is to see whether students believe that playing this game will improve their skills.
 The next questions concerned the game complementing the CSF course.
 These set of questions aim to evaluate whether the main goal set out in the Requirements chapter was completed successfully. 
 The subjects were asked to rate on a scale from 1 to 10 whether they think the game is a good supplement for the CSF course 
-and to explain their rating.
+and to explain their rating. It was expected that they would also rate this question positively (7 seems like a good estimate)
 Then, they were asked whether their understanding of cryptography improved regarding to the material presented in lectures, 
 to specify what they understand after playing it, and they still do not understand.
 The second-to-last question asked if the game created any confusion concerning the material, 
-and if it did to specify what caused it.
+and if it did to specify what caused it. 
+These questions were asked so that mistakes in content could be rectified.
 Finally, the last question asked about what the subjects wished was covered in the game.
 This is to see what future work could be done to extend the game.
 
 The two forms presented in this section were meant to evaluate the Intended Learning Outcomes identified in the Requirements chapter.
 A two-step evaluation was implemented so that a hypothesis test could be run.
 The null hypothesis is: the game does not improve the learning in cryptography in students taking CSF.
-The alternative hypothesis is: the game does not improve the learning in cryptography in students taking CSF.
+The alternative hypothesis is: the game does improve the learning in cryptography in students taking CSF.
+The expected result in this test is that the null hypothesis was to be rejected in favour of the alternative hypothesis.
+This means that it was expected that the game improves student's understanding of cryptography.
 Unfortunately, due to the lack of results, the test was not run.
 For more details, the two evaluation forms are included in the appendices of this paper.
 
@@ -1346,25 +1413,38 @@ The form has been included in the appendices of this paper.
 
 The first question asked whether the goals were clearly established. 
 The subjects had to rate it on a scale from one through ten, one being not clear at all, and ten being very clear.
+For each of the challenges, the goal was established clearly at the start of the challenge, 
+it was expected that answers to this question would range somewhere between 7 and 8.
 This allows to check how clear the goals were described to the players.
 The second question was a modified Likert scale question: 
 the subjects were asked whether the challenge was too easy, too difficult, or just alright.
 Feedback from this question gives perspective about how difficult the challenges were to the students,
 and if they should be redesigned to make them more accessible or more complicated.
+The challenges were designed to be "just alright" difficulty-wise.
 Then, subjects were asked whether the feedback from the challenges was clear. 
 If it is not, it would a good idea to think about why it is not, and redesign it.
+The expected result is that the feedback from the challenges was clear enough, 
+especially due to its specificity described in the previous chapter.
 Afterwards, subjects were asked if they felt motivated to continue playing the game.
 This question not only evaluates the challenge, but also the whole open-world game quest system since 
 points and unlocking new skills are supposed to motivate the player to keep going.
+it was expected that the game would score somewhere between five and seven.
+The storyline could have been a bit more captivating, and would motivate the players even more.
 The next two questions evaluated the interaction between subjects.
 The first question asked whether subjects talked with each other about the challenges, and, if they did, 
 to specify what they talked about. This is to see how the game influences cooperation and exchange of knowledge.
+The expected answer to this question is "no", this due to the fact that players were to be evaluated one-by-one,
+and this would hinder cooperation.
 The second question asked whether they compared their performance. 
 This enables to check whether there is competition between subjects to outperform each other, 
 and hence more motivation to play the game.
+It is difficult to predict a result for this question as it is difficult to know whether the subjects would talk with each other.
 The final question of this survey was about how fun the game was to play for the subjects.
-They had to rate this question on a scale from one to ten. 
+They had to rate this question on a scale from one to ten.
 This is also an important factor in motivation: if the game is not fun, students will not bother playing it.
+It was expected that the students would score the game somewhere between six and eight.
+The game was designed with fun in mind. However,
+tt also really depends on the person as some might dislike cryptography.
 
 \section{Challenge Data}
 
@@ -1395,7 +1475,7 @@ Then, the gamification characteristics evaluation was described.
 The goal was to check whether the game was enjoyable to the player.
 Finally, the challenge data evaluation was presented.
 Its purpose was to supplement the information collected in the first and second parts of the whole evaluation.
-Unfortunately, due to the 2020 Coronavirus pandemic, the evaluation has not been run.
+Unfortunately, due to the 2020 Coronavirus pandemic, the evaluation was not run.
 The next and final chapter will summarise and conclude this paper.
 
 %==================================================================================================================================
@@ -1403,25 +1483,68 @@ The next and final chapter will summarise and conclude this paper.
 
 \section{Project summary}
 
-The main goal of this project was to incorporate a cryptography quest
+The main goal of this project was to complement the 
+Cyber Security Fundamentals (CSF) course with an open-world game to reinforce
+and extend the concepts covered in class.
+The second goal of this project was to show that lectures can be made more interactive
+by the use of educational games.
+To accomplish these goals, some background information was given concerning gamification and serious games, 
+cryptography and mistakes made in this field. Also, a market research was conducted to scout games 
+that teach cryptography. Since, none were found, this shows that there is a need for such type of games.
+
+Then, requirements were defined. 
+The main requirement was to confirm and to enhance students' knowledge in cryptography. 
+This requirement corresponds to the main goal of the whole project. 
+This requirement spawned off the other ones. 
+It was decided that the game should teach students about the purpose of cryptography,
+the three types of cryptographic algorithms, and mistakes in cryptographic implementations.
+All these requirements were developed with the CSF course in mind.
+
+Afterwards, the challenges were designed and implemented.
+There were three challenges. 
+The first one required the players to decrypt a message using the Caesar cipher.
+This is so that they understand the main idea behind cryptography.
+The second challenge asked the students to design on a high-level cryptographic algorithms.
+This is to teach them what the purpose is of each type of cryptographic algorithm.
+The last challenge taught students about mistakes in cryptographic implementations.
+This allows the students to confront commonly made mistakes, and to avoid repeating them in the future.
+The challenges were implemented in a web application which used the React library.
+This web application was then connected with the open-world game which used Unreal Engine 4.
+Unreal Engine 4 provides developers with a web browser which enabled students to view the web application.
+Finally, the two elements were connected together using a backend running Express.js so that data could be transferred
+from the web application to the open-world game.
+
+Finally, an evaluation was designed which consisted of three parts.
+The first section aimed to evaluate learning experience.
+Students had to answer to the same questions before and after playing the game.
+The second part of the evaluation aimed to evaluate user experience while playing the game.
+Finally, some metadata (time taken, number of attempts) was to be collected to have more insights concerning the learning experience 
+and gaming experience.
+Unfortunately, due to the 2020 Coronavirus pandemic, the evaluation has not run.
+However, the results were expected to be mostly positive.
 
 \section{Future work}
 
-Summarise the whole project for a lazy reader who didn't read the rest (e.g. a prize-awarding committee).
-\section{Guidance}
-\begin{itemize}
-    \item
-        Summarise briefly and fairly.
-    \item
-        You should be addressing the general problem you introduced in the
-        Introduction.        
-    \item
-        Include summary of concrete results (``the new compiler ran 2x
-        faster'')
-    \item
-        Indicate what future work could be done, but remember: \textbf{you
-        won't get credit for things you haven't done}.
-\end{itemize}
+\subsection{Evaluation}
+
+Since the evaluation could not have been run, it should be run later on in time.
+Since giving expected results does not give real evidence,
+it could provide some definitive results that the approach described in this paper works.
+The proposed evaluation could be used to run it.
+
+\subsection{Serious Game about cryptographic libraries}
+
+A great addition to this game would be to confront students with different cryptographic libraries.
+\citet{acar_comparing_2017} presented a couple of cryptographic libraries and came to the conclusion that
+some of them were poorly documented or were badly implemented. 
+They asked some developers to complete some exercises using these libraries.
+They found out that some coders were confident that their solution was secure when it was not.
+Therefore, a game could ask the students to complete some tasks using some cryptographic library.
+Then, they would be asked to rate their solution. 
+Finally, they would be given some feedback concerning their solution.
+This type of game would more serious game-like since player would be asked to code their solutions.
+This would allow students to get exposed to real world cryptographic libraries that are used everyday, 
+and eventually build a safer computing experience for everyone.
 
 %==================================================================================================================================
 %
@@ -1432,6 +1555,8 @@ Summarise the whole project for a lazy reader who didn't read the rest (e.g. a p
 \begin{appendices}
 
 \chapter{Appendices}
+
+\section{Ethics Approval}
 
 Typical inclusions in the appendices are:
 
