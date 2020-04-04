@@ -83,75 +83,71 @@
 \pagenumbering{arabic} 
 
 
-Why should the reader care about what are you doing and what are you actually doing?
-\section{Guidance}
+\section{Motivation}
 
-\textbf{Motivate} first, then state the general problem clearly. 
+Nowadays, lectures tend to be overcrowded and there is a lack of interaction between students and lecturers \citep{lehmann_theory-driven_2014}.
+Due to this fact, the material presented in lectures in result is not conveyed correctly.
+Moreover, the students do not have the opportunity to check their understanding since interactions in large classroom are not feasible.
+Hence, the learning quality tends to diminish which leaves both lectures and students unsatisfied.
+As technology has become common in our daily lives, it can be used to resolve this issue.
+Gamifications and serious games are used to educate its players in various subjects.
+Therefore, they could be used to provide much needed feedback and enhance their knowledge in a particular subject.
 
-\section{Writing guidance}
-\subsection{Who is the reader?}
+Cyber Security is an important issue today, especially because of the growth of the Internet of Things (IoT) \citep{abomhara_cyber_2015}.
+It is a priority to have a good understanding of how systems work and to able to identify relevant vulnerabilities that can exist in the world \citep{abomhara_cyber_2015}.
+This understanding usually comes from people taking courses in cyber security.
+However, as stated in the previous paragraph, it is difficult to test students' understanding in lectures.
+Hence, some students might make some mistakes later on in their careers that might cause an attack 
+which could have been avoided with better feedback.
+Gamifications and serious games provide a framework which could solve this issue 
+by giving feedback to the student concerning their comprehension of cyber security, by enhancing and complementing the material taught in lectures,
+and by motivating them to learn more due to the fun nature of these games.
 
-This is the key question for any writing. Your reader:
+Finally, \citet{schneier_security_nodate} claims that cryptography is powerful when it is implemented correctly.
+Hence, attackers target the implementation around cryptography and not the cryptography itself \citep{schneier_security_nodate} \citep{lazar_why_nodate}.
+Since implementing cryptography into a system requires thorough understanding of how it works,
+it is essential that students get appropriate feedback concerning how these algorithms work.
+This is hindered by the lack of interaction (it is difficult for students to ask questions, for example) and feedback during lectures.
+Moreover, after an extensive research of cyber security games presented in 2.3, there are very few games that teach people about cryptography.
+Hence, creating a game about cryptography will not only educate students that take a cyber security course at university, 
+but also computer scientists and people around the world who want to learn more about cryptographic implementations.
 
+\section{Aim}
+
+The aim of this project is to complement the Cyber Security Fundamentals (CSF) with an open-world game 
+which covers material delivered in this course.
+The CSF course is taught at the University of Glasgow during the course of ten weeks and covers the following cyber security topics:
+Penetration Testing, Cryptography, Web Application Attacks, and Digital Forensics.
+In 2019, a group of students pursuing a master's degree in cyber security developed an open-world game 
+that would complement the CSF course. 
+Unfortunately, the overall result had some issues in it which required redesigning.
+These issues are presented in the third chapter of this paper.
+The main aim of this project is to provide feedback and enhance students knowledge in cryptography
+by building a quest. 
+This quest covers and extends the material presented in the course about cryptography.
+The material present in the course about cryptography is the following: cryptography fundamentals 
+and the three types of cryptographic algorithms (symmetric, asymmetric, and hashing algorithms).
+The game aims to give students practice in understanding and manipulating cryptographic algorithms.
+Moreover, the game aims to teach students common mistakes made when implementing systems that use cryptography.
+Finally, this also allows to build a game that covers cryptography in detail as there are very few games that have this theme.
+
+A second goal of this project is to show that lectures can be made more interactive by the use of educational games.
+As stated in the motivation section, the lack of interaction causes lack of feedback which in turn can cause a lack of understanding.
+In a field like cyber security, it is essential that students get appropriate feedback to make good decisions later on.
+Hence, this game could improve the learning experience of students and make it more enjoyable.
+
+\section{Paper summary}
+
+This chapter presented the motivation and the goals of this project.
+What follows is an outline of the different sections of this paper:
 \begin{itemize}
-    \item
-    is a trained computer scientist: \emph{don't explain basics}.
-    \item
-    has limited time: \emph{keep on topic}.
-    \item
-    has no idea why anyone would want to do this: \emph{motivate clearly}
-    \item
-    might not know \emph{anything} about your project in particular:
-    \emph{explain your project}.
-    \item
-    but might know precise details and check them: \emph{be precise and
-    strive for accuracy.}
-    \item
-    doesn't know or care about you: \emph{personal discussions are
-    irrelevant}.
+    \item Chapter 2 presents what gamifications and serious games are, delivers some cryptography basics, and reviews cyber security games.
+    \item Chapter 3 analyses the issue at hand, and formulates requirements for this project.
+    \item Chapter 4 provides the reasoning behind the design of the cryptography quest.
+    \item Chapter 5 provides a detailed overview of the implementation of the quest.
+    \item Chapter 6 demonstrates the planned evaluation and the expected results are explained.
+    \item Chapter 7 gives an overview of the whole project and gives directions to future work.
 \end{itemize}
-
-Remember, you will be marked by your supervisor and one or more members
-of staff. You might also have your project read by a prize-awarding
-committee or possibly a future employer. Bear that in mind.
-
-\subsection{References and style guides}
-There are many style guides on good English writing. You don't need to
-read these, but they will improve how you write.
-
-% \begin{itemize}
-%     \item
-%     \emph{How to write a great research paper} \cite{Pey17} (\textbf{recommended}, even though you aren't writing a research paper)
-%     \item
-%     \emph{How to Write with Style} \cite{Von80}. Short and easy to read. Available online.
-%     \item
-%     \emph{Style: The Basics of Clarity and Grace} \cite{Wil09} A very popular modern English style guide.
-%     \item
-%     \emph{Politics and the English Language} \cite{Orw68}  A famous essay on effective, clear writing in English.
-%     \item
-%     \emph{The Elements of Style} \cite{StrWhi07} Outdated, and American, but a classic.
-%     \item
-%     \emph{The Sense of Style} \cite{Pin15} Excellent, though quite in-depth.
-% \end{itemize}
-
-% \subsubsection{Citation styles}
-
-% \begin{itemize}
-% \item If you are referring to a reference as a noun, then cite it as: ``\citet{Orw68} discusses the role of language in political thought.''
-% \item If you are referring implicitly to references, use: ``There are many good books on writing \citep{Orw68, Wil09, Pin15}.''
-% \end{itemize}
-
-% There is a complete guide on good citation practice by Peter Coxhead available here: \url{http://www.cs.bham.ac.uk/~pxc/refs/index.html}. 
-% If you are unsure about how to cite online sources, please see this guide: \url{https://student.unsw.edu.au/how-do-i-cite-electronic-sources}.
-
-\subsection{Plagiarism warning}
-
-\begin{highlight_title}{WARNING}
-    
-    If you include material from other sources without full and correct attribution, you are commiting plagiarism. The penalties for plagiarism are severe.
-    Quote any included text and cite it correctly. Cite all images, figures, etc. clearly in the caption of the figure.
-\end{highlight_title}
-
 
 %==================================================================================================================================
 \chapter{Background}
@@ -406,7 +402,7 @@ Finally, bcrypt is a hash function that has been specifically designed for passw
 
 Finally, each of these algorithms has a specific purpose in cryptography.
 Hashing is usually used fingerprinting data to ensure that it has not been modified \citep{kessler_overview_2016}.
-If the receiver does not compute the same hash as the sender of a message, 
+In instance, if the receiver does not compute the same hash as the sender of a message, 
 this means that the message has been modified. 
 Symmetric cryptography is used to encrypt messages \citep{kessler_overview_2016}. 
 The sender and the receiver of the message will have to use the same key.
@@ -465,7 +461,7 @@ All the mistakes presented are due to wrong choices made by developers when they
 people to reach a better solution by learning from their previous iterations. 
 Therefore, the above mistakes present to students an early solution to a problem, show that they are not optimal, and
 finally present a better solution to that problem. 
-The next section will analyse some cybersecurity games, and demonstrate why games should be developed for cryptography.
+The next section will analyse some cyber security games, and demonstrate why games should be developed for cryptography.
 
 \section{Cybersecurity Games Analysis}
 
@@ -1403,7 +1399,14 @@ Unfortunately, due to the 2020 Coronavirus pandemic, the evaluation has not been
 The next and final chapter will summarise and conclude this paper.
 
 %==================================================================================================================================
-\chapter{Conclusion}    
+\chapter{Conclusion}
+
+\section{Project summary}
+
+The main goal of this project was to incorporate a cryptography quest
+
+\section{Future work}
+
 Summarise the whole project for a lazy reader who didn't read the rest (e.g. a prize-awarding committee).
 \section{Guidance}
 \begin{itemize}
