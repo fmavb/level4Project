@@ -423,3 +423,7 @@
 
 ### 4th April 2020
 * *6 hours* Writing Introduction, Conclusion and finishing touches
+
+### 5th April 2020
+* *6 hours* Recording the presentation video
+* *2 hours* Dissertation finishing touches

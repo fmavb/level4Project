@@ -22,7 +22,21 @@
 %==============================================================================
 %% ABSTRACT
 \begin{abstract}
-    
+
+Nowadays, lectures tend to be overcrowded and to lack interactions between students
+and lecturers. Hence, students do not have the chance to check their understanding
+of the material. This is especially relevant to cyber security and cryptography 
+where a good understanding of concepts is fundamental. 
+This project aims to resolve these issues by incorporating a series of challenges 
+in cryptography into an open-world game. 
+This is particularly relevant as there are very few games 
+that educate people about the use of cryptography.
+Eventually, a game was built that included three topics in cryptography:
+purpose of cryptography, the three types of cryptographic algorithms, and
+mistakes in cryptographic implementations.
+Unfortunately, due to the 2020 Coronavirus pandemic, it is not possible to tell
+whether this solution succeeded at improving the learning success of students.
+
 \end{abstract}
 
 %==============================================================================
@@ -116,14 +130,14 @@ The CSF course is taught at the University of Glasgow during the course of ten w
 Penetration Testing, Cryptography, Web Application Attacks, and Digital Forensics.
 In 2019, a group of students pursuing a master's degree in cyber security developed an open-world game 
 that would complement the CSF course. 
-Unfortunately, the overall result had some issues in it which required redesigning.
+Unfortunately, the overall result had some issues in it which required redesigning. %
 These issues are presented in the third chapter of this paper.
 The main aim of this project is to provide feedback and enhance students knowledge in cryptography
-by building a quest. 
-This quest covers and extends the material presented in the course about cryptography.
+by building a series of challenges that are going to be incorporated into the open-world game. 
+These challenges cover and extend the material about cryptography presented in the course.
 The material present in the course about cryptography is the following: cryptography fundamentals 
 and the three types of cryptographic algorithms (symmetric, asymmetric, and hashing algorithms).
-The game aims to give students practice in understanding and manipulating cryptographic algorithms.
+The game aims to give students practice in understanding cryptographic algorithms and manipulating them.
 Moreover, the game aims to teach students common mistakes made when implementing systems that use cryptography.
 Finally, this also allows to build a game that covers cryptography in detail as there are very few games that have this theme.
 
@@ -150,7 +164,7 @@ What follows is an outline of the different sections of this paper:
 
 This chapter is going to go over the research that has been completed in the area of gamification and serious games applied to cyber security and more precisely cryptography.
 The main focus will be on the applications of cryptography and not the building of a cryptographic algorithm.
-The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a possible system for education and prove why it is a workable approach.
+The first section of this chapter will discuss gamification and serious games. It will demonstrate why it is a feasible system for education and prove why it is a workable approach.
 Finally, an attempt at using gamification to educate people will be shown.
 The next part of this chapter will discuss cryptography, analyse various applications of cryptography, and why there exists a need to educate users in a better usage.
 As the game is designed for people who have no prior knowledge of cryptography, some cryptographic fundamentals will be discussed.
@@ -220,7 +234,7 @@ and an application of serious games to demonstrate that they provide some educat
 
 \citet{blumberg_serious_2012} have identified some characteristics that define serious games. These characteristics are the following: "Immersion", "Identity",
 "Interactivity", "Agency or Control", "Challenge", "Narrative" and "Feedback" \citep{blumberg_serious_2012}.
-"Immersion" is about the people feeling that they are part of the world of the game while playing it. 
+"Immersion" is about the people feeling that they are part of the virtual world of the game while playing it. 
 "Identity" refers to the player identifying themselves with their avatar or character they are playing in-game.
 "Interactivity" is all about the feedback players get for their in-game decisions, and how these decisions affect the chain of events in the game.
 "Agency or Control" defines how the player interacts with the game itself. This not only encompasses the control mechanisms, 
@@ -237,8 +251,7 @@ in a simulated operating room environment. In their research paper, they feature
 Its main aim is to encourage communication and cooperation between the different actors in a surgery room.
 The problem the game is solving, is the following: the main cause of failures in an operating room environment is due to miscommunication 
 which can have dramatic consequences like the patient's death \citep{panzoli_interaction_2017}. 
-The game models several rooms that are important during a surgery (pre-operating room, operating room, and post-operating), 
-is a first person point of view game.
+The game models several rooms that are important during a surgery (pre-operating room, operating room, and post-operating).
 Throughout the gaming session, the players actions are recorded and they receive some feedback at the end of the session.
 The game tries to replicate real-life scenarios where mistakes often occur, 
 and its aim is to assess the reaction of the participants to the mistakes that might arise \citep{panzoli_interaction_2017}.
@@ -248,9 +261,9 @@ The game presents the following serious game characteristics identified by \cite
     \item "Identity": Identity is provided via the first person point of view, and the multiplayer nature of this game;
     \item "Interactivity": There are a set of interactions the player can do, each of those will have their own set of consequences down the line, 
     the player is also interacting with other people in real-time to solve the challenge;
-    \item "Agency or Control": The player can interact with the environment (drawers, for example), but also with other players
+    \item "Agency or Control": The player can control the environment (drawers, for example), but also communicate with other players;
     \item "Challenge": The aim of this game is to avoid recreating the mistakes that are commonly made in a surgery;
-    \item "Narrative": The patient being operated on provides some narrative (his disease, for example);
+    \item "Narrative": The patient to be operated provides some narrative (his disease, for example);
     \item "Feedback": At the end of the session, the players are given feedback concerning their in-game actions.
 \end{itemize}
 \citet{panzoli_interaction_2017} claim that "3D Virtual Operating Room" is a successful game due to its immersiveness, and its multiplayer nature.
@@ -467,7 +480,7 @@ At the end of this section, a small summary will be provided of all of the games
 
 \subsection{CyberCIEGE}
 
-CyberCIEGE is "an innovative video game and tool to teach computer and network security concepts" developed by the Naval Postgraduate School and 
+CyberCIEGE \footnote{https://nps.edu/web/c3o/cyberciege} is "an innovative video game and tool to teach computer and network security concepts" developed by the Naval Postgraduate School and 
 sponsored by the United States Department of the Navy \citep{noauthor_cyberciege_nodate}. The player takes the role of a cybersecurity specialist, 
 and he is tasked to secure the network of a company. The player has a bird-eye view of the office, and his goal is to secure the network.
 The game presents seven campaigns. Due to the nature of this paper, the main focus was accorded to the "encryption" campaign.
@@ -480,7 +493,7 @@ In summary, CyberCIEGE is a game that presents some gamification characteristics
 
 \subsection{Targeted Attack}
 
-Targeted Attack is a game developed by TrendMicro, and it covers general cybersecurity concepts.
+Targeted Attack \footnote{http://targetedattacks.trendmicro.com/} is a game developed by TrendMicro, and it covers general cybersecurity concepts.
 The player takes the role of Dave, the CIO of a company called "Fugle Incorporated" which is about to release a "revolutionary payment application".
 The player watches some videos, and has to answer multiple choice questions to make the application as secure as possible. 
 Each answer to a question is a decision, and each decision will affect the overall outcome. 
@@ -496,7 +509,7 @@ In broad terms, Targeted Attack is a gamification that presents some cybersecuri
 
 \subsection{The Weakest Link}
 
-The Weakest Link is a game developed by IS Decisions. The player is asked thirty multiple choice questions about general workplace cybersecurity.
+The Weakest Link \footnote{https://www.isdecisions.com/user-security-awareness-game/} is a game developed by IS Decisions. The player is asked thirty multiple choice questions about general workplace cybersecurity.
 Topics covered include password management, movement of corporate files. The goal for the player is to obtain the highest possible security score.
 There are no cryptography questions.
 
@@ -504,7 +517,7 @@ In conclusion, The Weakest Link is a gamification that could be given to new hir
 
 \subsection{Cyber City Demo}
 
-Cyber City Demo is a game developed by Jason Stanton for Cyber Security Challenge UK.
+Cyber City Demo \footnote{https://cybergamesuk.com/} is a game developed by Jason Stanton for Cyber Security Challenge UK.
 The game is situated in a fictitious city called Cyber City, and presents open world game play resembling to Pokemon for Nintendo.
 This game familiarizes the player with the Computer Misuse Act by making some people stand in front of a court for some computer misdemeanors they did.
 The player has to determine if the accused are guilty of a crime, and the player gets feedback on their judgment.
@@ -517,7 +530,7 @@ In summary, this game has some gamification concepts, introduces players to some
 
 \subsection{Nite Team 4 (Demo)}
 
-Nite Team 4 is a game developed by Alice \& Smith, and provides a UNIX style operating system interface. 
+Nite Team 4 \footnote{https://www.niteteam4.com/} is a game developed by Alice \& Smith, and provides a UNIX style operating system interface. 
 The player is introduced to some cybersecurity tools used in the real world, 
 and allows the player to develop their skills in hacking while exploring at the same time the world of cyber warfare.
 However, as the demo version has very limited features, nothing more can be said about this game in the sense of content.
@@ -527,7 +540,7 @@ however due to limitations, more cannot be said.
 
 \subsection{CIA Cryptography Game (Break the Code)}
 
-This game was found on the United States Central Intelligence Agency website. 
+This game was found on the United States Central Intelligence Agency website \footnote{https://www.cia.gov/kids-page/games/break-the-code}. 
 It is a small game for children where the player has to manually decrypt a substitution cipher. 
 As a reward, the player gets to know the plaintext and its meaning after decryption.
 Unfortunately, the website was no longer accessible when this section was written. 
@@ -536,7 +549,8 @@ In essence, this game is a gamification, and it presents one cryptography compon
 
 \subsection{University of Edinburgh Cyber security Game}
 
-This game is a firewall setup game. It is based upon the "iptables" software in Linux. 
+This game is a firewall setup game \footnote{https://groups.inf.ed.ac.uk/tulips/projects/1617/CharlesFirewallGameWebsite/Website/v0.7/index.html}. 
+It is based upon the "iptables" software in Linux. 
 The player has to set up some rules in the firewall so that two users can communicate securely over the network.
 Some information, like ip addresses, applications that are being used, is given to the player so that he can setup the rules correctly.
 The player is given some choices which are arguments to the "iptables" command so that the rules are set up correctly.
@@ -547,7 +561,8 @@ Ultimately, this game presents some characteristics of a Serious Game, however i
 
 \subsection{Data Centre Attack}
 
-Data Centre Attack is another game by TrendMicro, and it follows a similar interaction scheme as the Targeted Attack game mentioned in section 2.3.1.
+Data Centre Attack \footnote{http://datacenterattacks.trendmicro.com/} is another game by TrendMicro, 
+and it follows a similar interaction scheme as the Targeted Attack game mentioned in section 2.3.1.
 The player takes the role of Mark, a computer information security officer in a hospital. 
 The player has to make the right decisions in order to protect the hospital from data breaches and ransomware.
 At the end of each video which provides context and guidance to the player, he must take a decision to prevent a data breach in the hospital.
@@ -559,7 +574,8 @@ In a nutshell, this gamification does not present any cryptographic content.
 
 \subsection{Cyber Challenge}
 
-Cyber Challenge is a game designed for the United States Department of Defense. This game presents three challenges.
+Cyber Challenge \footnote{https://www.cybermission.tech/\#!/page/home} is a game designed for the United States Department of Defense. 
+This game presents three challenges.
 The first challenge is a high-level network design where the player has to correctly place the firewall, server, database, and storage components.
 The second challenge is about determining whether some user actions on the network are malicious.
 The third challenge involves calculating IP addresses in binary. 
@@ -570,7 +586,7 @@ Finally, this game is a gamification which unfortunately does not present any cr
 
 \subsection{Cyber Lab}
 
-Cyber Lab is a game found on the website of the Public Broadcasting Service (PBS). 
+Cyber Lab \footnote{https://www.pbs.org/wgbh/nova/labs/lab/cyber/research\#/newuser} is a game found on the website of the Public Broadcasting Service (PBS). 
 In the beginning of the game, the player chooses his avatar and the startup he works for.
 The user has to complete three challenges. 
 The first challenge is a "coding challenge": the player has to write some code using a puzzle to move a character across a path.
@@ -640,7 +656,8 @@ The students built challenges in the following subjects which were primed during
 Unfortunately, the challenges lacked cohesion, and some did not go beyond the material.
 Lack of cohesion was due to the fact that each challenge had its own flow, and its own means of interaction with the user 
 (for example, the key bindings varied between quests). 
-Hence, it has been decided to maintain the already built map, to improve existing quests, and to construct new challenges where required.
+Hence, it has been decided to maintain the already built map and points system, to improve existing quests, and to construct new challenges where required.
+The points system present in the game allows the user to level up and unlock new skills and challenges.
 Moreover, since this course presents cryptography in a limited way, and the principal goal is to give more material about this subject,
 a cryptography quest is going to be built into the game. This would allow the students to learn more about it, 
 and to receive feedback about what was covered in lectures.
@@ -674,16 +691,16 @@ In the background section of this paper, these two algorithms have been presente
 It then presents and explains the three operations in cryptography: encryption, decryption, and hashing.
 It then proceeds to demonstrate how symmetric and asymmetric cryptography work, what keys are used, and where they are applied.
 
-This requirement is the parent of the other intended learning outcomes. 
+The requirement to verify students' knowledge in cryptography is the parent of the other intended learning outcomes. 
 Indeed, the question that has been asked for every idea that came to mind is the following:
 "How does it improve the students' learning experience and what new concepts does it bring to the table?"
 With this in mind, the other ILOs will be now presented.
 
-\subsection{Purpose of cryptography}
+\subsection{Purpose of cryptography learning}
 
-The purpose of cryptography requirement is all about algorithms that have been used in the past to understand its purpose.
-The core goal of this requirement is for the student to gain understanding what cryptography is about, and where it has come from.
-A consequential goal of this requirement is to understand why these algorithms are not longer in use.
+The core goal of this learning is for the student to gain understanding what cryptography is about, and where it has come from.
+The purpose of cryptography learning is all about algorithms that have been used in the past to understand its current state.
+A consequential goal of this learning is to understand why these algorithms are not longer in use.
 A good algorithm to fullfil these goals is the Caesar's cipher because it is easy to explain, 
 understand, and to break as claimed by \citet{anderson_security_2008}.
 
@@ -705,7 +722,7 @@ and why there are three of these. As mentioned by \citet{kessler_overview_2016},
 symmetric and asymmetric cryptography complement each other. 
 Symmetric cryptography is used for message transmission, and public key cryptography 
 is used for key exchange. Hashing is used to store passwords and to verify file integrity.
-Hence, this ILO will develop the idea of why there is a need for symmetric and asymmetric
+Hence, this ILO will be the development of understanding of why there is a need for symmetric and asymmetric
 cryptography, and how it is accomplished in practice.
 Finally, this requirement will present to the student commonly used algorithms for each
 type of cryptographic algorithm as this is not covered in detail in the course.
@@ -725,7 +742,7 @@ linked together, the following requirements can be formulated:
 \citet{eggleton_value_2001} claim that learning from mistakes is important as it allows people to 
 learn why their solutions were incorrect. Hence, presenting mistakes in 
 cryptographic implementations would help people to see why these were incorrect.
-This would in turn avoid people to make mistakes further on in their careers.
+This would in turn prevent students to make mistakes in their future systems design and coding.
 This fits in the main goal of supplementing the lecture material as these mistakes 
 have not been explained in lectures.
 
@@ -756,7 +773,7 @@ They have all been summarized in table \ref{tab:requirements}.
     \begin{tabular}{|l|l|}
     \hline
     \textbf{Intended Learning Outcomes}                    & \textbf{Specific Requirements}                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
-    Go beyond the lecture material presented in the course & This is the ILO that spawns off the the other ones                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+    Go beyond the lecture material presented in the course & This is the ILO that spawns off the other ones                                                                                                                                                                                                                                                                                                                                                        \\ \hline
     Present cryptography origins                           & \begin{tabular}[c]{@{}l@{}}1. Determine what algorithm was used to encrypt the message;\\ 2. Determine what the key is to decrypt the message;\\ 3. Decrypt the message itself\\ .\end{tabular}                                                                                                                                                                                                           \\ \hline
     Present the three types of cryptographic algorithms    & \begin{tabular}[c]{@{}l@{}}1. Present symmetric cryptography, the keys it uses, \\ and its commonly used algorithms;\\ 2. Present asymmetric cryptography, the keys it uses, \\ and its commonly used algorithms;\\ 3. Present hashing, and its commonly used algorithms;\\ 4. Present how symmetric and asymmetric cryptography \\ are combined together to establish secure communication.\end{tabular} \\ \hline
     Mistakes in cryptography                               & \begin{tabular}[c]{@{}l@{}}1. Cryptographic algorithm relying on its secrecy;\\ 2. Failure to delete the plaintext;\\ 3. Poor use of random numbers;\\ 4. Use of weak keys;\\ 5. Use of outdated algorithms.\end{tabular}                                                                                                                                                                                 \\ \hline
@@ -796,7 +813,7 @@ the message instructs the player to go to the coffee shop where the second chall
 
 \subsection{Challenge Design}
 
-This challenge has two important design parts. The cipher message design and the "decryptor" design.
+This challenge has two important design parts: the cipher message design and the "decryptor" design.
 This challenge is about primitive stream ciphers. Hence, the challenge was designed in such way that
 the student would have the choice between Caesar's cipher and the One-Time Pad cipher. Eventually,
 the message was encrypted with Caesar's cipher because the One-Time Pad uses the xOR operation which requires
@@ -1038,7 +1055,7 @@ gamification characteristics.
     \item "Capacity to overcome challenges": The challenge has been designed in such way 
     that it is not too difficult for the student. 
     Students could have been penalized if they would try including every file to the basket, but that
-    could have made the challenge to difficult for them.
+    could have made the challenge too difficult for them.
     \item "Providing feedback on performance": When the student adds a file to the basket, he is asked
     a question about the reason why he added that file. Answering correctly to the question provides 
     feedback to the student whether he understood the reason correctly.
@@ -1428,7 +1445,7 @@ especially due to its specificity described in the previous chapter.
 Afterwards, subjects were asked if they felt motivated to continue playing the game.
 This question not only evaluates the challenge, but also the whole open-world game quest system since 
 points and unlocking new skills are supposed to motivate the player to keep going.
-it was expected that the game would score somewhere between five and seven.
+It was expected that the game would score somewhere between five and seven.
 The storyline could have been a bit more captivating, and would motivate the players even more.
 The next two questions evaluated the interaction between subjects.
 The first question asked whether subjects talked with each other about the challenges, and, if they did, 
