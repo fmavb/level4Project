@@ -417,3 +417,9 @@
 ### 2nd April 2020
 * *0.5 hours* Supervisor meeting
 * *1 hour* Group meeting
+
+### 3rd April 2020
+* *6 hours* Writing the evaluation chapter
+
+### 4th April 2020
+* *6 hours* Writing Introduction, Conclusion and finishing touches
