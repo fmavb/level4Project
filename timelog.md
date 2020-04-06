@@ -427,3 +427,8 @@
 ### 5th April 2020
 * *6 hours* Recording the presentation video
 * *2 hours* Dissertation finishing touches
+
+## Week 28
+
+### 6th April 2020
+* *2 hours* Finishing touches and submission
