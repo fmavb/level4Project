@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \usepackage{float}
+\usepackage{pdfpages}
 \begin{document}
 
 %==============================================================================
@@ -95,10 +96,12 @@ whether this solution succeeded at improving the learning success of students.
 
 \section{Motivation}
 
+Historically lectures used to be one-way communication: teacher conveyed the message to large audience of students.
+Interactive communication between teacher and students was always a challenge to the conventional education system.
 Nowadays, lectures tend to be overcrowded and there is a lack of interaction between students and lecturers \citep{lehmann_theory-driven_2014}.
 Due to this fact, the material presented in lectures in result is not conveyed correctly.
 Moreover, the students do not have the opportunity to check their understanding since interactions in large classroom are not feasible.
-Hence, the learning quality tends to diminish which leaves both lectures and students unsatisfied.
+Hence, the learning quality tends to diminish which leaves both lecturers and students unsatisfied.
 As technology has become common in our daily lives, it can be used to resolve this issue.
 Gamifications and serious games are used to educate its players in various subjects.
 Therefore, they could be used to provide much needed feedback and enhance their knowledge in a particular subject.
@@ -113,8 +116,8 @@ Gamifications and serious games provide a framework which could solve this issue
 by giving feedback to the student concerning their comprehension of cyber security, by enhancing and complementing the material taught in lectures,
 and by motivating them to learn more due to the fun nature of these games.
 
-Finally, \citet{schneier_security_nodate} claims that cryptography is powerful when it is implemented correctly.
-Hence, attackers target the implementation around cryptography and not the cryptography itself \citep{schneier_security_nodate} \citep{lazar_why_nodate}.
+Finally, \citet{schneier_security_1998} claims that cryptography is powerful when it is implemented correctly.
+Hence, attackers target the implementation around cryptography and not the cryptography itself \citep{schneier_security_1998} \citep{lazar_why_2014}.
 Since implementing cryptography into a system requires thorough understanding of how it works,
 it is essential that students get appropriate feedback concerning how these algorithms work.
 This is hindered by the lack of interaction (it is difficult for students to ask questions, for example) and feedback during lectures.
@@ -357,7 +360,7 @@ DES was invented by IBM in the 1970s, and is a block cipher algorithm using 64-b
 DES is no longer considered secure today, however there are two variants to make DES make more secure: 3DES and DESX \citep{kessler_overview_2016}.
 AES is a successor to DES, and it uses a scheme called Rijndael invented by Belgian cryptographers Joan Daeman and Vincent Rijmen \citep{kessler_overview_2016}.
 It is a block cipher algorithm that does not have a fixed size block length and key length; the key length could be either 128, 192, or 256 bits;
-and the block length could be also 128, 192 bits, or 256 bits \citep{kessler_overview_2016}. AES is used in BitLocker which is a hard drive encryption software \citep{noauthor_bitlocker_2019}.
+and the block length could be also 128, 192 bits, or 256 bits \citep{kessler_overview_2016}. AES is used in BitLocker which is a hard drive encryption software \citep{microsoft_bitlocker_2019}.
 
 \begin{figure}[]
     \centering
@@ -422,32 +425,32 @@ The receiver then uses his private key to decrypt the key, and thus the message.
 \subsection{Mistakes in Cryptography}
 
 Cryptography is an important part of a secure computer system. However, mistakes are made when these algorithms are integrated in a system,
-and this is usually the spot where cryptography fails \citep{lazar_why_nodate}. This section will first investigate why cryptography itself is not the issue in most cases.
+and this is usually the spot where cryptography fails \citep{lazar_why_2014}. This section will first investigate why cryptography itself is not the issue in most cases.
 Then, it will discuss the mistakes that are made, and how they could be recovered from.
 
-Cryptography is often viewed as a panacea. Focusing only on cryptography is not the way to go as that enables attackers to go around it \citep{schneier_security_nodate}.
-However, it is powerful when the whole system is designed correctly \citep{schneier_security_nodate}. 
-\citet{schneier_security_nodate} claims that most of the time attackers will not attack the cryptography itself, but they will more go after the vulnerabilities around the
+Cryptography is often viewed as a panacea. Focusing only on cryptography is not the way to go as that enables attackers to go around it \citep{schneier_security_1998}.
+However, it is powerful when the whole system is designed correctly \citep{schneier_security_1998}. 
+\citet{schneier_security_1998} claims that most of the time attackers will not attack the cryptography itself, but they will more go after the vulnerabilities around the
 implemented cryptography. This is mostly due to attackers not having the skills, the infrastructure, or the time to break the cryptography. 
-That said, a cryptographic algorithm relying on its secrecy is also weak \citep{schneier_security_nodate}. It could take some days at most for specialists to reverse engineer 
+That said, a cryptographic algorithm relying on its secrecy is also weak \citep{schneier_security_1998}. It could take some days at most for specialists to reverse engineer 
 the algorithm and discover the plaintext. One of the mistakes made in cryptographic system design is the failure to destroy the plaintext after encrypting it. 
-\citet{schneier_security_nodate} and \citet{lazar_why_nodate} mention this issue, and it is a mistake where cryptography is not to blame, but the implementation is.
-Another mistake people make is the poor usage of random numbers or not using them at all. \citet{lazar_why_nodate} state that random numbers are essential for cryptography, 
+\citet{schneier_security_1998} and \citet{lazar_why_2014} mention this issue, and it is a mistake where cryptography is not to blame, but the implementation is.
+Another mistake people make is the poor usage of random numbers or not using them at all. \citet{lazar_why_2014} state that random numbers are essential for cryptography, 
 which could be used to generate a secret key. Sometimes, the random number generator is not certified for cryptography, and this allows attackers to predict the next bits.
-It can also happen that the seeds for the random number generator are not random which also allows to predict the resulting key \citep{lazar_why_nodate}.
+It can also happen that the seeds for the random number generator are not random which also allows to predict the resulting key \citep{lazar_why_2014}.
 Attackers are often helped by the choice of weak keys. Joining the idea of using good random numbers to generate a strong key, some people prefer to bypass randomness,
-and set weak passkeys generated by users that do not have a background in security as guessing a password if it is a key is much easier than trying to brute-force a key \citep{schneier_security_nodate}.
-However, if people are asked to use strong passwords, they will forget them \citep{schneier_security_nodate}.
-\citet{lazar_why_nodate} also claim that some developers hard-code the secret keys into the source code which cancels out the purpose of cryptography.
+and set weak passkeys generated by users that do not have a background in security as guessing a password if it is a key is much easier than trying to brute-force a key \citep{schneier_security_1998}.
+However, if people are asked to use strong passwords, they will forget them \citep{schneier_security_1998}.
+\citet{lazar_why_2014} also claim that some developers hard-code the secret keys into the source code which cancels out the purpose of cryptography.
 They think it is due to developers believing compilation will hide the key which is not true.
-The use of outdated or weak algorithms (like MD4, MD5, SHA-1) is a problem that has been described by \citet{lazar_why_nodate}.
+The use of outdated or weak algorithms (like MD4, MD5, SHA-1) is a problem that has been described by \citet{lazar_why_2014}.
 The vulnerability of MD5 has been described in a previous paragraph of this section.
 They claim that this is mostly due to developers using past practices that are no longer considered safe, and using default settings in cryptographic libraries.
 \citet{acar_comparing_2017} asked some coders to write some code using one of the five Python cryptographic libraries.
 They came to the conclusion that some cryptographic libraries are poorly documented, one of them provided insecure symmetric encryption for example.
 Therefore, good documentation for cryptographic APIs is needed for it to be used.
 They also think that the easier it is to use a cryptographic library, the better the security results are.
-Finally, they noticed that some developers said that their code is secure when it was not. This shows a lack of recognition for some security issues \citep{lazar_why_nodate}.
+Finally, they noticed that some developers said that their code is secure when it was not. This shows a lack of recognition for some security issues \citep{lazar_why_2014}.
 
 \subsection{Conclusion}
 
@@ -1574,26 +1577,17 @@ and eventually build a safer computing experience for everyone.
 \chapter{Appendices}
 
 \section{Ethics Approval}
+\includegraphics[page=1, scale=0.55]{images/SignedEthicsApproval.pdf}
 
-Typical inclusions in the appendices are:
+\includegraphics[page=2, scale=0.55]{images/SignedEthicsApproval.pdf}
 
-\begin{itemize}
-\item
-  Copies of ethics approvals (required if obtained)
-\item
-  Copies of questionnaires etc. used to gather data from subjects.
-\item
-  Extensive tables or figures that are too bulky to fit in the main body of
-  the report, particularly ones that are repetitive and summarised in the body.
+\section{Learning Experience Evaluation Form}
 
-\item Outline of the source code (e.g. directory structure), or other architecture documentation like class diagrams.
+\includepdf[pages={1-}, scale=0.5]{images/LearningExperience.pdf}
 
-\item User manuals, and any guides to starting/running the software.
+\section{Gamification Experience Evaluation Form}
 
-\end{itemize}
-
-\textbf{Don't include your source code in the appendices}. It will be
-submitted separately.
+\includepdf[pages={1-}, scale=0.5]{images/GamingExperience.pdf}
 
 \end{appendices}
 
